@@ -1,0 +1,104 @@
+.gldp-default {
+    position: absolute;
+}
+
+
+/* Core style for every cell */
+
+.gldp-default .core {
+    position: relative;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    background: #fff;
+}
+
+
+/* Cell border */
+
+.gldp-default .border {
+    border: 1px solid #aaa;
+}
+
+
+/* Month/Year text and select */
+
+.gldp-default .monyear,
+.gldp-default .monyear select {
+    font-size: 16px !important;
+}
+
+
+/* Month/Year text */
+
+.gldp-default .monyear span {
+    margin: 0 5px 0 5px;
+}
+
+
+/* Prev/Next arrows */
+
+.gldp-default .prev-arrow,
+.gldp-default .next-arrow {
+    color: #bdb099;
+}
+
+.gldp-default .prev-arrow:active,
+.gldp-default .next-arrow:active {
+    color: #aaa;
+}
+
+/* Days of the week */
+
+.gldp-default .dow {
+    cursor: default;
+    color: #fff;
+    background: #bdb099;
+}
+
+/* Selectable days that are outside of current month being shown */
+
+.gldp-default .outday {
+    font-weight: 100;
+    color: #aaa;
+}
+
+
+/* Hover */
+
+.gldp-default .mon:hover,
+.gldp-default .tue:hover,
+.gldp-default .wed:hover,
+.gldp-default .thu:hover,
+.gldp-default .fri:hover,
+.gldp-default .sat:hover,
+.gldp-default .sun:hover {
+    background: #e9e9e9;
+}
+
+
+/* Non-Selectable days */
+
+.gldp-default .noday {
+    font-weight: normal;
+    color: #fff;
+}
+
+/* Currently selected day */
+
+.gldp-default .selected {
+    color: #fff;
+    background: #bdb099;
+}
+
+
+.title {
+    border: none !important;
+    border-top: 1px solid #aaa !important;
+}
