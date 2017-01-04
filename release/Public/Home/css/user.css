@@ -1,0 +1,268 @@
+@charset 'utf-8';
+
+/*背景*/
+
+.title-wrap {
+    min-height: 202px;
+}
+
+.title-wrap::after {
+    font-size: 18px;
+    line-height: 300px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '图片加载中/Image loading ...';
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, .1);
+}
+
+.title-text {
+    top: 50%;
+    margin-top: -28px;
+}
+
+
+/*all-wrap*/
+
+.con-wrap {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+/*aside*/
+
+.aside {
+    width: 150px;
+    padding-top: 2px;
+    padding-left: 50px;
+}
+
+.portrait-btn {
+    padding: 8px 10px;
+    border: 1px solid #bdb099;
+}
+
+.portrait-btn:hover,
+.send-code:hover {
+    color: #fff;
+    background-color: #bdb099;
+}
+
+.aside-nav {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+/*content*/
+
+.con-main {
+    width: 720px;
+    padding-right: 50px;
+}
+
+.main-nav {
+    padding: 10px 40px;
+}
+
+.main-nav-fav {
+    padding: 10px 40px 10px 13px;
+}
+
+
+/*个人资料*/
+
+.main-con {
+    padding: 30px 40px;
+}
+
+.label-item {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.item-tip {
+    display: inline-block;
+    width: 100px;
+}
+
+.label-item input,
+.label-item select,
+.tel-wrap {
+    line-height: 28px;
+    width: 200px;
+    margin-right: 10px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.label-item select {
+    width: 104px;
+    height: 28px;
+}
+
+.label-tel {
+    margin-bottom: 15px;
+}
+
+.label-tel input {
+    width: 160px;
+}
+
+.tel-func {
+    width: 240px;
+}
+
+.tel-func,
+.tel-func button {
+    line-height: 30px;
+}
+
+.send-code {
+    padding: 0 8px;
+    border: 1px solid #bdb099;
+}
+
+.status-tel.true {
+    color: #9c9;
+}
+
+.status-tel.false {
+    color: #ff2c55;
+}
+
+.save-btn button {
+    width: 104px;
+    margin-right: 10px;
+    padding: 9px 0;
+    border: 1px solid #bdb099;
+    background-color: #bdb099;
+}
+
+.save-btn button:hover {
+    color: #bdb099;
+    background-color: #fff;
+}
+
+.submit-err {
+    color: #ff2c55;
+}
+
+
+/*收藏夹*/
+
+.fav-choice {
+    width: 13px;
+    height: 13px;
+    margin: 0 13px;
+}
+
+.fav-wrap {
+    width: 640px;
+    height: 150px;
+}
+
+.fav-wrap .fav-operation,
+.fav-wrap:hover .fav-con {
+    opacity: 0;
+}
+
+.fav-wrap:hover .fav-operation {
+    opacity: 1;
+}
+
+.fav-con {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.fav-name {
+    width: 224px;
+    height: 64px;
+    margin-top: 43px;
+}
+
+.fav-icon {
+    margin-top: 52px;
+}
+
+.fav-btn {
+    line-height: 30px;
+    margin-top: 59px;
+    padding: 0 10px;
+    color: #bdb099;
+    border: 1px solid #bdb099;
+}
+
+.fav-btn:hover {
+    color: #fff;
+    background-color: #bdb099;
+}
+
+/*public*/
+
+input[type='checkbox'] {
+    position: relative;
+    top: 2px;
+}
+
+.i-mw {
+    min-width: 1000px;
+}
+
+.i-bc {
+    border: 1px solid #e0e0e0;
+}
+
+
+/*icon*/
+
+.i-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background: url('../images/info/userCenterIcons.png') no-repeat;
+}
+
+.i-icon-data {
+    background-position: 0 0;
+}
+
+.icon-data:hover .i-icon-data,
+.icon-data.active .i-icon-data {
+    background-position: -20px 0;
+}
+
+.icon-data:hover,
+.icon-fav:hover,
+.icon-mes:hover,
+.main-nav li:hover,
+.main-nav li.active,
+.modify-tel:hover,
+.aside-nav a.active {
+    color: #bdb099;
+}
+
+.i-icon-fav {
+    background-position: 0 -20px;
+}
+
+.icon-fav:hover .i-icon-fav,
+.icon-fav.active .i-icon-fav {
+    background-position: -20px -20px;
+}
+
+.i-icon-mes {
+    background-position: 0 -60px;
+}
+
+.icon-mes:hover .i-icon-mes,
+.icon-mes.active .i-icon-mes {
+    background-position: -20px -60px;
+}
