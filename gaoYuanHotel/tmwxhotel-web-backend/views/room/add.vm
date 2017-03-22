@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    #if ($data)
+    <title>编辑房间</title>
+    #else
+    <title>新增房间</title>
+    #end
+    <!-- icon -->
+    <link rel="icon" sizes="any" href="/img/favicon.png" />
+    <!-- basic -->
+    <link rel="stylesheet" href="/css/base.css" />
+    <!-- this -->
+    <link rel="stylesheet" href="/css/all.css" />
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="body">
+    <!-- 头部 -->
+    #parse("./common/header.vm")
+    <main class="main bb pr page_room">
+        #parse("./common/aside.vm")
+        <section id="allWrap" class="all-wrap">
+            <!-- 导航栏 -->
+            <div class="con-nav i-lh30 i-bcm p10 mb20 c">
+                <nav class="fl">
+                    <a>房间管理</a>
+                    #if ($data)
+                    <a>编辑房间</a>
+                    #else
+                    <a href="/hotelRoom/add">新增房间</a>
+                    #end
+                </nav>
+            </div>
+            <form class="form" autocomplete="off">
+                <table class="con-show w1">
+                    <tbody>
+                        #if ($data)
+                            <input class="edit-id" name="id" type="hidden" value="${data.data.id}" />
+                        #end
+                        <tr>
+                            <td>酒店 *</td>
+                            <td>
+                                <select class="hotel-list ipt-item i-select i-w-long mr10" name="hotelid" >
+                                </select>
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <tr>
+                            <td>房间名称 *</td>
+                            <td>
+                                <input class="ipt-item i-input i-w-long" name="name" type="text" placeholder="房间名称" value="$!{data.data.name}" />
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <!-- <tr class="goods-img">
+                            <td>房间图片 *</td>
+                            <td id="imgCropWrap">
+                                #if ($data)
+                                    #foreach ($item in $data.data.tempImagepath)
+                                    <figure>
+                                        <img src="$!{item.tmpurl}" />
+                                        <span class="img-del">×</span>
+                                    </figure>
+                                    #end
+                                #end
+                                <label class="add-img" data-num="infinity">
+                                    <input id="imgUpload" class="none" type="file" name="inputFile" />
+                                </label>
+                                <input type="hidden" id="imagepath" name="imagepath" value="$!{data.data.imagepath}" />
+                            </td>
+                            <td>&emsp;</td>
+                        </tr> -->
+                        <tr>
+                            <td>是否上架 *</td>
+                            <td>
+                                <label class="dlb mr20">
+                                    <input type="radio" value="true" class="mr5" name="ismarketable" checked="checked" />是
+                                </label>
+                                <label class="dlb mr20">
+                                    <input type="radio" value="false" class="mr5" name="ismarketable"/>否
+                                </label>
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <tr>
+                            <td>是否含早 *</td>
+                            <td>
+                                <label class="dlb mr20">
+                                    <input type="radio" value="true" class="mr5" name="isbreakfast" />是
+                                </label>
+                                <label class="dlb mr20">
+                                    <input type="radio" value="false" class="mr5" name="isbreakfast" checked="checked"/>否
+                                </label>
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <tr>
+                            <td>价格 *</td>
+                            <td>
+                                <input class="ipt-item i-input i-w-long" name="price" type="text" value="$!{data.data.price}" />
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <tr>
+                            <td>库存 *</td>
+                            <td>
+                                <input class="ipt-item only-num i-input i-w-long" name="store" type="text" placeholder="非负整数" value="$!{data.data.store}" />
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <tr>
+                            <td>积分</td>
+                            <td>
+                                <input class="ipt-item only-num i-input i-w-long" name="buyearnpoint" type="text" placeholder="非负整数" value="$!{data.data.buyearnpoint}" />
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <tr>
+                            <td>描述</td>
+                            <td>
+                                <textarea class="ipt-item i-textarea i-w-long bb" name="introduction" placeholder="酒店描述">$!{data.data.introduction}</textarea>
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="con-operation tac pt20 mb30">
+                    #if ($data)
+                    <button type="button" class="submit-form type-edit i-button i-b-mw">保存</button>
+                    #else
+                    <button type="button" class="submit-form i-button i-b-mw">保存</button>
+                    #end
+                </div>
+            </form>
+        </section>
+    </main>
+    <script>
+        var RenderData = {
+            // imgData: '$!{data.data.imagepath}',
+            hotelid: '$!{data.data.hotelid}',
+            isbreakfast:'$!{data.data.isbreakfast}',
+            ismarketable:'$!{data.data.ismarketable}'
+        };
+    </script>
+    <!-- script -->
+    <script src="/js/jq.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/public.js"></script>
+    <!-- 下面4个js是图片异步上传插件（加载顺序不要乱） -->
+    <script src="/js/checkFileTypeAndSize.js"></script>
+    <script src="/js/jquery.ui.widget.js"></script>
+    <script src="/js/fileUpload.js"></script>
+    <script src="/js/layer.min.js"></script>
+    <script src="/js/migrate.js"></script>
+    <!-- this -->
+    <script src="/js/all.js"></script>
+    <script src="/js/hotelRoomAddEdit.js"></script>
+</body>
+
+</html>

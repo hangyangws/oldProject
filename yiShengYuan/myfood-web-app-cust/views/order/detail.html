@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>订单详情-我的菜</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link rel="icon" sizes="any" href="/img/icon.png" />
+    <link rel="stylesheet" href="/dist/css/base-pub.css" />
+    <link rel="stylesheet" href="/dist/css/order-detail.css" />
+</head>
+
+<body class="bc-light">
+    <main id="main" class="main pt10 pb10 pl5 pr5 #if ($isFooter)pb-54#end">
+        ## 进度状态栏
+        <section class="r4 bcf p10 tac mb10">
+            <div class="fc-number"><i class="i-status vam mr5 $!{nowIconClass}"></i><span class="dlb vam">$!{nowStatus}</span></div>
+            <ul class="status-wrap status-${statusList.length} fs0 fc-impor-one mt10 pr">
+                #foreach ($status in $statusList)
+                <li class="status-item fs14 dlb #if ($status.checked)active#end pr">
+                    <span>$status.name</span>
+                    <i></i>
+                </li>
+                #end
+            </ul>
+        </section>
+        ## 店铺列表
+        <ul>
+            #foreach ($shop in $shopList)
+            <li class="js-shop-item mb10 r4 bcf p5" data-end='{"shopId": "$!{shop.shopId}", "payMethod": "$!{shop.payMethod}", "dinMethod": "$!{shop.dinMode}"}' data-dinmodelist='$!{shop.dinModeList}' data-sendfee="$!{shop.sendMoney}">
+                <div class="pr tar fs0 pb5">
+                    <h3 class="shop-name pl5 l0 t0 b0 fc-impor-one tal to pa fs14">$!{shop.shopName}</h3>
+                    <i class="js-del i-tel mt5 mb5"></i>
+                </div>
+                <ul class="b-t-solid">
+                    #foreach ($food in $shop.foodList)
+                    <li class="food-item b-b-dash pr">
+                        <figure class="food-img pr r4" style="background: url(${food.foodImg}) 50% 50% / cover no-repeat;"></figure>
+                        <div class="food-con pa">
+                            <div>
+                                <h3 class="fc-impor-one to">$!{food.foodName}</h3>
+                                <dl class="fc-sub">
+                                    <dt class="dlb">月销量</dt>
+                                    <dd class="dlb">$!{food.foodSales}</dd>
+                                </dl>
+                            </div>
+                            <div class="food-price c">
+                                <span class="price fl fc-number fs16">$!{food.foodPrice}</span>
+                                <span class="c-impor-two fr fs16">×$!{food.foodNum}</span>
+                            </div>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+                <section class="b-b-dash pl5 pr5 pt10">
+                    <span class="fc-impor-two">给家厨捎的话：</span>
+                    <p class="fc-impor-one">$!{shop.note}</p>
+                </section>
+                <dl class="lh-50 b-b-dash pl5 pr5 c">
+                    <dt class="dlb fc-impor-two">预达时间</dt>
+                    <dd class="fc-number fs16 dlb fr">11:11</dd>
+                </dl>
+                <dl class="js-din-mode lh-50 b-b-dash pl5 pr5 c">
+                    <dt class="fc-impor-two fl">就餐方式</dt>
+                    <dd class="fr">
+                        <span class="js-din-name fc-impor-one mr10 dlb">$!{shop.dinMode}</span>
+                        <span class="fc-impor-two dlb">配送费</span>
+                        <span class="price fs16 fc-number dlb">$!{shop.sendMoney}</span>
+                    </dd>
+                </dl>
+                <dl class="lh-50 pl5 pr5 c">
+                    <dt class="dlb fc-impor-one fs16">$!{shop.payMethod}#if ($shop.payMethod == '在线支付')<span class="fc-number fs12">&ensp;(实际支付)</span>#end</dt>
+                    <dd class="fs16 dlb fr fc-number price">$!{shop.payMoney}</dd>
+                </dl>
+            </li>
+            #end
+        </ul>
+        ## 收货人
+        <section class="js-user-addr fc-impor-two bcf r4 pt5 pb5 pl10 pr10">
+            <dl class="pt5 mb5">
+                <dt class="fc-impor-one dlb w70">订单号：</dt>
+                <dd class="dlb">$!{orderInfo.orderNum}</dd>
+            </dl>
+            <dl class="pt5 mb5 b-t-solid">
+                <dt class="dlb w70">收餐人：</dt>
+                <dd class="dlb">$!{orderInfo.userName}</dd>
+            </dl>
+            <dl class="pt5 mb5 b-t-solid">
+                <dt class="dlb w70">联系方式：</dt>
+                <dd class="dlb">$!{orderInfo.tel}</dd>
+            </dl>
+            <dl class="pr pt5 mb5 b-t-solid">
+                <dt class="dlb w70">收餐地址：</dt>
+                <dd class="user-addr dlb pa to">$!{orderInfo.addr}</dd>
+            </dl>
+            <dl class="pt5 mb5 b-t-solid">
+                <dt class="dlb w70">下单时间：</dt>
+                <dd class="dlb">$!{orderInfo.orderTime}</dd>
+            </dl>
+        </section>
+    </main>
+    #if ($isFooter)
+    <footer id="footer" class="footer pf w1 l0 b0 c">
+        <div class="footer-con pa t0 l0 b0 tac">
+            <button class="cancel-btn bcf r4 pl10 pr10 fc-sub fs12">取消订单</button>
+        </div>
+        <span class="tac js-statement statement pr h1 fr dlb">去结算<span class="fs12 dlb bc-vice pa w70">找找 优惠券</span></span>
+    </footer>
+    #end
+    <script>
+    var G = {
+        device: '$!{device}'
+    };
+    </script>
+    <script src="/dist/js/lib-pub.js"></script>
+    <script src="/dist/js/order-detail.js"></script>
+</body>
+
+</html>

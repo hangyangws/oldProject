@@ -1,0 +1,290 @@
+/**
+ * 此文件在多个html中应用，修改时注意
+ */
+
+
+/*public*/
+
+.card {
+    margin-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 5px 10px 0 rgba(233, 233, 233, .75);
+}
+
+.select {
+    font-size: 1rem;
+    display: inline-block;
+    height: 2.2rem;
+    padding: 0 2.571rem 0 4px;
+    color: #999;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    background: url(../img/down.png) no-repeat right 50%/auto 22%;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    direction: rtl;
+}
+
+.select:active {
+    color: #fff;
+    background-color: rgba(0, 140, 209, .5);
+}
+
+.select-active {
+    color: #333;
+}
+
+
+/*点选组*/
+
+.radio-grup {
+    font-size: 0;
+    padding: 1rem 10px 1rem 40px;
+}
+
+.radio-grup > label {
+    font-size: 1rem;
+    display: inline-block;
+    min-width: 50%;
+    padding: .4rem 0;
+    color: #838383;
+}
+
+
+/*content*/
+
+.content {
+    overflow-y: auto;
+    padding-bottom: 5rem;
+}
+
+
+/*地址信息*/
+
+.label {
+    font-size: 1.143rem;
+    padding: 1rem 0 .6rem;
+}
+
+.label-2 {
+    font-size: 1.143rem;
+    padding: 0 0 .6rem;
+}
+
+.label .i,
+.label-2 .i {
+    margin: 0 10px;
+}
+
+.addr-info {
+    padding: 1rem 10px 0 40px;
+}
+
+.addr-info li {
+    margin-bottom: 1rem;
+}
+
+.addr-info h6 {
+    margin-bottom: .5rem;
+}
+
+.addr-info h6::after,
+.item-tag::after {
+    content: '*';
+    color: #008cd1;
+}
+
+.no-ask::after {
+    display: none;
+}
+
+.addr-info .select {
+    width: 100%;
+}
+
+.each-addr-active {
+    color: #333;
+}
+
+
+/*户主信息*/
+
+.master-info .i,
+.other-info .i {
+    top: 0;
+    bottom: 0;
+    margin: auto 10px;
+}
+
+
+/* 统一字段高度 mod by Alex */
+
+.master-info .each-list,
+.other-info .each-list {
+    line-height: 2.2rem;
+}
+
+.other-info .ipt-wrap {
+    padding-left: 11rem;
+}
+
+.other-info .item-tag {
+    width: 12rem;
+}
+
+
+/* 带header的标题 mod by Alex */
+
+section.content > h3 {
+    font-size: 1.2rem;
+    padding: 0 0 1rem 2rem;
+    border-bottom: 1px dashed #ccc;
+}
+
+section.content > h3:after {
+    position: absolute;
+    width: 100%;
+    content: '';
+}
+
+.each-con {
+    margin-left: 40px;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.item-wrap {
+    padding: 10px 0;
+}
+
+
+/* 单选radio mod by Alex */
+
+.item-wrap > label {
+    position: relative;
+    display: inline-block;
+    min-width: 48%;
+    margin: 5px auto;
+}
+
+
+/* 另一种单选radio mod by Alex */
+
+.no-radio {
+    margin-left: -1rem;
+}
+
+.no-radio > label {
+    min-width: 2rem;
+    margin: 1rem;
+    padding: .3rem .75rem;
+    text-align: center;
+}
+
+.no-radio .u-radio {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: border-color .4s;
+    -o-transition: border-color .4s;
+    transition: border-color .4s;
+    border: 1px solid #ccc;
+    border-radius: .3rem;
+}
+
+.no-radio .u-radio:before {
+    content: none;
+}
+
+.no-radio .o-radio:checked + .u-radio {
+    border-color: #00b0ea;
+    background: none;
+}
+
+.no-radio span:last-child {
+    -webkit-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+}
+
+.no-radio .o-radio:checked ~ span:last-child {
+    color: #00b0ea;
+}
+
+.each-list:last-child .each-con {
+    border-bottom: none;
+}
+
+.item-tag {
+    font-size: 1.143rem;
+    line-height: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 5.2rem;
+    height: 1rem;
+    margin: auto 0;
+}
+
+.ipt-wrap {
+    padding: 10px 10px 10px 6rem;
+}
+
+.ipt-wrap > input {
+    width: 100%;
+}
+
+.ipt-wrap > label {
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+.ipt-wrap > select {
+    width: 9rem;
+}
+
+.o-radio {
+    display: none;
+}
+
+.u-radio {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: .6rem;
+    vertical-align: middle;
+    pointer-events: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+.u-radio + span {
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.u-radio::before {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    content: '';
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.o-radio:checked + .u-radio::before {
+    background-color: #ff7109;
+}
+
+
+/*footer*/
+
+.sub-btn {
+    max-width: 600px;
+    margin: 0 auto;
+}

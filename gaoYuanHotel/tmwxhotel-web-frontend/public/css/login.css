@@ -1,0 +1,39 @@
+@charset 'utf-8';
+html, body {
+    height: 100%;
+}
+
+.title {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.form {
+    width: 290px;
+    top: 50%;
+    -webkit-transform: -webkit-translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.label {
+    margin-bottom: 20px;
+}
+
+.label input {
+    border: 1px solid #d6cebd;
+}
+.label span {
+    font-size: 14px;
+    display: inline-block;
+    width: 80px;
+}
+
+.form-btn {
+    margin-left: 80px;
+    background-color: #a9976d;
+}
+
+
+.label input,
+.form-btn {
+    line-height: 30px;
+}

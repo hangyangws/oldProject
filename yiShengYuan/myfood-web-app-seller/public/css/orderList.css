@@ -1,0 +1,91 @@
+@charset 'utf-8';
+
+/**
+ * Created by hangyangws(hangyangws@foxmail.com) in 2016-06-25.
+ */
+
+
+/*public*/
+
+html,
+body {
+    height: 100%;
+}
+
+.wp-nowrap {
+    white-space: nowrap;
+}
+
+.border-b {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.error-item {
+    top: 50%;
+}
+
+.order-item {
+    margin-bottom: 12px;
+    -webkit-transition: height .6s, padding .4s, margin .4s;
+    -moz-transition: height .6s, padding .4s, margin .4s;
+    -o-transition: height .6s, padding .4s, margin .4s;
+    transition: height .6s, padding .4s, margin .4s;
+}
+
+.order-item.active {
+    will-change: height;
+    padding: 0;
+    margin: 0;
+    height: 0 !important;
+}
+
+.order-btn button {
+    border-radius: 4px;
+    line-height: 2.4em;
+    margin-bottom: 10px;
+    width: 70px;
+    box-shadow: 0 1px rgba(4, 48, 34, .45);
+    margin-left: 16px;
+}
+
+.order-fs14 {
+    font-size: 14px !important;
+}
+
+
+/*order-item*/
+
+.order-wrap {
+    overflow-y: auto;
+}
+
+.order-item:last-child {
+    margin-bottom: 0;
+}
+
+.order-item dl {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.order-item dt {
+    width: 64px;
+    text-align: left;
+}
+
+.order-item dt,
+.order-item dd {
+    line-height: 16px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.order-addr {
+    padding-top: 1px;
+}
+
+.order-addr dd {
+    padding-left: 64px;
+}

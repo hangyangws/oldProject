@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <title>会员列表</title>
+    <!-- icon -->
+    <link rel="icon" sizes="any" href="/img/favicon.png" />
+    <!-- basic -->
+    <link rel="stylesheet" href="/css/base.css" />
+    <!-- this -->
+    <link rel="stylesheet" href="/css/all.css" />
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="body">
+    <!-- 头部 -->
+    #parse("./common/header.vm")
+    <main class="main bb pr page_member">
+        #parse("./common/aside.vm")
+        <section id="allWrap" class="all-wrap">
+            <!-- 导航栏 -->
+            <div class="con-nav i-lh30 i-bcm h30 p10 mb20 c">
+                <nav class="fl">
+                    <a>会员管理</a>
+                    <a href="/hotelMember">会员列表</a>
+                </nav>
+                <div class="fr c">
+                    <!-- 第一个不需要 class ml20 -->
+                    <label class="nav-search fl">
+                        <input class="search-list i-input w300 i-b1m fl" type="text" value="$!{search}" placeholder="用户名、昵称、微信号" />
+                        <button class="mem-search-btn i-button fl" type="botton">搜索</button>
+                    </label>
+                </div>
+            </div>
+            <!-- 搜索区域 -->
+            <div class="mb20 c">
+                <select class="member-list i-select fl mr10">
+                    <option value="null">选择状态</option>
+                    <option value="true">启用</option>
+                    <option value="false">禁用</option>
+                </select>
+            </div>
+            <!-- 结果展示区域 table -->
+            <table class="i-table mb20 w1">
+                <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th>昵称</th>
+                        <th>积分</th>
+                        ##<th>微信号</th>
+                        <th>会员等级</th>
+                        #*<th>平台ID</th>
+                        <th>是否启用</th>
+                        <th>操作</th>*#
+                    </tr>
+                </thead>
+                <tbody>
+                    #if ($msg == '获取数据正常')
+                        #foreach ($item in $data.data.list)
+                        <tr data-id="$!{item.id}" data-name="$!{item.username}">
+                            <td>$!{item.username}</td>
+                            <td>$!{item.hotelmemberext[0].nickname}</td>
+                            <td>$!{item.point}</td>
+                            ##<td>$!{item.hotelauthplatform[0].platformaccount}</td>
+                            <td>$!{item.memberrankname}</td>
+                            ##<td>$!{item.hotelauthplatform[0].authid}</td>
+                            #*<td>
+                                #if ($item.isaccountenabled)
+                                是
+                                #else
+                                否
+                                #end
+                            </td>
+                            <td>
+                                #if ($item.isaccountenabled)
+                                <span class="user-toggle i-button-m dlb cp" title="禁用此用户">禁用</span>
+                                #else
+                                <spanclass="user-toggle i-button-m dlb cp" title="启用此用户">启用</span>
+                                #end
+                            </td>*#
+                        </tr>
+                        #end
+                    #else
+                    <tr>
+                        <td colspan="8">$!{msg}</td>
+                    </tr>
+                    #end
+                </tbody>
+            </table>
+            <!-- 分页 paging -->
+            <section class="paging"></section>
+        </section>
+    </main>
+    <!-- script -->
+    <script>
+        var RenderData = {
+            useable: '$!{isaccountenabled}',
+            search: '$!{search}',
+            pageNum: '$!{data.data.pageNum}',
+            total: '$!{data.data.total}'
+        };
+    </script>
+    <script src="/js/jq.js"></script>
+    <script src="/js/public.js"></script>
+    <script src="/js/layer.min.js"></script>
+    <!-- this -->
+    <script src="/js/all.js"></script>
+    <script src="/js/hotelMember.js"></script>
+</body>
+
+</html>

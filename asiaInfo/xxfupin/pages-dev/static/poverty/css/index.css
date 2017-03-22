@@ -1,0 +1,249 @@
+/*轮播*/
+
+.swiper-container {
+    height: 36%;
+    box-shadow: 0 2px 6px 0 rgba(233, 233, 233, .75);
+}
+
+.swiper-wrapper {
+    min-height: 204px;
+}
+
+.swiper-slide {
+    background-color: #fff;
+}
+
+
+/*导航*/
+
+.index-nav {
+    font-size: 0;
+    position: relative;
+    z-index: 1;
+    top: -1.5rem;
+    margin: 0 .714rem;
+    padding: 1.5rem 0 .3rem 0;
+    color: #7f7f7f;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px 0 rgba(233, 233, 233, .75);
+}
+
+.index-nav a {
+    font-size: 1rem;
+    display: inline-block;
+    width: 33.33%;
+    margin-bottom: 1.4rem;
+}
+
+.index-nav span {
+    position: relative;
+    display: inline-block;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 6px;
+}
+
+.index-nav .i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+.index-nav p {
+    margin-top: .6rem;
+}
+
+.index-nav a:nth-child(1) span {
+    background-color: rgb(116, 209, 254);
+    box-shadow: 0 2px 16px 0 rgba(175, 229, 255, .7);
+}
+
+.index-nav a:nth-child(2) span {
+    background-color: rgb(194, 116, 254);
+    box-shadow: 0 2px 16px 0 rgba(215, 165, 253, .7);
+}
+
+.index-nav a:nth-child(3) span {
+    background-color: rgb(116, 155, 254);
+    box-shadow: 0 2px 16px 0 rgba(189, 208, 255, .7);
+}
+
+.index-nav a:nth-child(4) span {
+    background-color: rgb(255, 230, 132);
+    background-color: rgb(255, 160, 160);
+    box-shadow: 0 2px 16px 0 rgba(255, 215, 209, .7);
+}
+
+.index-nav a:nth-child(5) span {
+    background-color: rgb(254, 177, 116);
+    box-shadow: 0 2px 16px 0 rgba(253, 220, 193, .7);
+}
+
+.index-nav a:nth-child(6) span {
+    background-color: rgb(255, 230, 132);
+    box-shadow: 0 2px 16px 0 rgba(255, 241, 184, .7);
+}
+
+
+/*便民电话*/
+
+.com-tel {
+    right: .714rem;
+    bottom: 5rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 6px;
+    background-color: rgb(255, 136, 212);
+    box-shadow: 0 2px 16px 0 rgba(255, 197, 234, .98);
+}
+
+.com-tel .i {
+    width: 30px;
+    height: 30px;
+    margin-bottom: .4rem;
+}
+
+
+/*新闻动态*/
+
+.news-info {
+    padding: .714rem;
+}
+
+.news-info > h3 {
+    margin-bottom: .714rem;
+}
+
+.news-item {
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px 0 rgba(233, 233, 233, .7);
+    margin-bottom: 1rem;
+}
+
+.news-item header {
+    font-size: 0;
+    margin: 0 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px dashed #cfcfcf;
+}
+
+.news-item h4 {
+    font-size: 1.286rem;
+    color: #333;
+}
+
+.news-item header ul {
+    margin-top: .6rem;
+    color: #888;
+}
+
+.news-item header li {
+    font-size: .857rem;
+    line-height: .857rem;
+    display: inline-block;
+    margin-right: 3rem;
+    vertical-align: middle;
+}
+
+.news-item header li:last-child {
+    margin-right: 0;
+}
+
+.news-item header dt,
+.news-item header dd {
+    display: inline-block;
+}
+
+.news-item article {
+    padding: 1rem;
+}
+
+.news-item article p {
+    font-size: 1.143rem;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #515151;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.news-item figure {
+    font-size: 0;
+}
+
+.news-item figure div {
+    display: inline-block;
+    width: 33.33%;
+    text-align: center;
+}
+
+.news-item figure i {
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    margin-top: 1rem;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 6px;
+}
+
+.news-item figure div:nth-child(3n-2) {
+    text-align: left;
+}
+
+.news-item figure div:nth-child(3n) {
+    text-align: right;
+}
+
+.news-item footer {
+    font-size: 0;
+    padding: 1rem 0;
+    border-top: 1px solid #ececec;
+}
+
+.news-item footer div {
+    font-size: 1rem;
+    position: relative;
+    display: inline-block;
+    width: 33.33%;
+    text-align: center;
+    vertical-align: middle;
+    color: #868686;
+}
+
+.news-item footer div::after {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 1px;
+    height: 60%;
+    content: '';
+    background-color: #cacaca;
+}
+
+.news-item footer div:last-child::after {
+    display: none;
+}
+
+.news-item footer button {
+    background-color: transparent;
+}
+
+
+/*媒体查询*/
+
+@media screen and (max-height: 666px) {
+    .index-nav p {
+        margin-top: 0;
+    }
+}

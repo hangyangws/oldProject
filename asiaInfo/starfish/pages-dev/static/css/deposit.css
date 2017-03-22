@@ -1,0 +1,189 @@
+/*public*/
+
+body {
+    background-color: #f6f6f6;
+}
+
+.card {
+    box-shadow: 0 2px 4px 0 rgba(226, 226, 226, .7);
+}
+
+.i-radio {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    vertical-align: middle;
+    border: 1px solid #cfcfcf;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.i-radio::before {
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin: 3px;
+    content: '';
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.radio:checked + .i-radio::before {
+    background-color: #fe7308;
+}
+
+.i-phone {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    background: url(../img/icon/i-two.png) no-repeat -110px 0/600%;
+}
+
+.i-wallet-s {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    background: url(../img/icon/i-two.png) no-repeat -108px -80px/600%;
+}
+
+.i-wallet {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../img/icon/i-two.png) no-repeat -108px -54px/460%;
+}
+
+.i-weixin {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../img/icon/i-two.png) no-repeat -103px -22px/440%;
+}
+
+.i-pay {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background: url(../img/icon/i-two.png) no-repeat -68px -22px/500%;
+}
+
+
+/*面额选择*/
+
+.amount-wrap {
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.amount-middle {
+    width: 50px;
+}
+
+.amount-left {
+    left: 50px;
+}
+
+.amount-right {
+    right: 50px;
+}
+
+.amount-wrap input {
+    display: none;
+}
+
+.amount-wrap label {
+    width: 50px;
+    height: 50px;
+    margin: 28px 0;
+    display: block;
+}
+
+.amount-wrap span {
+    color: #a6a6a6;
+    text-align: center;
+    border: 1px dashed #dedede;
+    display: block;
+    background-color: #fff;
+    font-size: 18px;
+    line-height: 48px;
+    border-radius: 4px;
+}
+
+.amount-wrap input[checked="checked"] + span {
+    color: #ff7901;
+    border: 1px solid rgb(255, 121, 1);
+}
+
+
+/*pay*/
+
+.pay {
+    padding: 10px 26px 20px;
+}
+
+.pay-tit {
+    color: #ff7901;
+    padding: 2em .8em .8em;
+}
+
+.pay-tit span {
+    margin-left: 1em;
+}
+
+.pay label {
+    display: block;
+    position: relative;
+    border-bottom: 1px dashed #efefef;
+    margin-bottom: 10px;
+}
+
+.pay-txt {
+    padding: .8em 60px .8em 34px;
+}
+
+.pay-disable {
+    opacity: .5;
+}
+
+.pay-disable .pay-note {
+    display: block;
+}
+
+.pay-right {
+    right: 26px;
+    margin: auto;
+}
+
+
+/*footer*/
+
+.pay-btn {
+    line-height: 50px;
+    background-color: #f60;
+    background-image: -moz-linear-gradient( 180deg, rgb(253, 107, 0) 0%, rgb(255, 134, 27) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(253, 107, 0) 0%, rgb(255, 134, 27) 100%);
+    box-shadow: 0 -2px 8px 0 rgba(254, 178, 120, .7);
+}
+
+.pay-btn-txt {
+    margin-left: 1.4em;
+}
+
+@media (max-width: 350px) {
+    .pay {
+        padding: 10px 16px 20px;
+    }
+    .pay-txt {
+        padding: .8em 46px .8em 32px;
+    }
+    .pay-name {
+        font-size: 14px;
+    }
+    .pay-right {
+        right: 10px;
+    }
+}

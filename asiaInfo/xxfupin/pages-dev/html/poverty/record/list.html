@@ -1,0 +1,162 @@
+#parse("././common.html")
+#if($family)
+#set($type = 'userList')
+#elseif($isGov)
+#set($type = 'gov')
+#else
+#set($type = 'user')
+#end
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>帮扶记事</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/poverty/css/help-note.css" />
+    <!-- /coolie -->
+</head>
+
+<body id="body" class="bg-gray">
+    <!-- 如果不显示头部添加class：no-header -->
+    <!-- 如果不显示尾部添加class：no-footer -->
+    <!-- 不显示头尾部分，只是用CSS影藏和控制属性值，最好再利用模板引擎不渲染相应的Dom节点 -->
+    <!-- 本页面有2个tab，第一个tab（全部记事列表，点赞、评论、查看），第二个tab（根据情况筛选的记事列表，点赞、评论、编辑、新增） -->
+    <!-- 默认显示第一个tab，显示第二个tab添加class：show-my-note -->
+    <main id="main" class="main-wrap h1 ofh
+                            #if($type == 'userList') show-my-note #end
+                            #if($type != 'gov') no-header #end
+                            #if($type == 'user') no-footer #end">
+        #if($type == 'gov')
+        <!-- 头部，切换记事类型 -->
+        <header class="header gradient-bg pa w1 bb z1">
+            <ul class="h-con bcf tac pr fs0">
+                <li class="j-tab-toggle all-note" data-tab="0"><i class="i i-4-8"></i><span>帮扶记事</span></li>
+                <li class="j-tab-toggle my-note" data-tab="1"><i class="i i-4-7"></i><span>我的帮扶记事</span></li>
+            </ul>
+        </header>
+        #end
+        <!-- 内容主容器 -->
+        <section id="content" class="content h1 bb pr">
+            <!-- 全部帮扶记事 -->
+            <div class="j-scroll all-note-wrap note-wrap h1 bb" data-tab="0" data-first="true">
+                <!-- 没有数据 -->
+                #if($type == 'user')
+                <div class="j-no-data no-data">没有你的帮扶记事</div>
+                #else
+                <a class="j-no-data no-data-add" href="$uctx/record/add?family=$!family"><i class="i i-4-6"></i><span>&emsp;请您添加帮扶记事</span></a>
+                #end
+                <!-- 数据列表-ajax展示 -->
+                <ul class="j-content n-con pr"></ul>
+            </div>
+            <!-- 我的帮扶记事 -->
+            <div class="j-scroll my-note-wrap note-wrap h1 bb none" data-tab="1" data-first="true">
+                <!-- 没有数据，去添加 -->
+                <div class="j-no-data no-data">请您添加帮扶记事</div>
+                <!-- 数据列表-ajax展示 -->
+                <ul class="j-content n-con pr"></ul>
+            </div>
+        </section>
+        #if($type != 'user')
+        <!-- 新建记事 -->
+        <footer class="footer pa w1 bb b0 l0 z2">
+            <a class="btn-def" href="$uctx/record/add?family=$!family"><i class="i i-1-10"></i><span>&emsp;新建记事</span></a>
+        </footer>
+        #end
+        <!-- 评论弹窗 -->
+        <footer id="replay" class="reply-wrap pa w1 b0 l0 ofh bcf none">
+            <div class="replay-con pr">
+                <div class="replay-ipt-wrap fs0">
+                    <textarea class="j-re-ipt replay-ipt fc3 w1 h1" maxlength="100"></textarea>
+                </div>
+                <!-- 添加类：jc-re-sure 触发可提交 -->
+                <button class="j-re-sure reply-btn pa r0 b0 bb">发送</button>
+            </div>
+        </footer>
+    </main>
+    <!-- 图片预览 -->
+    <div id="imgMask" class="mask img-mask pf w1 h1 t0 l0 none #if($type == 'user')no-del-img#end">
+        <div class="img-view pa">
+            <span class="j-close-img close-img pa z2"><i class="middle i i-6-2"></i></span>
+            <figure class="j-img-view img-show z1"></figure>
+        </div>
+    </div>
+    <!-- 评论区域 -->
+    <!-- 字符串模板-记事列表 -->
+    <template class="tp" data-name="noteList">
+        <li class="j-each-note each-note" data-id="{{id}}">
+            <span class="time-flow"></span>
+            <a href="$uctx/record/{{id}}/{{edit}}{{family}}">
+                <div class="n-time gradient-bg"><i class="i i-4-9"></i><span>{{time}}</span></div>
+                <div class="n-name">
+                    <i class="i i-1-17"></i>
+                    <div class="c"><span class="fl">走访贫困户</span><span class="fr">{{name}}</span></div>
+                </div>
+                <div class="n-main">
+                    <i class="i i-4-10"></i>
+                    <article class="n-text">
+                        <h4 class="to">{{tit}}</h4>
+                        <div>{{content}}</div>
+                    </article>
+                </div>
+            </a>
+            <figure class="n-img fs0 {{none}}">{{imgList}}</figure>
+            <div class="comment">
+                <ul class="c-num">
+                    <li class="j-like {{like}}"><i class="i i-4-14"></i><span>赞（{{likeNum}}）</span></li>
+                    <li class="j-comment"><i class="i i-4-13"></i><span>评论（{{commentNum}}）</span></li>
+                </ul>
+                <ul class="j-com-wrap c-txt">{{commentList}}</ul>
+            </div>
+        </li>
+    </template>
+    <!-- 字符串模板-图片列表 -->
+    <template class="tp" data-name="tpImg">
+        <div class="j-note-img j-lazy-img" data-thumbnail="$ctx/file/{{img}}.thumb.jpg" data-original="$ctx/file/{{img}}.jpg"><span></span></div>
+    </template>
+    <!-- 字符串模板-评论列表 -->
+    <template class="tp" data-name="tpComment">
+        <li class="j-comment-u" data-id="{{id}}"><span class="j-user c-user">{{name}}</span><span data-id="{{toId}}">{{toName}}</span>{{txt}}</li>
+    </template>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$ctx/pages-dev/static/js/public.js"></script>
+    <script src="$ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        creator: '$!USER_SESSION.userid',
+        userName: '$!USER_SESSION.name',
+        type: '$type',
+        like_url: '$uctx/record/{{id}}/taplike',
+        re_url: '$uctx/record/{{id}}/comment',
+        family: '$!family',
+        list_url: {
+            all: '$uctx/record/{{page}}/{{size}}',
+            my: '$uctx/record/my/{{page}}/{{size}}'
+        },
+        href: '$uctx/record'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/poverty/js/help-note.js"></script>
+    <!-- /coolie -->
+</body>

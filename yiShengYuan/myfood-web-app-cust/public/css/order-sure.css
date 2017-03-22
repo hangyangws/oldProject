@@ -1,0 +1,261 @@
+@charset 'utf-8';
+
+/*public*/
+
+.i-arrow-up,
+.i-arrow-down {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(/img/sprite-icon.png) -100px -5px no-repeat;
+    background-size: 960%;
+}
+
+.i-arrow-down {
+    -webkit-transform: -webkit-rotate(180deg);
+    -moz-transform: -moz-rotate(180deg);
+    -o-transform: -o-rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.i-arrow-right {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(/img/sprite-icon.png) -94px -38px no-repeat;
+    background-size: 960%;
+}
+
+.i-del {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/img/sprite-icon.png) -64px -32px/cover no-repeat;
+    background-size: 700%;
+}
+
+.b-t-solid {
+    border-top: 1px solid #e2e2e2;
+}
+
+.b-t-dash {
+    border-top: 1px dashed #e2e2e2;
+}
+
+.main {
+    padding-bottom: 54px;
+}
+
+
+/*收货人*/
+
+.user-wrap {
+    top: 5px;
+    right: 34px;
+    bottom: 5px;
+    left: 10px;
+}
+
+.user-wrap dd {
+    right: 0;
+    left: 70px;
+}
+
+.icon-wrap {
+    width: 22px;
+}
+
+
+/*店铺列表*/
+
+.shop-name {
+    line-height: 45px;
+    right: 36px;
+}
+
+.arrive-time,
+.din-mode,
+.pay-tit {
+    line-height: 50px;
+}
+
+.pay-method button {
+    line-height: 2em;
+    padding: 0 .4em;
+    border: 1px solid #19dd9f;
+}
+
+.pay-method button:first-child {
+    margin-left: 0;
+}
+
+.pay-method button.active {
+    color: #fff;
+    background-color: #19dd9f;
+}
+
+
+/*菜品列表*/
+
+.food-item {
+    padding: 8px 5px;
+}
+
+.food-price {
+    line-height: 44px;
+}
+
+.food-img {
+    width: 105px;
+    height: 72px;
+}
+
+.car-num {
+    width: 24px;
+}
+
+.food-con {
+    top: 8px;
+    right: 5px;
+    bottom: 8px;
+    left: 118px;
+}
+
+.add-animate {
+    -webkit-transition: -webkit-transform .4s;
+    -moz-transition: -moz-transform .4s;
+    -o-transition: -o-transform .4s;
+    transition: transform .4s;
+    -webkit-transform: translateX(220%) rotate(40deg);
+    -moz-transform: translateX(220%) rotate(40deg);
+    -o-transform: translateX(220%) rotate(40deg);
+    transform: translateX(220%) rotate(40deg);
+}
+
+.add-car.active .add-animate {
+    -webkit-transform: translateX(0) rotate(0);
+    -moz-transform: translateX(0) rotate(0);
+    -o-transform: translateX(0) rotate(0);
+    transform: translateX(0) rotate(0);
+}
+
+
+/*页脚*/
+
+.footer {
+    height: 44px;
+    background-color: #ecf0ef;
+}
+
+.footer-con {
+    line-height: 44px;
+    right: 126px;
+    border-top: 1px solid #e2e2e2;
+}
+
+.statement {
+    line-height: 32px;
+    width: 126px;
+    color: #fff;
+    background-color: #19dd9f;
+}
+
+.statement span {
+    line-height: 16px;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: auto;
+}
+
+.statement span::before {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    border: 5px solid #fed61b;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: none;
+}
+
+.statement span::after {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: -5px;
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    border: 5px solid #fed61b;
+    border-top: 8px solid transparent;
+    border-right: none;
+    border-bottom: 8px solid transparent;
+}
+
+
+/*弹窗*/
+
+.mask {
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-transition: opacity .4s;
+    -moz-transition: opacity .4s;
+    -o-transition: opacity .4s;
+    transition: opacity .4s;
+    opacity: 0;
+}
+
+.mask.active {
+    opacity: 1;
+}
+
+.user-mask-wrap {
+    top: 1em;
+    right: 1em;
+    left: 1em;
+    height: 0;
+    padding: 0 5px;
+    -webkit-transition: height .6s, padding .6s;
+    -moz-transition: height .6s, padding .6s;
+    -o-transition: height .6s, padding .6s;
+    transition: height .6s, padding .6s;
+}
+
+.user-addr {
+    left: 70px;
+}
+
+.mask-din-mode {
+    top: 30%;
+    height: 0;
+    padding: 0 5px;
+    right: 1em;
+    -webkit-transition: height .6s, padding .6s;
+    -moz-transition: height .6s, padding .6s;
+    -o-transition: height .6s, padding .6s;
+    transition: height .6s, padding .6s;
+    left: 1em;
+}
+
+.mask-dim-btn button {
+    line-height: 2em;
+    margin-right: 2em;
+    padding: 0 .4em;
+    color: #19dd9f;
+    border: 1px solid #19dd9f;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.mask-dim-btn .active {
+    color: #fff;
+    background-color: #19dd9f;
+}
+
+.mask-dim-btn button:last-child {
+    margin-right: 0;
+}

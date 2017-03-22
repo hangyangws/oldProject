@@ -1,0 +1,87 @@
+#parse("common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>保障计划列表</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/layer-old.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/swiper-me.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/list.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <!-- 轮播 -->
+    <div id="swiper" class="swiper-container fs0">
+        <div class="swiper-wrapper">
+            #foreach ($slide in $slides)
+            <div class="swiper-slide" data-url="$!slide.link">
+                <img class="swiper-lazy w1" data-src="$!slide.url" />
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            #end
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!--保障计划列表-->
+    <div id="main" class="mt20">
+        #foreach ($plan in $plans)
+        <section class="list-item pr mb20" data-id="$!plan.planid">
+            <a class="list-figure db h1 fs0" href="$!ctx/plan/$plan.planid?wx-ref=$WX_SESSION.openid">
+                <figure class="j-bg-img h1 w1" data-src="$!plan.iconurl"></figure>
+            </a>
+            <div class="list-con bcf pa tac">
+                <a class="list-text b-line db tal fc-sub" href="$!ctx/plan/$plan.planid?wx-ref=$!WX_SESSION.openid">
+                    <h3 class="fc-m fs16 to">$!plan.title</h3>
+                    <div><i class="i i-age"></i><span>
+                        #if($plan.ageMin < 0)
+                            #set($ageMin=$plan.ageMin * -1 + '天')
+                        #else
+                            #set($ageMin=$plan.ageMin)
+                        #end
+                        ${ageMin}-$!{plan.ageMax}周岁</span></div>
+                    <div><i class="i i-join"></i><span>$!plan.joinCost元加入 最高可享$!plan.insuranceAmount万保障</span></div>
+                </a>
+                <a data-href="$!ctx/plan/$plan.planid/join" class="j-join-btn join-btn r4 fwb dlb fcf bc"><i class="i i-plus"></i>立即加入</a>
+            </div>
+        </section>
+        #end
+    </div>
+    <script>
+    var G = {
+        isLogin: '$!USER_SESSION',
+        loginUrl: '$!ctx/my/login'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/layer-old.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/swiper.jquery.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/list.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

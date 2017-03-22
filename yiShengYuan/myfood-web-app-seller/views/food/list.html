@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>菜品信息</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link rel="icon" sizes="any" href="/img/icon.png" />
+    <link rel="stylesheet" href="/dist/css/base-pub.css" />
+    <link rel="stylesheet" href="/dist/css/foodList.css" />
+</head>
+
+<body class="bc-light">
+    <ul class="list-wrap h1" id="listWrap">
+        #if ($status)
+        #foreach ($food in $foodList)
+        ## 滑动后加上class active
+        ## 删除后加上class del
+        <li class="food-item ofh pr mt10 h70" data-id="$!{food.id}">
+            <div class="food-wrap pt10 pb10 pr z2">
+                <span class="food-num db tac w10 pl20 pr10 fc-sub">$!{food.sortNum}</span>
+                <div class="food-con pa r0">
+                    <figure class="w50 h50 r4" style="background: url($!{food.imagepath}) 50% 50% / cover no-repeat">
+                    </figure>
+                    <div class="food-txt pa t0 b0 r0">
+                        <div class="name-wrap c">
+                            <h2 class="dlb fc-impor-one">$!{food.name}</h2>
+                            <span class="food-sale fr ts4 fc-light">$!{food.ismarketable}</span>
+                        </div>
+                        <span class="fc-number price">$!{food.price}</span>
+                    </div>
+                </div>
+            </div>
+            ## 编辑/删除 (滑动)
+            <div class="food-edit pa h1 z1 t0">
+                <div class="space-bg fl h1">
+                    <span class="db h1 ml10 mr10 r4 bcf"></span>
+                </div>
+                <div class="btn-wrap fl h1 bb tac c">
+                    <div class="edit-btn fl">
+                        <i class="db w30 h30"></i>
+                        <span class="fc-light fs12">编辑</span>
+                    </div>
+                    <div class="del-btn fl">
+                        <i class="db w30 h30"></i>
+                        <span class="fc-light fs12">删除</span>
+                    </div>
+                </div>
+            </div>
+        </li>
+        #end
+        #else
+        <li class="error-item pr fc-light top-middle">
+            <figure class="tac fs12">
+                <img class="w100 mb5 bc" src="/img/order-none.png" />
+                <span>
+                    #if ($isempty)
+                    您暂时还没有菜品哦~
+                    #else
+                    $!{msg}~
+                    #end
+                    <br />*^_^*
+                </span>
+            </figure>
+        </li>
+        #end
+    </ul>
+    <template id="noneFood">
+        <li class="error-item pr fc-light top-middle">
+            <figure class="tac fs12">
+                <img class="w100 mb5 bc" src="/img/order-none.png" />
+                <span>您暂时还没有菜品哦~<br />*^_^*</span>
+            </figure>
+        </li>
+    </template>
+    <script>
+    var G = {
+        device: '$!{device}'
+    };
+    </script>
+    <script src="/dist/js/lib-pub.js"></script>
+    <script src="/dist/js/foodList.js"></script>
+</body>
+
+</html>

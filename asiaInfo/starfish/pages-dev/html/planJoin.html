@@ -1,0 +1,117 @@
+#parse("common.html")
+#if($!balance < 3)
+    #set($payway = 'weixin')
+#else
+    #set($payway = 'balance')
+#end
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>立即加入$!plan.title</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/layer-old.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/join.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <header class="header pr fcf" data-bg="../pages-dev/static/img/temp/detail-one.jpg">
+        <i class="i-label pr"></i>
+        <dl class="h-tit pa z1">
+            <dt>保障计划:</dt>
+            <dd class="fs18">$!plan.title</dd>
+        </dl>
+    </header>
+    <main class="padding-com">
+        <!-- 已经添加保障人 -->
+        <div id="added" class="added-man card ofh none">
+            <h2 class="added-tit padding-com fcf"><i class="i-en-man"></i><span class="vam">被保障人</span></h2>
+            <ul class="j-added-wrap"></ul>
+        </div>
+        <!-- 添加保障人输入框 -->
+        <div id="addMan" class="add-man padding-com card fc3">
+            <label class="pr">
+                <i class="i-man-big"></i>
+                <div class="add-name"><input class="j-name" type="text" maxlength="15" placeholder="姓名" /></div>
+            </label>
+            <label class="pr">
+                <i class="i-card-big"></i>
+                <div class="add-id"><input class="j-id" type="text" maxlength="18" placeholder="身份证号码" /></div>
+            </label>
+            <p class="fs12 fc6 pt15">*重要提示：以上信息为被保障人重要凭证，提交后不可修改</p>
+            <!-- 确认添加 -->
+            <div class="j-add-man add-man-btn r4 tac"><i class="i-man-add"></i><span class="fc3 fs ml20 vam">确认添加保障人</span></div>
+        </div>
+        <!-- 支付 -->
+        <div id="pay" class="pay card fc3">
+            <!-- 公约 -->
+            <label class="convention padding-com db pr">
+                <p>本人身体健康，确认无#foreach ($doc in $docs)<a href="$ctx/doc/$doc.docid">$!doc.title</a>#end中情况</p>
+                <input type="checkbox" class="j-convention checkbox none" checked="checked" />
+                <i class="i-checkbox"></i>
+            </label>
+            <h2 class="pay-tit padding-com"><i class="i-phone"></i><span class="vam">请选择支付方式</span></h2>
+            <label class="pay-label j-balance-wrap #if($payway == 'weixin')pay-disable#end">
+                <input type="radio" name="pay" value="0" class="j-balance-radio radio none" #if($payway == 'balance')checked="checked"#end #if($payway == 'weixin')disabled="disabled"#end/>
+                <i class="i-radio pa t0 b0 l0"></i>
+                <div class="pay-txt">
+                    <span class="pay-name fs16 vam">奖励零钱支付（剩余¥$!balance）</span>
+                    <span class="pay-note none fs12">奖励零钱不足</span>
+                </div>
+                <i class="pay-right i-wallet pa t0 b0"></i>
+            </label>
+            <label class="pay-label j-weixin-pay">
+                <input type="radio" name="pay" value="1" class="radio none" #if($payway == 'weixin')checked="checked"#end />
+                <i class="i-radio pa t0 b0 l0"></i>
+                <div class="pay-txt">
+                    <span class="pay-name fs16 vam">微信支付</span>
+                </div>
+                <i class="pay-right i-weixin pa t0 b0"></i>
+            </label>
+        </div>
+    </main>
+    <button id="payBtn" class="pay-btn pf b0 l0 w1 z1 tac fs0"><i class="i-pay"></i><span class="pay-btn-txt vam fs16 fcf">确认支付￥<span class="j-pay-money">3</span></span></button>
+    <!-- 字符串模板 -->
+    <template id="tpAdded">
+        <li class="j-man-each man-each pr" data-id="{{id}}">
+            <div class="m-each-txt fc3 c">
+                <span class="fl">{{name}}</span>
+                <span class="fr">{{id}}</span>
+            </div>
+            <div class="j-del m-each-del pa"><i class="i-del middle"></i></div>
+        </li>
+    </template>
+    <script>
+    var G = {
+        baseUrl: '$ctx',
+        planId: '$!plan.planid',
+        balance: '$!balance'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/layer-old.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/join.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

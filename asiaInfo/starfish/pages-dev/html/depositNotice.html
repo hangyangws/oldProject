@@ -1,0 +1,60 @@
+#parse("common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>充值#if($result)成功#else失败#end</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/layer-old.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/pay-result.css" />
+    <!-- /coolie -->
+</head>
+
+<body class="tac#if($result) success#else error#end">
+    <div id="content" class="result-wrap pr" data-i="$!ctx/pages-dev/static/img/icon/i-three.png">
+        <div class="pr top-50 top-middle">
+            <i class="j-icon i-result"></i>
+            #if($result)
+                <span class="result-tit db">已成功充值￥$!amount</span>
+            #else
+                <span class="result-tit db">充值失败</span>
+            #end
+        </div>
+    </div>
+    <div class="btn-wrap pr">
+        <div class="top-50 top-middle">
+        #if($result)
+            <a class="fcf" href="$!ctx/my">查看账户</a>
+            <a class="fcf" href="$!ctx/plan/$!planid/$!joinid/deposit">继续为该计划充值</a>
+        #else
+            <span class="fcf">非常抱歉，由于接口超时调用失败，导致您本次充值失败。</span>
+            <a class="fcf" href="$!ctx/plan/$!planid/$!joinid/deposit">重新充值</a>
+        #end
+        </div>
+    </div>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/layer-old.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/pay-result.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

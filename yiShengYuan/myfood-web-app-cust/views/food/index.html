@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>点餐-我的菜</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link rel="icon" sizes="any" href="/img/icon.png" />
+    <link rel="stylesheet" href="/dist/css/base-pub.css" />
+    <link rel="stylesheet" href="/dist/css/swiper.css" />
+    <link rel="stylesheet" href="/dist/css/foodlist.css" />
+</head>
+
+<body class="bc-light">
+    ## 静态轮播
+    <section class="carousel w1 pr ofh z3">
+        <div id="swiper" class="swiper-container">
+            <div class="swiper-wrapper bcf">
+                <div class="swiper-slide">
+                    <img class="swiper-lazy middle w1" data-src="/img/banner/banner1.jpg" />
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-lazy middle w1" data-src="/img/banner/banner2.jpg" />
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-lazy middle w1" data-src="/img/banner/banner3.jpg" />
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+            </div>
+        </div>
+        <nav class="swiper-dir pr z1 tac"></nav>
+    </section>
+    #parse('./common/foodlist.html')
+    <script src="/dist/js/lib-pub.js"></script>
+    <script src="/dist/js/swiper.js"></script>
+    ## 轮播器和滚动检测代码内嵌页面
+    <script>
+    ! function(win, $) {
+        var $swiper = $('#swiper'),
+            $foodSelect = $('#foodSelect'),
+            $bodySelect = $body.add($foodSelect),
+            _win = $(win),
+            mySwiper = new Swiper($swiper, {
+                setWrapperSize: true,
+                pagination: '.swiper-dir',
+                paginationClickable: true,
+                lazyLoading: true,
+                loop: true,
+                paginationElement: 'a'
+            }),
+            _h_swiper = $swiper.height(),
+            scroll = function() {
+                if (_win.scrollTop() > _h_swiper) {
+                    $bodySelect.addClass('active');
+                } else {
+                    $bodySelect.removeClass('active');
+                }
+            };
+        ($swiper.find('.swiper-slide').length < 2) && $('.swiper-dir').remove();
+        _win.on('scroll', function() { scroll() })
+    }(window || this, Zepto);
+    </script>
+    <script src="/dist/js/foodlist.js"></script>
+</body>
+
+</html>

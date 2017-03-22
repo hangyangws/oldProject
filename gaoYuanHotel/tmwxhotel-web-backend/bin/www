@@ -1,0 +1,77 @@
+﻿/**
+ * 项目启动文件
+ */
+
+var app = require('../app'),
+    debug = require('debug')('hotel-backend:server'),
+    http = require('http'),
+    cluster = require('cluster'),
+    numCpus = require('os').cpus().length,
+    port = normalizePort(process.env.PORT || '3001');
+
+// 设置启动端口
+app.set('port', port);
+
+// 创建服务器
+if (cluster.isMaster) {
+    //根据CPU数量创建进程
+    var i = 0;
+    for (; i < numCpus; i++) {
+        cluster.fork();
+    }
+    console.log('program:---all:' + numCpus + '---success:' + i + '---');
+
+    // 如果一个挂掉,重新创建一个进程
+    cluster.on('exit', function(worker, code, signal) {
+        var _id = worker.process.pid;
+        console.log('---线程id:' + _id + '挂掉,重启中…');
+        cluster.fork();
+        console.log('---线程id:' + _id + ',重启成功')
+    });
+} else {
+    var server = http.createServer(app);
+    server.listen(port);
+    server.on('error', onError);
+    server.on('listening', onListening);
+}
+
+
+// Normalize a port into a number, string, or false.
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+    if (isNaN(port)) {
+        return val;
+    }
+    if (port >= 0) {
+        return port;
+    }
+    return false;
+}
+
+// Event listener for HTTP server "error" event.
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+    var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+// Event listener for HTTP server "listening" event.
+function onListening() {
+    var addr = server.address(),
+        bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+    debug('Listening on ' + bind);
+}

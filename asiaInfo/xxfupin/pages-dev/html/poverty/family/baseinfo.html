@@ -1,0 +1,51 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>用户登录</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <!-- /coolie -->
+</head>
+
+<body>
+    <main class="fcf h1 ofh" id="loginPassword">
+        <!-- logo -->
+        <figure id="logo" class="logo">
+            <h1>贫困户详情</h1>
+        </figure>
+        <section id="content" class="content pr">
+        <a href="$ctx/poverty/family/$!id/baseinfo/edit">修改</a>
+        <a href="$ctx/poverty/family/$!id/del">删除</a>
+        <p>地址：$!family.addrProvinceLabel
+                $!family.addrCityLabel
+                $!family.addrDistrictLabel
+                $!family.addrTownLabel
+                $!family.addrVillageLabel
+        <p>姓名：$!family.householder.name
+        <p>性别：$!family.householder.sexLabel
+        <p>联系电话：$!family.contactPhone
+        <p>证件号码：$!family.householder.idcard
+        <p>开户行：$!family.bankName
+        <p>银行账号：$!family.bankCard
+        <p>识别标准：$!family.standardFlagLabel
+        <p>脱贫状态：$!family.statusLabel
+        <p>属性：$!family.attributeLabel
+        <p>是否军烈属：$!family.isSpecialCare
+        <p>是否独生子女户：$!family.isOnlyChild
+        <p>是否双女户: $!family.isDoubleDaughter
+        </section>
+    </main>
+</body>
+
+</html>

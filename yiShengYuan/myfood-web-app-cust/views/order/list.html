@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>订单列表-我的菜</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link rel="icon" sizes="any" href="/img/icon.png" />
+    <link rel="stylesheet" href="/dist/css/base-pub.css" />
+    <link rel="stylesheet" href="/dist/css/order-list.css" />
+</head>
+
+<body class="bc-light">
+    <ul id="orderWrap" class="order-wrap fs0 fc-impor-two h1 p10 bb"></ul>
+    ## 订单列表模板
+    <template id="tpOrderList">
+        <li class="order-item bcf r4 pt10 ofh ${unpay}" data-orderid="${orderid}">
+            <div class="order-detail">
+                <dl>
+                    <dt>订单编号：</dt>
+                    <dd>${ordersn}</dd>
+                </dl>
+                <dl class="border-b tar">
+                    <dt class="fl">下单时间：</dt>
+                    <dd class="fl wp-nowrap">${createtime}</dd>
+                    <dt class="unpay-hidden">预达时间：</dt>
+                    <dd class="fc-number order-fs14 unpay-hidden">${expectdeliverytime}</dd>
+                </dl>
+                <dl class="tar unpay-none">
+                    <dt class="fl">就餐方式：</dt>
+                    <dd class="fl fc-impor-one">${diningtypename}</dd>
+                    <dt>配送金额：</dt>
+                    <dd class="order-fs14 fc-impor-one price">${freight}</dd>
+                </dl>
+                <dl class="order-addr border-b pr">
+                    <dt class="pa">配送地址：</dt>
+                    <dd>${orderaddress}</dd>
+                </dl>
+                <dl>
+                    <dt>总金额：</dt>
+                    <dd class="fc-number order-fs14 price">${paymentamount}</dd>
+                </dl>
+            </div>
+            <footer class="order-btn fs12 tar pr10 pt10 fcf">${orderstatus}</footer>
+        </li>
+    </template>
+    ## 没有订单数据模板
+    <template id="noneOrder">
+        <li class="error-item fc-light top-50 top-middle">
+            <figure class="tac fs12">
+                <img class="w100 mb5 bc" src="/img/order-none.png" />
+                <span>${msg}~<br />*^_^*</span>
+            </figure>
+        </li>
+    </template>
+    ## 订单状态按钮模板
+    <div id="tpStatusBtn" class="none">
+        ## 客户已确认
+        <div class="js-CUSTCONFIRM">
+            <button class="js-order-del btn-2" data-type="cancel">取消</button>
+            <button class="js-order-pay btn-1" data-type="pay">去支付</button>
+        </div>
+        ## 货到付款已确认
+        <div class="js-CUSTCONFIRMCASH">
+            <button class="btn-3">待接单</button>
+        </div>
+        ## 客户已支付
+        <div class="js-CUSTPAY">
+            <button class="btn-3">待接单</button>
+        </div>
+        ## 店铺已接单
+        <div class="js-SHOPTAKE">
+            <button class="btn-3">待送达</button>
+        </div>
+        ## 店铺已完成
+        <div class="js-SHOPFINISH">
+            <button class="btn-3">已完成</button>
+        </div>
+        ## 店铺已拒绝
+        <div class="js-SHOPREFUSE">
+            <button class="btn-3">已拒绝</button>
+        </div>
+    </div>
+    <script>
+    var G = {
+        device: '$!{device}',
+        orderType: '$!{orderType}',
+        userId: '$!{userId}'
+    };
+    </script>
+    <script src="/dist/js/lib-pub.js"></script>
+    <script src="/dist/js/order-list.js"></script>
+</body>
+
+</html>

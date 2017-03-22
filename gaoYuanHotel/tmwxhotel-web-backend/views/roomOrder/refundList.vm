@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <title>退款列表</title>
+    <!-- icon -->
+    <link rel="icon" sizes="any" href="/img/favicon.png" />
+    <!-- basic -->
+    <link rel="stylesheet" href="/css/base.css" />
+    <!-- this -->
+    <link rel="stylesheet" href="/css/all.css" />
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="body">
+    <!-- 头部 -->
+    #parse("./common/header.vm")
+    <main class="main bb pr page_order">
+        #parse("./common/aside.vm")
+        <section id="allWrap" class="all-wrap">
+            <!-- 导航栏 -->
+            <div class="con-nav i-lh30 i-bcm h30 p10 mb20 c">
+                <nav class="fl">
+                    <a>订单管理</a>
+                    <a href="/refundOrder/list">退款列表</a>
+                </nav>
+                <div class="fr c">
+                    <!-- 第一个不需要 class ml20 -->
+                    <label class="nav-search fl">
+                        <input class="search-list i-input i-b1m fl w300" type="text" value="$!{search}" placeholder="退款序列号、会员昵称" />
+                        <button id="refundSearchBtn" class="i-button fl" type="botton">搜索</button>
+                    </label>
+                </div>
+            </div>
+            <!-- 搜索区域 select 集 -->
+            <div id="dateWrap" class="mb20">
+                <span class="fs12 lh200">申请时间:</span>
+                <input class="start-date input-date i-input mr10" type="text" readonly="true" placeholder="选择申请时间" data-type="startdate" value="$!{startdate}" />
+                <span class="fs12 lh200">结束时间:</span>
+                <input class="end-date input-date i-input mr10" type="text" readonly="true" placeholder="选择结束时间" data-type="enddate" value="$!{enddate}" />
+                <select id="refundStatus" class="order-status-list i-select mr10">
+                    <option value="null">退款状态</option>
+                    <option value="10">申请</option>
+                    <option value="30">审批</option>
+                    <option value="90">成功</option>
+                    <option value="-10">作废</option>
+                    <option value="-20">超时</option>
+                    <option value="-30">拒绝</option>
+                </select>
+            </div>
+            <!-- 结果展示区域 table -->
+            <table class="i-table mb20 w1">
+                <thead>
+                    <tr>
+                        <th>退款单序列号</th>
+                        <th>申请日期</th>
+                        <th>会员昵称</th>
+                        <th>退款总金额</th>
+                        <th>房间订单序列号</th>
+                        <th>微信退款状态</th>
+                        <th>退款状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    #if ($status == true)
+                        #foreach ($item in $data.list)
+                        <tr data-id="${item.id}" data-transactionid="$!{item.transactionid}" data-fee="$!{item.totalamount}" data-refundsn="$!{item.refundsn}">
+                            <td>$!{item.refundsn}</td>
+                            <td>$!{item.createdate}</td>
+                            <td>$!{item.nickname}</td>
+                            <td>$!{item.totalamount} 元</td>
+                            <td>$!{item.roomordersn}</td>
+                            <td>$!{item.transactionrefundstatus}</td>
+                            <td class="refund-status">$!{item.refundstatus}</td>
+                            <td>
+                                #if ($item.refundstatus == '申请')
+                                <span class="apply-pass i-button-m dlb mr15 cp">审批</span>
+                                <span class="apply-refuse i-button-m dlb cp">拒绝</span>
+                                #elseif ($item.refundstatus == '审批')
+                                退款中
+                                #elseif ($item.refundstatus == '拒绝')
+                                已拒绝
+                                #end
+                            </td>
+                        </tr>
+                        #end
+                    #else
+                    <tr>
+                        <td colspan="8">$!{msg}</td>
+                    </tr>
+                    #end
+                </tbody>
+            </table>
+            <!-- 分页 paging -->
+            <section class="paging"></section>
+        </section>
+    </main>
+    <script>
+        var RenderData = {
+            pageNum: '$!{data.pageNum}',
+            total: '$!{data.total}',
+            search: '$!{search}',
+            startdate: '$!{startdate}',
+            enddate: '$!{enddate}',
+            refundstatus: '$!{refundstatus}'
+        };
+    </script>
+    <script src="/js/jq.js"></script>
+    <script src="/js/public.js"></script>
+    <script src="/js/layer.min.js"></script>
+    <!-- 日期 -->
+    <link rel="stylesheet" href="/css/inputdate.css" />
+    <script src="/js/inputdate.js"></script>
+    <!-- this -->
+    <script src="/js/all.js"></script>
+    <script src="/js/refundList.js"></script>
+</body>
+
+</html>

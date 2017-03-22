@@ -1,0 +1,65 @@
+/*public*/
+
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+/*header*/
+
+.header {
+    height: 4.286rem;
+}
+
+.tel-wrap {
+    top: 0;
+    right: .714rem;
+    bottom: .714rem;
+    left: .714rem;
+    overflow-y: auto;
+    border-radius: 6px;
+    padding-top: 5rem;
+}
+
+.tel-each {
+    margin-bottom: .714rem;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(233, 233, 233, .75);
+}
+
+.e-tit {
+    font-size: 0;
+    padding: .714rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.e-tit > span {
+    font-size: 1rem;
+    position: relative;
+    display: inline-block;
+    width: 50%;
+}
+
+.t-name .i,
+.e-tel .i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto 0;
+}
+
+.t-name span,
+.e-tel span {
+    display: block;
+    padding-left: 40px;
+}
+
+.e-tel {
+    position: relative;
+    display: block;
+    padding: .714rem 0;
+}

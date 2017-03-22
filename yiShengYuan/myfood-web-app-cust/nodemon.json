@@ -1,0 +1,8 @@
+{
+    "ignore": [
+        "public/**",
+        "views/**/*.html",
+        "*.json",
+        "*.md"
+    ]
+}

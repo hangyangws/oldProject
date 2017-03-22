@@ -1,0 +1,115 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>我的贫困户</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/poverty/css/poor-list.css" />
+    <!-- /coolie -->
+</head>
+
+<body class="bg-gray">
+    <main class="main-wrap main h1">
+        <header id="header" class="header pa t0 l0 w1 bb">
+            <div class="h-con bcf pr">
+                <i class="i i-4-5 pa t0 b0"></i>
+                <label class="ipt-wrap db bb">
+                    <input class="j-search-ipt ipt-search w1" type="text" placeholder="输入关键字" />
+                </label>
+                <button class="j-search-btn search-btn tac bct pa r0 t0 b0">搜索</button>
+            </div>
+        </header>
+        <section id="content" class="content h1 bb">
+            <div class="j-empty-tip no-data tac">没有相关数据</div>
+            <ul class="j-data-wrap ofh">
+                <!-- ajax动态数据 -->
+            </ul>
+            <div class="j-more btn-more"><i class="i i-3-3"></i><span>&emsp;加载更多</span></div>
+        </section>
+        <footer class="footer pa b0 l0 w1 bb">
+            <a class="btn-def" href="$uctx/family/add"><i class="i i-1-10"></i><span>&emsp;添加贫困户</span></a>
+        </footer>
+    </main>
+    <!-- 字符串模板 -->
+    <template id="tpUser">
+        <li class="item">
+            <a href="$uctx/family/{{id}}">
+                <header class="i-header"><i class="pa i i-1-17"></i><span>{{name}}</span></header>
+                <ul class="i-con pr">
+                    <li>
+                        <i class="i i-3-18"></i>
+                        <dl>
+                            <dt>脱贫状态</dt>
+                            <dd>{{status}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <i class="i i-4-2"></i>
+                        <dl>
+                            <dt>致贫原因</dt>
+                            <dd>{{reason}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <i class="i i-1-6"></i>
+                        <dl>
+                            <dt>手机号码</dt>
+                            <dd>{{tel}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <i class="i i-1-18"></i>
+                        <dl>
+                            <dt>身份证号</dt>
+                            <dd>{{idcard}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <i class="i i-3-12"></i>
+                        <dl>
+                            <dt>家庭住址</dt>
+                            <dd>{{addr}}</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </a>
+            <nav class="i-footer">
+                <a href="$uctx/family/{{id}}/member"><i class="i i-4-3"></i><span>&emsp;家庭成员</span></a>
+                <a href="$uctx/record?family={{id}}"><i class="i i-4-4"></i><span>&emsp;帮扶记事</span></a>
+            </nav>
+        </li>
+    </template>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$ctx/pages-dev/static/js/public.js"></script>
+    <script src="$ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        get_url: '$uctx/family/list/{{page}}/{{size}}'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/poverty/js/poor-list.js"></script>
+    <!-- /coolie -->
+</body>

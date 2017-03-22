@@ -1,0 +1,108 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>#if($!namespace == 'poverty')村民#else干部#end登录</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/poverty/css/login.css" />
+    <!-- /coolie -->
+</head>
+
+<body class="body-bg">
+    <main id="passLogin" class="main-wrap h1 ofh">
+        <!-- logo -->
+        <section class="logo-wrap h-50 ofh">
+            <figure class="logo tac">
+                <img src="$ctx/pages-dev/static/img/icon/logo.png" alt="logo" />
+            </figure>
+        </section>
+        <!-- 密码登录 -->
+        <section id="passWrap" class="pass-login content h-50">
+            <div class="h-50">
+                <label class="ipt-wrap">
+                    <i class="pa i i-1-6"></i>
+                    <div class="ipt-parent">
+                        <input class="j-ipt bb" type="tel" name="mobile" maxlength="11" placeholder="请输入手机号" />
+                    </div>
+                </label>
+                <label class="ipt-wrap">
+                    <i class="pa i i-1-8"></i>
+                    <div class="ipt-parent c">
+                        <input class="j-pass j-ipt bb" type="password" name="vcode" maxlength="6" placeholder="请输入密码" />
+                        <i class="j-see-pass pa r0 i i-1-1"></i>
+                    </div>
+                </label>
+            </div>
+            <footer class="h-50">
+                <button class="j-login-btn login-btn btn-def login-btn-color">登录</button>
+                #if($!namespace == 'poverty')
+                <ul class="login-type fs0">
+                    <li><span class="j-toggle-login" data-type="0" data-href="$ctx/poverty/login#passLogin">验证码登录</span></li>
+                    <li><a href="$ctx/poverty/sign">注册</a></li>
+                </ul>
+                #end
+            </footer>
+        </section>
+        <!-- 验证码登录 -->
+        <section id="codeWrap" class="code-login content h-50">
+            <div class="h-50">
+                <label class="ipt-wrap">
+                    <i class="pa i i-1-6"></i>
+                    <div class="ipt-parent">
+                        <input class="j-ipt bb" type="tel" name="mobile" maxlength="11" placeholder="请输入手机号" />
+                        <button class="j-get-code ipt-btn">获取验证码</button>
+                    </div>
+                </label>
+                <label class="ipt-wrap">
+                    <i class="pa i i-1-7"></i>
+                    <div class="ipt-parent c">
+                        <input class="j-ipt bb" type="number" name="vcode" j-maxlength="6" placeholder="请输入验证码" />
+                    </div>
+                </label>
+            </div>
+            <footer class="h-50">
+                <button class="j-login-btn login-btn btn-def login-btn-color">登录</button>
+                <ul class="login-type fs0">
+                    <li><span class="j-toggle-login" data-type="1" data-href="$ctx/poverty/login#">密码登录</span></li>
+                    <li><a href="$ctx/poverty/sign">注册</a></li>
+                </ul>
+            </footer>
+        </section>
+    </main>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$ctx/pages-dev/static/js/public.js"></script>
+    <script src="$ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        send_code_url: '$ctx/sms/send',
+        get_code_url: '$ctx/sms',
+        login_url: '$ctx/$!namespace/login',
+        user_url: '$ctx/$!namespace'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/poverty/js/login.js"></script>
+    <!-- /coolie -->
+</body>

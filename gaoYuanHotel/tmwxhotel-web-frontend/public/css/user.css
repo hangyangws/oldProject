@@ -1,0 +1,107 @@
+@charset 'utf-8';
+.user-info {
+    padding-top: 64px;
+    background: url(/img/user/user-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.user-header img {
+    top: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 1px #999;
+}
+
+.name-mark {
+    bottom: 20px;
+    padding-left: 110px;
+}
+
+.name-mark dl {
+    line-height: 20px;
+    border: 1px solid #a9976d;
+    left: 110px;
+    bottom: 10px;
+}
+
+.name {
+}
+
+.navtype a {
+    font-size: 16px;
+    line-height: 40px;
+    display: inline-block;
+    width: 33.33%;
+    background-color: #a9976d;
+}
+
+.navtype .active {
+    color: #a9976d;
+    background-color: #fff;
+}
+
+.un-pay > li {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #a9976d;
+    border-radius: 4px;
+}
+
+.order-num,
+.order-con {
+    border-bottom: 1px solid #ccc;
+}
+
+.order-num i {
+    background: url(/img/icon/i-arrow.png) no-repeat center center;
+    background-size: cover;
+}
+
+.order-con {
+    padding: 10px;
+}
+
+.order-con li {
+    line-height: 24px;
+}
+
+.order-pay {
+    line-height: 34px;
+}
+
+.order-btn {
+    line-height: 36px;
+}
+
+
+/*申请退款状态*/
+
+.refundstatus-undefined {
+    background-color: #a9976d;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.refundstatus-undefined::before {
+    content: '申请退款';
+}
+
+.refundstatus-10::before {
+    content: '退款等待审批';
+}
+
+.refundstatus-30::before {
+    content: '退款中…';
+}
+
+.refundstatus-90::before {
+    content: '退款成功';
+}
+
+.refundstatus--::before {
+    content: '拒绝退款';
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>管理</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link rel="icon" sizes="any" href="/img/icon.png" />
+    <link rel="stylesheet" href="/dist/css/base-pub.css" />
+    <link rel="stylesheet" href="/dist/css/manage.css" />
+</head>
+
+<body class="bc-light">
+    ## 基本信息
+    <div class="base-info p10 bcf">
+        <section id="manageInfo" class="info-con r4 fcf tac pr">
+            <dl class="today-turnover pa t5 top-middle">
+                <dt>今日营业额</dt>
+                <dd class="price">$!{data.todayturnover}</dd>
+            </dl>
+            <div class="js-order-view order-num w100 h100 bc r50  ">
+                <dl class="pr top-middle t5">
+                    <dt class="fc-main">今日订单数</dt>
+                    <dd class="fc-number fs16">$!{data.todayordercount}</dd>
+                </dl>
+            </div>
+            <div class="count-balance pa t5 top-middle">
+                <dl>
+                    <dt>账户余额</dt>
+                    <dd class="js-countbalance price">$!{data.remainbalance}</dd>
+                </dl>
+                #if ($!data.remainbalance != '0.00')
+                <button class="withdrawals pa r4 fs12 bcf fc-number w70">去提现</button>
+                #end
+            </div>
+        </section>
+    </div>
+    ## 菜品和厨房信息
+    <ul id="foodKitchen" class="food-kitchen bcf mt15">
+        <li class="js-go-fk info-food border-b border-t p1em c" data-type="food">
+            <span class="fc-impor-two">菜品信息</span>
+            <i class="icon-arrow fr"></i>
+        </li>
+        <li class="js-go-fk p1em c border-b" data-type="kitchen">
+            <span class="fc-impor-two">厨房信息</span>
+            <i class="icon-arrow fr"></i>
+        </li>
+    </ul>
+    ## 营业状态
+    <section id="businessState" class="business-state bcf mt15 p1em border-b border-t">
+        <dl class="c">
+            <dt class="fc-impor-two fl">营业状态</dt>
+            <dd class="fr fs0">
+                <label id="checkLabel" for="stateCheck">
+                    <input id="stateCheck" class="state-checked none" type="checkbox" #if($data.isopen)checked#end />
+                    <div class="icon-checked h20 fs0"><span class="dlb h1"></span></div>
+                </label>
+            </dd>
+        </dl>
+        <p class="mt5 fc-light fs12">关闭后，用户端商店状态显示为休息中，厨房不能进行接单。</p>
+    </section>
+    <script>
+    var G = {
+        device: '$!{data.device}',
+        shopId: '$!{data.shopid}'
+    };
+    </script>
+    <script src="/dist/js/lib-pub.js"></script>
+    <script src="/dist/js/manage.js"></script>
+</body>
+
+</html>

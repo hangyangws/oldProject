@@ -1,0 +1,69 @@
+#parse("common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>交易明细</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/layer-old.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/payrecord.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <main class="main-wrap mt20 bcf">
+        <table class="content tac fc3">
+            <tbody id="listWrap">
+                <tr class="fc9"><td>数据加载中……</td></tr>
+            </tbody>
+        </table>
+        <footer id="footer" class="footer tac"><i class="i-add vam"></i><span class="ml10 vam">加载更多</span></footer>
+    </main>
+    <!-- 字符串模板 -->
+    <template id="tpList">
+        <tr>
+            <td class="way">
+                <span>{{tit}}</span>
+                <span>{{time}}</span>
+            </td>
+            <td class="money">
+                <span>+{{amount}}元</span>
+                <span>{{way}}</span>
+            </td>
+            <td class="result">
+                <span>{{balance}}元</span>
+                <span>余额</span>
+            </td>
+        </tr>
+    </template>
+    <script>
+    var G = {
+        loadUrl: '$ctx/plan/$!planid/$!joinid/record/data'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/layer-old.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/payrecord.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

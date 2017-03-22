@@ -1,0 +1,134 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>我的海星</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/layer-old.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/user.css" />
+    <!-- /coolie -->
+</head>
+
+<!-- 此id在css中有使用 -->
+<body id="helpToggle">
+    <header id="header" class="header fcf pr" data-bg="$!ctx/pages-dev/static/img/bg/user-bg.png">
+        <!-- 设置密码（目前取消） -->
+        <!-- <nav class="h-out-wrap pa fs12 w1 c">
+            <a class="fl ml10" href="$ctx/my/passwd"><i class="i-set"></i><span>#if($USER_SESSION.passwd)修改密码#else设置密码#end</span></a>
+            <a class="fr mr10 j-out"><i class="i-out"></i><span>退出</span></a>
+        </nav> -->
+        <figure class="h-img tac">
+            <a href="$!ctx/my/setting" class="j-head dlb" data-bg="#if($WX_SESSION.headimgurl != '')$!{WX_SESSION.headimgurl}#else$ctx/pages-dev/static/img/bg/head.jpg#end"></a>
+            <h1 class="j-name user-name fs16 mt15">#if($WX_SESSION.nickname != '')$WX_SESSION.nickname#else$USER_SESSION.mobile#end</h1>
+        </figure>
+        <nav class="h-info fc9 r4 bcf tac pr c">
+            <a class="fl"><i class="i-member"></i><span class="user-order">您是第$USER_SESSION.userid位会员</span></a>
+            <a class="fr" href="$ctx/my/record"><i class="i-wallet"></i><span class="money">奖励零钱：￥$!balance</span></a>
+        </nav>
+    </header>
+    <main>
+        <!-- 导航 -->
+        <nav id="mainNav" class="main-nav tac bcf fc9 pr c">
+            <a class="fl" href="$!ctx/my#"><span class="join-toggle fc3 dlb">已加入的计划</span><span class="j-join-num">（0）</span></a>
+            <a class="fr" href="$!ctx/my#helpToggle"><span class="help-toggle fc3 dlb">互助保障公示</span><span>（0）</span></a>
+        </nav>
+        <!-- 已计入计划 -->
+        <section id="joinWrap" class="join-con p10">
+            <!-- 计划列表（ajax获取） -->
+            <ul class="j-joined"></ul>
+            <!-- 加载更多 -->
+            <div class="j-add-more add-more bcf tac r4"><i class="i-add2 vam"></i><span class="vam ml20">加载更多</span></div>
+            <!-- 进入首页 -->
+            <div class="mb10">
+                <a href="$ctx/plan" class="to-index tac db">
+                    <i class="i-add none"></i>
+                    <span class="j-notice dlb vam ml20">加入海星互助保障计划</span>
+                </a>
+            </div>
+        </section>
+        <!-- 互助保障公示 -->
+        <section class="help-con">
+            <ul class="h-list"></ul>
+            <!-- 没有数据 -->
+            <figure class="no-help">
+                <img src="$!ctx/pages-dev/static/img/icon/logo-gray.png" />
+                <p>暂时未发生互助事件</p>
+            </figure>
+            <!-- 加载更多 -->
+            <div class="j-add-help add-more bcf tac none"><i class="i-add2 vam"></i><span class="vam ml20">加载更多</span></div>
+        </section>
+    </main>
+    <!-- 模板字符串(已加载计划) -->
+    <template id="tpJoinList">
+        <li class="join-each r4 bcf {{each-amount-poor}}" data-id="{{id}}">
+            <div class="join-tit">
+                <a href="$ctx/plan/{{planid}}?wx-ref=$!WX_SESSION.openid" class="fs16 db">{{tit}}</a>
+                <span class="fs12">{{status}}，{{day}}</span>
+            </div>
+            <div class="each-dailog fc3">
+                <dl><dt>保障人姓名</dt><dd>{{name}}</dd></dl>
+                <dl><dt>保障人身份证</dt><dd>{{idnum}}</dd></dl>
+                <dl><dt>加入计划时间</dt><dd>{{jointime}}</dd></dl>
+                <dl><dt>计划生效日期</dt><dd>{{activetime}}</dd></dl>
+                <dl><dt>最高保障金额</dt><dd>{{upmoney}}万元</dd></dl>
+            </div>
+            <footer class="plan-foot">
+                <nav class="c">
+                    <a class="f-detail fl" href="$ctx/plan/{{planid}}/{{id}}/record"><i class="i-detail"></i><span>余额:￥{{balance}}</span></a>
+                    <a class="f-deposit fr" href="$ctx/plan/{{planid}}/{{id}}/deposit"><i class="i-recharge"></i><span>充值</span></a>
+                </nav>
+                <p class="plan-poor">余额可能不足以支付下次扣款，请充值</p>
+            </footer>
+        </li>
+    </template>
+    <!-- 模板字符串(已加载计划) -->
+    <template id="tpHelpList">
+        <li class="h-each">
+            <section class="h-con">
+                <div class="h-txt pr">
+                    <div class="h-tit">
+                        <h4>王小小互助事件</h4>
+                        <p>如日中天—中青年抗癌计划</p>
+                    </div>
+                    <span class="h-tag pa h-tag-active"></span>
+                </div>
+                <div class="h-time"><i class="i-time"></i><span class="vam ml10">2016-09-21至2016-09-28</span></div>
+            </section>
+            <footer class="h-footer pr tac fs0">
+                <span>预估均摊￥1.5</span>
+                <span>筹互助金￥30</span>
+            </footer>
+        </li>
+    </template>
+    <script>
+    var G = {
+        baseUrl: '$ctx/my',
+        hasNickName: '$!WX_SESSION.nickname'
+    }
+    </script>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/layer-old.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/user.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

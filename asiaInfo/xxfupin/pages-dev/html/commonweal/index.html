@@ -1,0 +1,101 @@
+#parse("././common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/index.css" />
+    <!-- /coolie -->
+</head>
+
+<body class="bg-gray">
+    <main class="main-wrap">
+        <!-- 内容滚动区域 -->
+        <div id="mainCon" class="main-con h1 bb">
+            <header class="header pr fcf">
+                <!-- 个人信息 -->
+                <div class="user-info pr">
+                    <div class="referee pa">#if($user.referee)<i class="i i-1-9"></i><span>已认证</span>#else<i class="i i-3-1"></i><span>未认证</span>#end</div>
+                    <dl>
+                        <dt><i class="i i-1-15"></i><span>姓名：</span></dt>
+                        <dd>#if($!user.name)$!user.name#else未设置#end</dd>
+                    </dl>
+                    <dl>
+                        <dt><i class="i i-1-14"></i><span>邮箱：</span></dt>
+                        <dd>#if($!user.email)$!user.email#else未设置#end</dd>
+                    </dl>
+                    <dl>
+                        <dt><i class="i i-1-13"></i><span>电话：</span></dt>
+                        <dd>$!user.mobile</dd>
+                    </dl>
+                    <dl>
+                        <dt><i class="i i-1-12"></i><span>机构：</span></dt>
+                        <dd>#if($!user.org)$!user.org#else无#end</dd>
+                    </dl>
+                </div>
+                <!-- 编辑按钮 -->
+                <a class="edit-btn pa" href="$ctx/commonweal/setting" role="button">
+                    <i class="middle i i-2-1"></i>
+                </a>
+            </header>
+            <section class="project">
+                <h3 class="pro-num"><i class="i i-1-11"></i><span class="j-pro-num">我的项目（…）</span></h3>
+                <div class="pro-wrap">
+                    <!-- 项目列表 -->
+                    <div class="j-pro-wrap">
+                    </div>
+                    <p class="j-empty-tip empty-tip tac">您还没有添加项目，去添加</p>
+                    <div class="j-more btn-more" role="button"><i class="i i-3-3"></i><span>&emsp;加载更多</span></div>
+                </div>
+            </section>
+        </div>
+        <!-- 添加项目 -->
+        <a class="add-pro pa btn-def" href="$ctx/project/add" role="button"><i class="i i-1-10"></i><span>&emsp;添加项目</span></a>
+    </main>
+    <!-- 字符串模板 -->
+    <template id="proList">
+        <a class="pro-item" href="$ctx/project/{{id}}/info">
+            <h4>{{tit}}</h4>
+            <p>{{content}}</p>
+            <footer class="pro-foot c">
+                <span class="fl">预计帮助{{helpNum}}人</span>
+                <span class="added-man fr">已添加{{addNum}}人</span>
+            </footer>
+        </a>
+    </template>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        load_url: '$ctx/project/list/{{page}}/{{size}}'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/index.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

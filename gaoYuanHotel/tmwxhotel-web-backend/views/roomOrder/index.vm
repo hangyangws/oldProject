@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <title>订单列表</title>
+    <!-- icon -->
+    <link rel="icon" sizes="any" href="/img/favicon.png" />
+    <!-- basic -->
+    <link rel="stylesheet" href="/css/base.css" />
+    <!-- this -->
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/room.css" />
+    <style>
+        .rule-wrap {
+            width: 600px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="body">
+    <!-- 头部 -->
+    #parse("./common/header.vm")
+    <main class="main bb pr page_order">
+        #parse("./common/aside.vm")
+        <section id="allWrap" class="all-wrap">
+            <!-- 导航栏 -->
+            <div class="con-nav i-lh30 i-bcm h30 p10 mb20 c">
+                <nav class="fl">
+                    <a>订单管理</a>
+                    <a href="/roomOrder">订单列表</a>
+                </nav>
+                <div class="fr c">
+                    <!-- 第一个不需要 class ml20 -->
+                    <label class="nav-search fl">
+                        <input class="search-list i-input i-b1m fl w300" type="text" value="$!{search}" placeholder="订单序列号、会员名、手机号" />
+                        <button class="roomorder-search-btn i-button fl" type="botton">搜索</button>
+                    </label>
+                </div>
+            </div>
+            <!-- 搜索区域 select 集 -->
+            <div id="dateWrap" class="mb20">
+                <span class="fs12 lh200">入住时间:</span>
+                <input class="indate input-date i-input mr10" type="text" readonly="true" placeholder="选择入住时间" value="$!{indate}" />
+                <span class="fs12 lh200">离店时间:</span>
+                <input class="outdate input-date i-input mr10" type="text" readonly="true" placeholder="选择离店时间" value="$!{outdate}" />
+                <select class="hotel-list i-select mr10" data-id="$!{hotelid}">
+                    <option value="null">选择酒店</option>
+                </select>
+                <select class="room-list i-select mr10" data-id="$!{roomid}">
+                    <option value="null">选择房间</option>
+                </select>
+                <select class="order-status-list i-select mr10" data-id="$!{orderstatus}">
+                    <option value="null">订单状态</option>
+                    <option value="10">已创建</option>
+                    <option value="50">已支付</option>
+                    <option value="60">已入住</option>
+                    <option value="90">已离店</option>
+                    <option value="-10">已作废</option>
+                </select>
+                <select class="payment-status-list i-select" data-id="$!{paymentstatus}">
+                    <option value="null">支付状态</option>
+                    <option value="10">未支付</option>
+                    <option value="50">部分支付</option>
+                    <option value="90">已支付</option>
+                </select>
+            </div>
+            <!-- 结果展示区域 table -->
+            <table class="i-table mb20 w1">
+                <thead>
+                    <tr>
+                        <th>订单序列号</th>
+                        <th>下单日期</th>
+                        <th>入住时间</th>
+                        <th>离店时间</th>
+                        <th>会员名</th>
+                        <th>手机号</th>
+                        <th>酒店名称</th>
+                        <th>房间名</th>
+                        <th>房间单价</th>
+                        <th>支付总金额</th>
+                        <th>支付状态</th>
+                        <th>订单状态</th>
+                        ##<th>退款状态</th>
+                        ##<th>付款单序列号</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    #if ($status == true)
+                        #foreach ($item in $data.list)
+                        <tr data-id="${item.id}" data-paymentamount="$!{item.paymenttotalamount}" data-name="$!{item.name}" data-indate="$!{item.hotelroomorderitem[0].indate}" data-outdate="$!{item.hotelroomorderitem[0].outdate}" data-roomid="$!{item.hotelroomorderitem[0].roomid}" data-roomordersn="$!{item.roomordersn}">
+                            <td><span class="room-order-sn r4 dlb cp" title="查看订单序列号: $!{item.roomordersn} 日志列表">$!{item.roomordersn}</span></td>
+                            <td>$!{item.createdate}</td>
+                            <td>$!{item.hotelroomorderitem[0].indate}</td>
+                            <td>$!{item.hotelroomorderitem[0].outdate}</td>
+                            <td>$!{item.name}</td>
+                            <td>$!{item.mobile}</td>
+                            <td>$!{item.hotelname}</td>
+                            <td>$!{item.hotelroomorderitem[0].roomname}</td>
+                            <td>$!{item.hotelroomorderitem[0].roomprice} 元</td>
+                            <td>$!{item.paymenttotalamount} 元</td>
+                            <td>
+                                #if ($item.paymentstatus == 10)
+                                未支付
+                                #elseif ($item.paymentstatus == 50)
+                                部分支付
+                                #elseif ($item.paymentstatus == 90)
+                                已支付
+                                #end
+                            </td>
+                            <td class="order-status">
+                                #if ($item.orderstatus == -10)
+                                已作废
+                                #elseif ($item.orderstatus == 10)
+                                已创建
+                                #elseif ($item.orderstatus == 30)
+                                已确认
+                                #elseif ($item.orderstatus == 50)
+                                已支付
+                                #elseif ($item.orderstatus == 60)
+                                已入住
+                                #elseif ($item.orderstatus == 90)
+                                已离店
+                                #end
+                            </td>
+                            ##<td>$!{item.refundstatus}</td>
+                            ##<td>$!{item.paymentsn}</td>
+                            <td>
+                                #if($item.orderstatus == 10)
+                                <span class="room-rule i-button-m dlb cp" data-status="$!{item.orderstatus}">确认</span>
+                                #elseif($item.orderstatus == 30)
+                                <span class="room-rule i-button-m dlb cp" data-status="$!{item.orderstatus}">支付</span>
+                                #elseif($item.orderstatus == 50)
+                                <span class="room-rule i-button-m dlb cp" data-status="$!{item.orderstatus}">入住</span>
+                                #elseif($item.orderstatus == 60)
+                                <span class="room-rule i-button-m dlb cp" data-status="$!{item.orderstatus}">离店</span>
+                                #elseif($item.orderstatus == 90)
+                                <span class="room-rule i-button-m dlb cp" data-status="$!{item.orderstatus}">已完成</span>
+                                #else
+                                /
+                                #end
+                            </td>
+                        </tr>
+                        #end
+                    #else
+                    <tr>
+                        <td colspan="14">$!{msg}</td>
+                    </tr>
+                    #end
+                </tbody>
+            </table>
+            <!-- 分页 paging -->
+            <section class="paging"></section>
+        </section>
+    </main>
+    <!-- mask -->
+    <div id="mask" class="mask none">
+        <div class="rule-wrap bb bc bcf pr r4">
+            <span class="close-rule cp t0 r0 fs22 pa" title="关闭窗口">×</span>
+            <div class="mb10 c">
+                <h2 class="rule-name fl">订单序列号: <b class="roomordersn fs16"></b> 的订单日志</h2>
+            </div>
+            <table class="i-table w1">
+                <thead>
+                    <tr>
+                        <th>创建日期</th>
+                        <th>信息</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="paging">${LogPaging}</div>
+        </div>
+    </div>
+    <!-- 用于订单日子的字符串模板 -->
+    <template id="orderLogsTP" class="none">
+        <tr>
+            <td>${createdate}</td>
+            <td>${info}</td>
+        </tr>
+    </template>
+    <script>
+        var RenderData = {
+            search: '$!{search}',
+            pageNum: '$!{data.pageNum}',
+            total: '$!{data.total}',
+            hotelid: '$!{hotelid}',
+            roomid:'$!{roomid}',
+            indate:'$!{indate}',
+            outdate:'$!{outdate}',
+            orderstatus:'$!{orderstatus}',
+            paymentstatus:'$!{paymentstatus}'
+        };
+    </script>
+    <script src="/js/jq.js"></script>
+    <script src="/js/public.js"></script>
+    <script src="/js/layer.min.js"></script>
+    <!-- 日期 -->
+    <link rel="stylesheet" href="/css/inputdate.css" />
+    <script src="/js/inputdate.js"></script>
+    <!-- this -->
+    <script src="/js/all.js"></script>
+    <script src="/js/hotelRoomOrder.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+#parse("common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>分享奖励</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/layer-old.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/share.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <div id="logoWrap" class="logo-wrap css-bg pr fs0" data-bg="$!ctx/pages-dev/static/img/bg/share-bg.png">
+        <figure class="j-logo logo pr" data-bg="$!ctx/pages-dev/static/img/icon/logo-white.png"><h1>海星互助 分享</h1></figure>
+    </div>
+    <main id="main" class="main tac pa w1">
+        <ul class="share c">
+            <li class="j-share-fris css-bg fl">
+                <div class="top-50 top-middle">
+                    <i class="i-share"></i><span>分享至朋友圈</span>
+                </div>
+            </li>
+            <li class="j-share-fri css-bg fr">
+                <div class="top-50 top-middle">
+                    <i class="i-priend"></i><span>邀请好友</span>
+                </div>
+            </li>
+        </ul>
+        <ul class="qrcode pr fs0 c">
+            <li class="fl fs14"><a class="db" href="$ctx/doc/share-rule">分享规则</a></li>
+            <li class="fr fs14"><a class="db" href="$ctx/share/qrcode">二维码邀请</a></li>
+        </ul>
+    </main>
+    <!-- 微信jsSDk -->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+    var G = {
+        baseImgUrl: '$!ctx/pages-dev/static/img',
+        shareUrl: '$!shareURL',
+        appId: '$!WX_SESSION.appid', // 微信,公众号提供的AppId
+        timestamp: '$signature.timestamp', // 时间戳
+        nonceStr: '$signature.nonce', // 随机字符串
+        signature: '$signature.signature' // 签名
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/layer-old.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/share.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

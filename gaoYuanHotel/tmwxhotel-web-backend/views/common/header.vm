@@ -1,0 +1,15 @@
+<header class="header w1 pf t0 l0 bcf z2">
+    <div class="header-wrap bc c h60">
+        <ul class="fl h1">
+            <li class="fl fs0 mr30">
+                <a href="/" class="db" title="高远文旅">
+                    <img src="/img/logo.png" class="fs22 fcm" alt="高远文旅" />
+                </a>
+            </li>
+        </ul>
+        <ul class="fr h1">
+            <li class="fl h1 mt15"><a class="header-lh db cd">${username}</a></li>
+            <li class="fl h1 mt15 ml30"><a class="header-lh ts4 dlb cp" href="/login/logout">退出</a></li>
+        </ul>
+    </div>
+</header>

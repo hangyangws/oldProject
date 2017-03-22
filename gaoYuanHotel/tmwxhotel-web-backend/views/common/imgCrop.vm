@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/Jcrop.min.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            padding-top: 0;
+        }
+
+        .main-wrap {
+            height: 385px;
+        }
+
+        .img-wrap {
+            width: 50%;
+            height: 100%;
+        }
+
+        .img-wrap-big {
+            margin: 20px;
+            background-color: #eee;
+            width: 370px;
+            height: 345px;
+        }
+
+        .jcrop-holder {
+            margin-left: auto;
+            margin-right: auto;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .jcrop-keymgr {
+            visibility: hidden;
+        }
+
+        .img-wrap-thum {
+            width: ${width}px;
+            background-color: #eee;
+            height: ${height}px;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+            overflow: hidden;
+        }
+
+        .img-big {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .footer {
+            background-color: #f8f8f8;
+            border-top: 1px solid #eee;
+        }
+
+        .submit {
+            background-color: #bdb099;
+            line-height: 30px;
+            border: 1px solid #bdb099;
+        }
+
+        .submit:hover {
+            background-color: #fff;
+            color: #bdb099;
+        }
+    </style>
+</head>
+
+<body class="ofh">
+    <main class="main-wrap c">
+        <!-- 原始图片 -->
+        <section class="img-wrap fl">
+            <figure class="img-wrap-big">
+                <img id="imgBig" class="img-big db" src="$!{imgSrc}" draggable="false" />
+            </figure>
+        </section>
+        <!-- 预览图片 -->
+        <section class="img-wrap fr">
+            <figure class="ofh img-wrap-thum bc">
+                <img class="db pr" id="imgThum" src="$!{imgSrc}" draggable="false" />
+            </figure>
+        </section>
+    </main>
+    <footer class="footer pt10 pb10 tac">
+        <button id="submit" class="submit r4 pl10 pr10 fcf ts4">确定</button>
+    </footer>
+    <script>
+        var _img_name = '$!{imgSrc}',
+            width = '$!{width}',
+            height = '$!{height}',
+            _type = '$!{type}';
+        _img_name = _img_name.slice(_img_name.lastIndexOf('/') + 1);
+    </script>
+    <script src="/js/jq.js"></script>
+    <script src="/js/layer.min.js"></script>
+    <script src="/js/jquery.ui.widget.js"></script>
+    <script src="/js/fileUpload.js"></script>
+    <script src="/js/Jcrop.min.js"></script>
+    <script src="/js/imgCrop.js"></script>
+</body>
+
+</html>

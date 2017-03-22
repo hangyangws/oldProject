@@ -1,0 +1,154 @@
+/*main-wrap*/
+
+html,
+body,
+.main-wrap {
+    height: 100%;
+}
+
+
+/*main-con*/
+
+.main-con {
+    overflow-y: auto;
+    padding-bottom: 50px;
+}
+
+
+/*header*/
+
+.header {
+    padding: 1.2rem 0 1.2rem 26px;
+    background-image: -moz-linear-gradient( 101deg, rgb(16, 116, 189) 0%, rgb(5, 140, 209) 38%, rgb(0, 174, 233) 100%);
+    background-image: -webkit-linear-gradient( 101deg, rgb(16, 116, 189) 0%, rgb(5, 140, 209) 38%, rgb(0, 174, 233) 100%);
+    background-image: -ms-linear-gradient( 101deg, rgb(16, 116, 189) 0%, rgb(5, 140, 209) 38%, rgb(0, 174, 233) 100%);
+    box-shadow: 0 2px 5px 0 rgba(185, 185, 185, .75);
+}
+
+.user-info {
+    margin-right: 50px;
+    border-right: 1px dashed rgba(255, 255, 255, .65);
+}
+
+.user-info dl {
+    margin-top: .28rem;
+}
+
+.user-info dt {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.user-info dt span {
+    margin-left: .4rem;
+}
+
+.user-info dd {
+    display: inline-block;
+    vertical-align: middle;
+    word-break: break-all;
+    padding-right: 1rem;
+}
+
+.referee {
+    font-size: .857rem;
+    top: 0;
+    right: 1.2rem;
+}
+
+.edit-btn {
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+}
+
+.edit-btn .i {
+    width: 30px;
+    height: 30px;
+}
+
+
+/*project*/
+
+.project {
+    padding: 1.4rem 10px 10px;
+}
+
+.pro-num {
+    position: relative;
+    left: -4px;
+}
+
+.pro-num span {
+    margin-left: .2rem;
+}
+
+.pro-wrap {
+    margin-top: .8rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #cfcfcf;
+}
+
+.pro-item {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(233, 233, 233, .75);
+}
+
+.pro-item h4 {
+    padding-bottom: .4rem;
+    color: #0281c9;
+    border-bottom: 1px solid #eee;
+}
+
+.pro-item p {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 1rem 0;
+    word-break: break-all;
+    color: #7c7c7c;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.pro-foot {
+    line-height: 1.714rem;
+    padding-top: 1rem;
+    color: #868686;
+    border-top: 1px dashed #cfcfcf;
+}
+
+.added-man {
+    width: 6rem;
+    text-align: center;
+    color: #ff7109;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.empty-tip {
+    font-size: .857rem;
+    color: #b4b4b4;
+    padding: 2.6rem 0;
+    border-radius: 6px;
+    border: 1px dashed #cfcfcf;
+}
+
+.btn-more {
+    margin-top: 1rem;
+}
+
+
+/*add-pro*/
+
+.add-pro {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    padding: 1rem 0;
+}

@@ -1,0 +1,68 @@
+## 筛选区域
+<section id="foodSelect" class="food-select t0 w1 tac fc-impor-two $!{scrollFixed}">
+    <div class="select-wrap bcf c pr z2">
+        #if (!$isempty)
+        <span class="js-type-select dlb w5 ts4 fl">$!{typeList[0].name}<i></i></span>
+        #else
+        <span class="dlb w5 ts4 fl">暂无分类<i></i></span>
+        #end
+        <span class="dlb w5 fl">距离最近<i></i></span>
+    </div>
+    #if (!$isempty)
+    <ul class="js-item-select select-item pr fs12 z1">
+        #foreach ($type in $typeList)
+        <li data-id="$!{type.id}">$!{type.name}</li>
+        #end
+    </ul>
+    #end
+</section>
+<main id="main"></main>
+<template id="tpShopList">
+    <li class="food-item bcf ofh" data-foodid="${foodId}" data-shopid="${shopid}" data-distancce="${distance}" data-shopname="${shopname}">
+        <figure class="js-go-food img-wrap pr ofh" style="${styleFoodImg}">
+            <span class="pa tac fcf bc-vice r50 ${gray}">${shopStatus}</span>
+        </figure>
+        <div class="pr shop-wrap">
+            <figure class="js-go-shop head-wrap tac">
+                <div class="r50" style="${styleCookImg}"></div>
+                <span class="fcf bc-vice r4">已认证</span>
+            </figure>
+            <div class="pa shop-con">
+                <h2 class="js-go-food to fs14 fc-impor-one">${foodName}</h2>
+                <div class="addr-con pr tar">
+                    <span class="addr l0 tal to pa fc-impor-two">${shopAddr}</span>
+                    <span class="fc-sub w50 dlb fc-sub">${distance}m</span>
+                </div>
+                <div class="c">
+                    <span class="price fc-number fl fs14">${price}</span>
+                    <dl class="fr">
+                        <dt class="fc-sub dlb">月销量</dt>
+                        <dd class="dlb fc-number fs14">${sales}份</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </li>
+</template>
+## 没有数据信息模板
+<template id="tpNoData">
+    <div class="error-wrap tac w1 pa">
+        <p class="fs12 mb10">你所在位置暂未开放家厨*^_^*</p>
+        <button class="js-change-addr i-btn r4 fcf bc-main">切换位置</button>
+    </div>
+</template>
+## 出错信息模板
+<template id="tpError">
+    <div class="error-wrap tac w1 pa">
+        <p class="fs12 mb10">${msg}*^_^*</p>
+        <button class="js-reload i-btn r4 fcf bc-main">重新加载</button>
+    </div>
+</template>
+<script>
+var G = {
+    lng: '$!{s_applongitude}',
+    lat: '$!{s_applatitude}',
+    device: '$!{device}',
+    search: '$!{search}'
+};
+</script>

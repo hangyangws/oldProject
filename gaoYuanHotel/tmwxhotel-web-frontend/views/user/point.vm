@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>积分详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <!-- icon -->
+    <link rel="icon" sizes="any" href="/img/favicon.png" />
+    <!-- css -->
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/public.css" />
+    <style>
+        ul {
+            margin-top: 64px;
+        }
+        .point-name {
+            padding: 12px 80px 12px 15px;
+        }
+        h2 {
+            margin-bottom: 8px;
+        }
+        .point {
+            line-height: 69px;
+            right: 15px
+        }
+        .point::before {
+            content: '+';
+        }
+    </style>
+</head>
+
+<body id="body">
+    #parse("./common/nav.vm")
+    <ul>
+        #if ($status == true)
+            #foreach ($item in $data.data)
+            <li class="pr">
+                <div class="point-name">
+                    #if ($!item.type == 1)
+                    <h2 class="fs16">离店</h2>
+                    #end
+                    <time class="fc9 fs12">$!{item.createdate}</time>
+                </div>
+                <span class="point h1 fs18 fcm pa t0">$!{item.point}</span>
+            </li>
+            #end
+        #else
+        <li class="tac mt30 fc9">$!{msg}</li>
+        #end
+    </ul>
+</body>
+
+</html>

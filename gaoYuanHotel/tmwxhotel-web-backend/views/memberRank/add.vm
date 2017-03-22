@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    #if ($data)
+    <title>编辑等级</title>
+    #else
+    <title>新增等级</title>
+    #end
+    <!-- icon -->
+    <link rel="icon" sizes="any" href="/img/favicon.png" />
+    <!-- basic -->
+    <link rel="stylesheet" href="/css/base.css" />
+    <!-- this -->
+    <link rel="stylesheet" href="/css/all.css" />
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="body">
+    <!-- 头部 -->
+    #parse("./common/header.vm")
+    <main class="main bb pr page_member">
+        #parse("./common/aside.vm")
+        <section id="allWrap" class="all-wrap">
+            <!-- 导航栏 -->
+            <div class="con-nav i-lh30 i-bcm p10 mb20 c">
+                <nav class="fl">
+                    <a>会员管理</a>
+                    #if ($data)
+                    <a>编辑等级</a>
+                    #else
+                    <a href="/hotelMemberrank/add">新增等级</a>
+                    #end
+                </nav>
+            </div>
+            <form class="form" autocomplete="off">
+                <table class="con-show w1">
+                    <tbody>
+                        #if ($data)
+                        <input class="edit-id" name="id" type="hidden" value="${data.data.id}" />
+                        #end
+                        <tr>
+                            <td>等级名称</td>
+                            <td><input class="ipt-item i-input i-w-long" data-tit="等级名称" data-need="true" data-name="name" name="name" type="text" placeholder="等级名称" value="$!{data.data.name}" /></td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <tr>
+                            <td>等级起始积分</td>
+                            <td>
+                                <input class="ipt-item i-input i-w-long" data-tit="等级起始积分" data-need="true" data-name="point" name="point" type="number" placeholder="等级起始积分" value="$!{data.data.point}" />
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <tr>
+                            <td>是否默认等级</td>
+                            <td>
+                                <label class="dlb mr20" data-oo="${data.data.isdefault}">
+                                    #if ($data.data.isdefault == true)
+                                    <input type="radio" value="true" class="mr5" name="isdefault" checked="checked" />是
+                                    <input type="radio" value="false" class="ml20" name="isdefault" />否
+                                    #else
+                                    <input type="radio" value="true" class="mr5" name="isdefault" />是
+                                    <input type="radio" value="false" class="ml20" name="isdefault" checked="checked" />否
+                                    #end
+                                </label>
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                        <tr class="none">
+                            <td>会员折扣</td>
+                            <td>
+                            <input class="i-input i-w-long" data-tit="会员折扣" data-need="true" data-name="preferentialscale" name="preferentialscale" type="text" placeholder="会员折扣" value="$!{data.data.preferentialscale}" />
+                            </td>
+                            <td>&emsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="con-operation tac pt20 mb30">
+                    #if ($data)
+                    <button type="button" class="submit-form type-edit i-button i-b-mw">保存</button>
+                    #else
+                    <button type="button" class="submit-form i-button i-b-mw">保存</button>
+                    #end
+                </div>
+            </form>
+        </section>
+    </main>
+    <!-- script -->
+    <script src="/js/jq.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/public.js"></script>
+     <script src="/js/layer.min.js"></script>
+    <!-- this -->
+    <script src="/js/all.js"></script>
+    <script src="/js/memRankAddEdit.js"></script>
+</body>
+
+</html>

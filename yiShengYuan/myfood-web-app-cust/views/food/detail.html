@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>菜品详情-我的菜</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link rel="icon" sizes="any" href="/img/icon.png" />
+    <link rel="stylesheet" href="/dist/css/base-pub.css" />
+    <link rel="stylesheet" href="/dist/css/swiper.css" />
+    <link rel="stylesheet" href="/dist/css/fooddetail.css" />
+</head>
+
+<body>
+    ## 静态轮播
+    <section class="carousel w1 pr ofh z3">
+        <div id="swiper" class="swiper-container">
+            <div class="swiper-wrapper bcf">
+                #foreach ($foodimg in $data.foodimagepath)
+                <div class="swiper-slide">
+                    <img class="swiper-lazy middle" data-src="${foodimg}" />
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                #end
+            </div>
+        </div>
+        <nav class="swiper-dir pr z1 tac"></nav>
+    </section>
+    <main id="main" class="main ofh">
+        ## 价格、销量、添加购物车
+        <section class="p1em c">
+            <span class="price fc-number mr10 fs16">$!{data.foodprice}</span>
+            <dl class="dlb fc-sub">
+                <dt class="dlb">月销量</dt>
+                <dd class="dlb">300</dd>
+            </dl>
+            <div id="addCar" class="add-car fs0 fc-impor-two fr #if ($data.foodcount != 0)active#end">
+                <span class="add-animate dlb mr5"><i class="js-car-opt car-down vam mr5" data-type="minus"></i><span class="js-food-num fs16 vam">$!{data.foodcount}</span></span><i class="js-car-opt car-up vam" data-type="add"></i>
+            </div>
+        </section>
+        ## 菜品名字
+        <h2 class="border-t-b fc-impor-one p1em fs16">$!{data.foodname}</h2>
+        ## 店铺
+        <section id="shop" class="p1em pr tar">
+            <div class="shop-name pa tal">
+                <h3 class="fc-impor-one fs16">$!{data.shopname}</h3>
+                <p class="fc-impor-two to">$!{data.shopaddress}</p>
+            </div>
+            <button class="js-to-shop to-shop mt10 mb10 r4 fcf bc-main">进店</button>
+        </section>
+        ## cook
+        <section class="cook border-t-b c">
+            <figure class="fl r50" style="background: url($!{data.shopimagepath}) 50% 50% / cover no-repeat;"></figure>
+            <span class="fr cook-check fc-number"><i class="vam"></i>已认证</span>
+        </section>
+        ## 备注
+        <p class="p1em fc-impor-two">$!{data.fooddescription}</p>
+    </main>
+    ## 购物车和结算
+    <footer id="footer" class="footer pf w1 l0 b0 c #if ($data.carnum != 0)active#end">
+        <dl class="footer-con pa t0 l0 b0">
+            <dt class="js-to-car r50 pr dlb vam"><i class="js-num pa w20 fs12 tac r50 fcf none">$!{data.carnum}</i></dt>
+            <dd class="js-price price dlb vam fc-impor-two fs16 ml5">$!{data.carprice}</dd>
+        </dl>
+        <button class="js-statement statement h1 fr dlb">去结算</button>
+    </footer>
+    <script src="/dist/js/lib-pub.js"></script>
+    <script src="/dist/js/swiper.js"></script>
+    ## 轮播器和滚动检测代码内嵌页面
+    <script>
+    var G = {
+        shopid: '$!{data.shopid}',
+        shopName: '$!{data.shopname}',
+        foodid: '$!{data.foodid}',
+        userid: '$!{data.userid}',
+        device: '$!{data.device}'
+    };
+    ! function(win, $) {
+        var $swiper = $('#swiper'),
+            mySwiper = new Swiper($swiper, {
+                setWrapperSize: true,
+                pagination: '.swiper-dir',
+                paginationClickable: true,
+                lazyLoading: true,
+                loop: true,
+                paginationElement: 'a'
+            }),
+            _h_swiper = $swiper.height();
+        ($('.swiper-dir').find('a').length < 2) && $('.swiper-dir').remove();
+    }(window || this, Zepto);
+    </script>
+    <script src="/dist/js/fooddetail.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+@charset 'utf-8';
+
+/**
+ * Created by hangyangws(hangyangws@foxmail.com) in 2016-06-22.
+ */
+
+/*other*/
+html, body {
+    height: 100%;
+}
+
+/*food-item*/
+
+.food-item.active .food-wrap {
+    pointer-events: none;
+}
+
+.food-item.active .food-sale {
+    opacity: 0;
+}
+
+.food-item.del {
+    height: 0;
+    margin-top: 0;
+    -webkit-transition: height .4s, margin-top .4s;
+    -moz-transition: height .4s, margin-top .4s;
+    -o-transition: height .4s, margin-top .4s;
+    transition: height .4s, margin-top .4s;
+}
+
+.error-item {
+    top: 50%;
+}
+
+
+/*food list */
+
+.food-num {
+    line-height: 50px;
+    border-right: 1px dashed #d6d6d6;
+}
+
+.food-con {
+    top: 10px;
+    bottom: 10px;
+    left: 51px;
+}
+
+.food-txt {
+    left: 60px;
+}
+
+.name-wrap {
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+.food-sale {
+    margin-right: 30px;
+}
+
+
+/*food-edit*/
+
+.food-edit {
+    left: 0;
+    width: 200%;
+    -webkit-transition: -webkit-transform .1s;
+    -moz-transition: -moz-transform .1s;
+    -o-transition: -o-transform .1s;
+    transition: transform .1s;
+}
+
+.space-bg {
+    width: 50%;
+}
+
+.btn-wrap {
+    padding-top: 12.5px;
+}
+
+.edit-btn {
+    padding-right: 6px;
+}
+
+.edit-btn i {
+    background: url(/img/sprite.png) no-repeat;
+    background-position: -28px 1px;
+    background-size: 208px;
+}
+
+.del-btn i {
+    background: url(/img/sprite.png) no-repeat;
+    background-position: -1px 0;
+    background-size: 226px;
+}

@@ -1,0 +1,45 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>通讯录</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/poverty/css/phonebook.css" />
+    <!-- /coolie -->
+</head>
+
+<body class="bg-gray">
+    <main class="main-wrap h1 ofh">
+        <header class="header gradient-bg"></header>
+        <ul class="tel-wrap pa">
+            #foreach($info in $!phones)
+            <li class="tel-each">
+                <div class="e-tit">
+                    <span class="t-name fc3"><i class="i i-1-17"></i><span class="to">$!info.name</span></span>
+                    <span class="to">$!info.position</span>
+                </div>
+                <a href="tel:$!info.phone" class="e-tel"><i class="i i-6-1"></i><span>$!info.phone</span></a>
+            </li>
+            #end
+        </ul>
+    </main>
+</body>
+
+</html>

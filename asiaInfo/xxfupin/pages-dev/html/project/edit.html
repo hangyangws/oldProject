@@ -1,0 +1,246 @@
+#parse("././common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>#if($project.projectId)修改#else添加#end项目</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/project.css" />
+    <!-- /coolie -->
+</head>
+
+<body class="bg-gray">
+    <main class="main-wrap bb">
+        <!--
+        <p>性别</p>
+        <select name="sexLimit">
+            #option($!sexList $!project.sexLimit)
+        </select>
+        <p>联系人</p>
+        <input name="contact" value="$!project.contact">
+        <p>联系电话</p>
+        <input name="contactPhone" value="$!project.contactPhone">
+        <p>联系邮箱</p>
+        <input name="contactEmail" value="$!project.contactEmail">
+        <p>项目预算</p>
+        <input name="planAmount" value="$!project.planAmount">
+        <p>帮助人数</p>
+        <input name="planCount" value="$!project.planCount">
+        <p>备注</p>
+        <input name="remark" value="$!project.remark"> -->
+        <ul id="itemWrap" class="item-wrap">
+            <li class="item-list">
+                <!-- 项目名称 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">项目名称</span>
+                        <input class="j-ipt" type="text" maxlength="20" name="name" value="$!project.projectName" placeholder="请输入项目名称" />
+                    </div>
+                </label>
+                <!-- 项目简介 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">项目简介</span>
+                        <textarea class="j-ipt" type="text" maxlength="20" name="name" value="$!project.projectDesc" placeholder="100字以内"></textarea>
+                    </div>
+                </label>
+            </li>
+            <li class="item-list">
+                <!-- 实施时间 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">实施时间</span>
+                        <input class="j-ipt" type="text" maxlength="10" name="startTime" value="$!project.startTime" placeholder="开始时间" />
+                        <span>到</span>
+                        <input class="j-ipt" type="text" maxlength="10" name="endTime" value="$!project.endTime" placeholder="结束时间" />
+                    </div>
+                </label>
+                <!-- 实施地点 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">实施地点</span>
+                        <select name="projectProvince">
+                            <option value="四川省">四川省</option>
+                        </select>
+                        <select name="projectCity">
+                            <option value="成都市">成都市</option>
+                        </select>
+                        <select name="projectDistrict">
+                            <option value="高新区">高新区</option>
+                        </select>
+                    </div>
+                </label>
+                <!-- 年龄 -->
+                <div class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">年龄</span>
+                        <div class="item-con c">
+                            <label>
+                                <input class="j-ipt" type="text" maxlength="20" name="startAge" value="$!project.startAge" />
+                                <span>岁</span>
+                            </label>
+                            <span>到</span>
+                            <label>
+                                <input class="j-ipt" type="text" maxlength="20" name="endAge" value="!project.endAge" />
+                                <span>岁</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 性别 -->
+                <div class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">性别</span>
+                        <div class="item-con c">
+                            <label>
+                                <input type="radio" name="" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="item-list">
+                <!-- 联系人 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">联系人</span>
+                        <input class="j-ipt" type="text" maxlength="20" name="name" value="$!project.projectName" placeholder="请输入联系人" />
+                    </div>
+                </label>
+                <!-- 联系电话 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">联系电话</span>
+                        <input class="j-ipt" type="text" maxlength="20" name="name" value="$!project.projectName" placeholder="请输入电话" />
+                    </div>
+                </label>
+                <!-- 联系邮箱 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">联系邮箱</span>
+                        <input class="j-ipt" type="text" maxlength="20" name="name" value="$!project.projectName" placeholder="请输入邮箱" />
+                    </div>
+                </label>
+                <!-- 项目预算 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">项目预算</span>
+                        <input class="j-ipt" type="text" maxlength="20" name="name" value="$!project.projectName" placeholder="请输入项目名称" />
+                    </div>
+                </label>
+                <!-- 帮助人数 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">帮助人数</span>
+                        <input class="j-ipt" type="text" maxlength="20" name="name" value="$!project.projectName" placeholder="请输入项目名称" />
+                    </div>
+                </label>
+            </li>
+            <li class="item-list">
+                <!-- 备注 -->
+                <label class="item-each pr db">
+                    <i class="pa i i-1-17"></i>
+                    <div class="item-con c">
+                        <span class="item-tag">备注</span>
+                        <textarea class="j-ipt" type="text" maxlength="20" name="name" value="$!project.projectDesc" placeholder="100字以内"></textarea>
+                    </div>
+                </label>
+            </li>
+        </ul>
+        <footer id="footer" class="reg-btn-wrap pa">
+            <div class="j-modify btn-def reg-btn tac" role="button"><i class="i i-1-3"></i><span>&emsp;确认修改</span></div>
+        </footer>
+    </main>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        project_id: '$!project.projectId'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/project.js"></script>
+    <!-- /coolie -->
+    <script>
+    $('#btnSign').click(function() {
+        var data = $('form').serialize();
+        $.post('$!ctx/project/save', data, function(json) {
+            if (json && json.code === 0) {
+                alert('成功');
+                window.location.href = '$ctx/commonweal';
+            } else {
+                alert(json.msg);
+            }
+        });
+        return false;
+    });
+
+    $(function() {
+        getSelect('[name=projectProvince]', '-', '$!project.projectProvince');
+        getSelect('[name=projectCity]', '$!project.projectProvince', '$!project.projectCity');
+        getSelect('[name=projectDistrict]', '$!project.projectCity', '$!project.projectDistrict');
+
+        $('[name=projectProvince],[name=projectCity]').change(function() {
+            getSelect($(this).next(), $(this).val(), null)
+        });
+    });
+
+    function getSelect(selector, parent, value) {
+        if (!parent) {
+            return;
+        }
+        $.get('$ctx/area/' + parent, function(json) {
+            if (json && json.code === 0) {
+                var list = json.data;
+                var html = '';
+                for (var i in list) {
+                    var dic = list[i];
+                    html += '<option value="' + dic.code + '"';
+                    if (dic.code === value) {
+                        html += ' selected="selected"';
+                    }
+                    html += '>' + dic.label + '</option>';
+                }
+                $(selector).html(html);
+            } else {
+                alert(json.msg);
+            }
+        });
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+/*public*/
+
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+}
+
+.main-wrap {
+    overflow-y: hidden;
+    height: 100%;
+    padding-bottom: 4rem;
+}
+
+.item-wrap {
+    overflow-y: auto;
+    height: 100%;
+    border-top: 2px solid #239ad6;
+}
+
+.item-list {
+    margin-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(233, 233, 233, .7);
+}
+
+.item-each > .i {
+    top: 0;
+    bottom: 0;
+    margin: auto 10px;
+}
+
+.item-con {
+    margin-left: 40px;
+    padding: 1.5rem 10px 1.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-each:last-child .item-con {
+    border-bottom: none;
+}
+
+.item-tag {
+    font-size: 1.143rem;
+    line-height: 1.429rem;
+    width: 5.714rem;
+    color: #515151;
+}
+
+.item-con input {
+    float: right;
+    text-align: right;
+}
+
+input[readonly] {
+    opacity: .5;
+}
+
+/*sign-flow*/
+
+.mask-active {
+    opacity: 1;
+}
+
+.sign-flow {
+    overflow: hidden;
+    margin: 0 2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 18px 0 rgba(0, 0, 0, .4);
+}
+
+.s-f-tit {
+    font-size: 1.256rem;
+    padding: 2rem 0;
+    background-image: -moz-linear-gradient( 180deg, rgb(0, 133, 204) 0%, rgb(0, 176, 234) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(0, 133, 204) 0%, rgb(0, 176, 234) 100%);
+    background-image: -ms-linear-gradient( 180deg, rgb(0, 133, 204) 0%, rgb(0, 176, 234) 100%);
+}
+
+.s-f-con {
+    margin: 0 2rem 3rem 2rem;
+    color: #515151;
+}
+
+.s-f-con::before {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    overflow: hidden;
+    width: 1px;
+    height: 100%;
+    content: '';
+    background-color: #e0e0e0;
+}
+
+.s-f-con li {
+    position: relative;
+    margin-top: 3rem;
+    padding-left: 2rem;
+}
+
+.s-f-con li::before {
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    left: -6px;
+    width: 11px;
+    height: 11px;
+    content: '';
+    border: 1px solid #009be7;
+    border-radius: 100%;
+    background-color: #fff;
+    ;
+}
+
+.s-f-con li:last-child::after {
+    position: absolute;
+    top: 8px;
+    left: -.5rem;
+    width: 1rem;
+    height: 100%;
+    content: '';
+    background-color: #fff;
+}
+
+
+/*footer*/
+
+.reg-btn-wrap {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+}
+
+.reg-btn {
+    padding: .8rem 0;
+}

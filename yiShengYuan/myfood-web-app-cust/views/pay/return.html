@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>支付完成-我的菜</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link rel="icon" sizes="any" href="/img/icon.png" />
+    <link rel="stylesheet" href="/dist/css/base-pub.css" />
+    <link rel="stylesheet" href="/dist/css/pay-return.css" />
+</head>
+
+<body class="bc-light">
+    <main class="m10 bcf r4 p20 tac">
+        <h3 class="fc-number fs16">$!{msg}</h3>
+        <dl class="fc-sub mb10">
+            <dt class="dlb">订单号</dt>
+            <dd class="dlb">$!{data.orderSn}</dd>
+        </dl>
+        #if ($status)
+        <p class="fc-impor-two">预计送达时间 $!{data.expectedTime} 请您耐心等候*^_^*</p>
+        #end
+    </main>
+    ## 因为支付宝的问题 第一个版本不显示此功能
+    <footer id="footer" class="footer tac pf w1 c fc-sub">
+        <div class="dlb w5 fl fs12">
+            <i class="js-page-go i-index" data-page="index"></i>
+            <div>返回首页</div>
+        </div>
+        <div class="dlb w5 fl fs12">
+            <i class="js-page-go i-order" data-page="order"></i>
+            <div>返回订单</div>
+        </div>
+    </footer>
+    <script>
+    var G = {
+        device: '$!{data.device}'
+    };
+    </script>
+    <script src="/dist/js/lib-pub.js"></script>
+    <script src="/dist/js/pay-return.js"></script>
+</body>
+
+</html>

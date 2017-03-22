@@ -1,0 +1,80 @@
+/*head-info*/
+
+.head-info {
+    padding-top: 5rem;
+    box-shadow: 0 2px 8px 0 rgba(95, 193, 253, .75);
+}
+
+.h-con {
+    padding-bottom: 1.8rem;
+}
+
+.sured {
+    opacity: 0;
+}
+
+.sured-live {
+    opacity: 1;
+}
+
+.h-wraper {
+    width: 6.857rem;
+    height: 6.857rem;
+    padding: .286rem;
+    background-color: rgba(255, 255, 255, .4);
+    box-shadow: 0 2px 12px 0 rgba(60, 177, 253, .75);
+}
+
+.h-name {
+    font-size: 1.143rem;
+    margin: .8rem 0 .4rem 0;
+}
+
+.h-type::before,
+.h-type::after {
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    margin: 0 .6rem;
+    content: '';
+    vertical-align: middle;
+    opacity: .5;
+    background-color: #fff;
+}
+
+
+/*content*/
+
+.i-list-wrap {
+    margin: 1.2rem 0;
+}
+
+.l-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.i-list-con {
+    margin-left: 60px;
+}
+
+.i-list-con > h3 {
+    font-size: 1rem;
+    text-align: left;
+    color: #333;
+    padding-left: 4px;
+}
+
+.dynamics li {
+    width: 50%;
+    font-size: .857rem;
+    display: inline-block;
+}
+
+.dynamics-time {
+    padding-right: 1rem;
+}
+
+.no-data {
+    margin: .714rem;
+}

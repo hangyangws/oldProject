@@ -1,0 +1,39 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>用户登录</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <!-- /coolie -->
+</head>
+
+<body>
+    <main class="fcf h1 ofh" id="loginPassword">
+        <!-- logo -->
+        <figure id="logo" class="logo">
+            <h1>生产条件</h1>
+        </figure>
+        <section id="content" class="content pr">
+        <p>耕地面积：$!info.mjGengDi
+        <p>有效灌溉面积:$!info.mjGuanGai
+        <p>林地面积：$!info.mjLinDi
+        <p>退耕还林面积：$!info.mjTuiGengHuanLin
+        <p>林果面积：$!info.mjLinGuo
+        <p>牧草地面积：$!info.mjMuCaoDi
+        <p>水面面积：$!info.mjShuiMain
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>$!{data.brandname}·$!{data.name}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    ##icon
+    <link rel="icon" sizes="any" href="/img/favicon.png" />
+    ##css
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/public.css" />
+    <link rel="stylesheet" href="/css/searchRoom.css" />
+</head>
+
+<body id="body">
+    <main>
+        #parse("./common/nav.vm")
+        #if ($status == true)
+        ##轮播图
+        <section id="carousel" class="carousel w1 pr ofh">
+            <figure class="img-wrap h1 pr">
+                #foreach ($item in $data.imagepath)
+                <img class="h1 fl" src="$!{item.imagepath}" />
+                #end
+            </figure>
+            ##js 生成
+            <nav class="img-dir-wrap pa l0 b0 w1 tac fs0"></nav>
+        </section>
+        ##地址 - 电话
+        <ul class="addr-tel">
+            <li>
+                <i class="i-addr mr10"></i>
+                $!{data.address}
+            </li>
+            <li>
+                <i class="i-tel mr10"></i>
+                <a href="tel://$!{data.phone}">$!{data.phone}</a>
+            </li>
+            <li>
+                $!{time.indateMin}入住&emsp;&ensp;$!{time.outdateMin}离店
+                <span class="all-time fr mr15">共$!{time.count}晚上</span>
+            </li>
+        </ul>
+        ##房间列表
+        <ul id="roomList" class="room-list m10">
+            ##不同会员等级 data-pri 不一样
+            #foreach ($item in $data.room)
+                #if ($!item.memberrankprice)
+                <li class="pr" data-id="$!{item.id}" data-pri="$!{item.memberrankprice}" data-name="$!{item.name}" data-breakfast="$!{item.breakfast}">
+                #else
+                <li class="pr" data-id="$!{item.id}" data-pri="$!{item.price}" data-name="$!{item.name}" data-breakfast="$!{item.breakfast}">
+                #end
+                <div class="list-con h40">
+                    <div class="c">
+                        <h2 class="fl fs16 fcm">$!{item.name}</h2>
+                        ##判断当前房间是否有会员等级
+                        #if ($!item.memberrankprice)
+                        <div class="fr fc9 line-through">原价：<span>￥$!{item.price}</span></div>
+                        #else
+                        <div class="fr fc9">价格：<span>￥$!{item.price}</span></div>
+                        #end
+                    </div>
+                    <div class="c">
+                        <p class="dlb fc9 fl">$!{item.introduction}</p>
+                        #if ($!item.memberrankprice)
+                        <span class="fr">$!{item.memberrankname}：￥$!{item.memberrankprice}</span>
+                        #end
+                    </div>
+                </div>
+                #if ($item.resv)
+                <button class="order-btn order-sub pa fs16 r4 fcf" type="button"></button>
+                #else
+                <button class="order-btn pa fs16 r4 fcf no-use" type="button"></button>
+                #end
+            </li>
+            #end
+        </ul>
+        #end
+    </main>
+    <div id="pay" class="pay-wrap w1 h1 pf l0 t0 none">
+        <div class="pay r4 bc fcf">
+            <div class="pay-list p5">
+                <h2 class="fs16 pr pl5">订单明细</h2>
+                <dl>
+                    <dt>酒店名称</dt>
+                    <dd>$!{data.brandname}·$!{data.name}</dd>
+                </dl>
+                <dl>
+                    <dt>房间名称</dt>
+                    <dd class="target-room-name"></dd>
+                </dl>
+                <dl>
+                    <dt>入住时间</dt>
+                    <dd>$!{time.indate}</dd>
+                </dl>
+                <dl>
+                    <dt>离店时间</dt>
+                    <dd>$!{time.outdate}</dd>
+                </dl>
+                <div class="all-time">共$!{time.count}晚（<span class="target-room-bkf"></span>）</div>
+                <dl>
+                    <dt>支付总金额</dt>
+                    <dd class="target-room-price"></dd>
+                </dl>
+            </div>
+            <div class="pay-tel p5 pb10">
+                <h2 class="fs16 pr pl5">联系人</h2>
+                <input class="person db w1 bb r4" type="text" maxlength="6" placeholder="请输入联系人" />
+                <h2 class="fs16 pr pl5 mt10">手机号（接受订单信息）</h2>
+                <input class="tel db w1 bb r4" type="tel" maxlength="11" placeholder="请输入手机号" />
+            </div>
+            <div class="tac">
+                <button class="submit-pay dlb mt15 r4" type="button">确&emsp;定</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var Render = {
+            indate: '$!{data.indate}',
+            outdate: '$!{data.outdate}',
+            hotelid: '$!{data.id}',
+            hotelName: '$!{data.brandname}·$!{data.name}',
+            roomName: null
+        };
+    </script>
+    <script src="/js/zepto.min.js"></script>
+    <script src="/js/layer.js"></script>
+    ##ip
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="/js/searchRoom.js"></script>
+</body>
+
+</html>

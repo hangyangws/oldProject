@@ -1,0 +1,53 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>重置密码-第二步</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <!-- /coolie -->
+</head>
+
+<body>
+    <main class="fcf h1 ofh" id="loginPassword">
+        <!-- logo -->
+        <figure id="logo" class="logo">
+            <h1>重置密码-第二步</h1>
+        </figure>
+        <section id="content" class="content pr">
+        <p>手机号<input id="user_mobile" value="$mobile">
+        <p>密码<input id="user_passwd">
+        <p><button id="btnSign">重置</button>
+        </section>
+    </main>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script>
+    $('#btnSign').click(function() {
+    	$.post('$!ctx/commonweal/password/reset/2', {
+    		"passwd": $('#user_passwd').val(),
+    		"token": $token
+    	}, function(json) {
+    		if(json && json.code === 0) {
+    			alert('成功')
+    		} else {
+    			alert(json.msg);
+    		}
+    	});
+    });
+    </script>
+    <!-- /coolie -->
+</body>
+
+</html>

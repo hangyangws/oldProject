@@ -1,0 +1,109 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>#if($isGov)帮扶干部#else普通用户#end个人中心</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/poverty/css/profile.css" />
+    <!-- /coolie -->
+</head>
+
+<body class="bg-gray">
+    <main class="main-wrap h1 ofh">
+        <!-- 公共头部，导航页面 -->
+        #if($isGov)
+            #header($uctx '帮扶干部个人中心')
+        #else
+            #header($uctx '普通用户个人中心')
+        #end
+        <!-- 头部信息 -->
+        <section class="head-info gradient-bg tac">
+            <div class="ofh">
+                <!-- 认证信息[目前没有使用]，已认证添加sured-live -->
+                <div class="sured tar op0">
+                    <i class="i i-8-6"></i>
+                    <span class="fcf fs12">&ensp;已认证&emsp;</span>
+                </div>
+                <div class="h-wraper fs0 bc r50">
+                    <figure class="j-delay-bg w1 h1 r50" data-bg="$ctx/pages-dev/static/poverty/img/temp/default-head.png"></figure>
+                </div>
+                <p class="h-name fcf">$!USER_SESSION.name</p>
+            </div>
+            <ul class="head-val bcf fs0 pr">
+                <li>
+                    <i class="i i-7-20"></i>
+                    #if($isGov)
+                    <p>身份：帮扶干部</p>
+                    #else
+                    <p>身份状态：村民</p>
+                    #end
+                </li>
+                <li>
+                    <i class="i i-8-1"></i>
+                    <p>已入驻村民：$!villagerCount人</p>
+                </li>
+            </ul>
+        </section>
+        <!-- 主体 -->
+        <nav class="content bcf fc3">
+            <a class="c-list" href="$uctx/profile/edit">
+                <i class="i i-8-4"></i>
+                <div>
+                    <span>修改资料</span>
+                    <i class="i i-3-15"></i>
+                </div>
+            </a>
+            <a class="c-list" href="$uctx/profile/dynamics">
+                <i class="i i-8-2"></i>
+                <div>
+                    <span>我的动态</span>
+                    <i class="i i-3-15"></i>
+                </div>
+            </a>
+            #if(!$isGov)
+            <a class="c-list" href="$uctx/profile/email">
+                <i class="i i-8-5"></i>
+                <div>
+                    <span>我的发表</span>
+                    <i class="i i-3-15"></i>
+                </div>
+            </a>
+            #end
+            <a class="c-list" href="$uctx/profile/share">
+                <i class="i i-8-3"></i>
+                <div>
+                    <span>我要分享</span>
+                    <i class="i i-3-15"></i>
+                </div>
+            </a>
+        </nav>
+    </main>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$ctx/pages-dev/static/js/public.js"></script>
+    <script src="$ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {};
+    </script>
+</body>

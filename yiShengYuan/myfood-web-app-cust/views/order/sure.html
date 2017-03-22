@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>订单确认-我的菜</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <link rel="icon" sizes="any" href="/img/icon.png" />
+    <link rel="stylesheet" href="/dist/css/base-pub.css" />
+    <link rel="stylesheet" href="/dist/css/order-sure.css" />
+</head>
+
+<body class="bc-light">
+    <main id="main" class="main pt10 pl5 pr5">
+        ## 收货人
+        <section class="js-user-addr bcf r4 pt5 pb5 pl10 pr10 pr tar">
+            <div class="user-wrap tal pa">
+                <dl class="pr">
+                    <dt class="fc-impor-two dlb w70">收餐人：</dt>
+                    <dd class="js-username fc-sub dlb pa to">请输入吃货姓名</dd>
+                </dl>
+                <dl class="pr">
+                    <dt class="fc-impor-two dlb w70">联系方式：</dt>
+                    <dd class="js-usertel fc-impor-one dlb pa to">$!{data.userPhone}</dd>
+                </dl>
+                <dl class="pr">
+                    <dt class="fc-impor-two dlb w70">收餐地址：</dt>
+                    <dd class="js-useraddr fc-impor-one dlb pa to">$!{data.userAddr}</dd>
+                </dl>
+            </div>
+            <div class="icon-wrap dlb h60 pr">
+                <i class="i-arrow-down middle"></i>
+            </div>
+        </section>
+        <ul>
+            #foreach ($shop in $data.shops)
+            <li class="js-shop-item mt10 r4 bcf p5" data-end='{"id": "$!{shop.id}", "paymentmethod": "$!{shop.paymentmethod}", "diningtypename": "$!{shop.diningtypename}"}' data-dinmodelist='$!{shop.diningtypes}'>
+                <div class="pr tar fs0 pb5 h40">
+                    <h3 class="shop-name pl5 l0 t0 b0 fc-impor-one tal to pa fs14">$!{shop.name}</h3>
+                    ## 订单确认页面 先不要删除功能 <i class="js-del i-del mt5 mb5"></i>
+                </div>
+                <dl class="arrive-time b-t-solid pl5 pr5 c">
+                    <dt class="dlb fc-impor-two">预达时间</dt>
+                    <dd class="fc-number fs16 dlb fr">$!{shop.delayhours}小时之内</dd>
+                </dl>
+                <dl class="js-din-mode din-mode b-t-dash pl5 pr5 c">
+                    <dt class="fc-impor-two fl">就餐方式</dt>
+                    <dd class="fr">
+                        <span class="js-din-name fc-impor-one mr10 dlb">$!{shop.diningtypezhname}</span>
+                        <span class="fc-impor-two dlb">配送费</span>
+                        <span class="js-din-fee price fs16 fc-number dlb">$!{shop.freight}</span>
+                        <i class="i-arrow-right vam"></i>
+                    </dd>
+                </dl>
+                <dl class="pay-method b-t-dash c pl5 pr5">
+                    <dt class="pay-tit fc-impor-two dlb">支付方式</dt>
+                    <dd class="dlb fr pt10 pb10">
+                        #foreach ($pay in $shop.paymentmethods)
+                        <button class="js-pay ts4 fc-main bcf ml20 r4 #if ($pay.default)active#end" data-name="$!{pay.name}">$!{pay.zhname}</button>
+                        #end
+                    </dd>
+                </dl>
+                <ul>
+                    #foreach ($food in $shop.foods)
+                    <li class="food-item b-t-dash pr">
+                        <figure class="food-img pr r4" style="background: url(${food.imagepath}) 50% 50% / cover no-repeat;"></figure>
+                        <div class="food-con pa">
+                            <div>
+                                <h3 class="fc-impor-one to">$!{food.name}</h3>
+                                <dl class="fc-sub">
+                                    <dt class="dlb">月销量</dt>
+                                    <dd class="dlb">$!{food.sales}</dd>
+                                </dl>
+                            </div>
+                            <div class="food-price c">
+                                <span class="price fl fc-number fs16">$!{food.price}</span>
+                                <span class="c-impor-two fr">×$!{food.count}</span>
+                            </div>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+                <section class="b-t-dash pl5 pr5 pt10">
+                    <span class="fc-impor-two">给家厨捎句话吧：</span>
+                    <textarea class="js-note fc-impor-one w1 db" placeholder="辣椒、葱要不要？"></textarea>
+                </section>
+            </li>
+            #end
+        </ul>
+    </main>
+    <footer id="footer" class="footer pf w1 l0 b0 c">
+        <dl class="footer-con pa t0 l0 b0 tac">
+            <dt class="dlb mr5 fc-impor-two">实付款</dt>
+            <dd class="js-amount dlb fs16 price fc-number">$!{data.amount}</dd>
+        </dl>
+        <span class="tac js-statement statement pr h1 fr dlb">去结算<span class="fs12 dlb bc-vice pa w70">找找 优惠券</span></span>
+    </footer>
+    ## 弹窗
+    <div id="mask" class="mask pf w1 h1 t0 l0 none">
+        ## 收货人
+        <section class="js-receipt user-mask-wrap r4 bcf pa ofh">
+            <label class="db p10">
+                <span class="fc-impor-two">收餐人：</span>
+                <input class="js-username-edit db w1 fc-impor-one" type="text" placeholder="输入吃货的名字*^_^*" maxlength="10" />
+            </label>
+            <label class="db p10 b-t-dash">
+                <span class="fc-impor-two">联系人：</span>
+                <input class="js-usertel-edit db w1 fc-impor-one" type="tel" placeholder="输入吃货的电话号码*^_^*" value="$!{data.userPhone}" maxlength="11" />
+            </label>
+            <label class="db p10 b-t-dash">
+                <span class="fc-impor-two db pr">收餐地址：<span class="user-addr fc-impor-one pa to r0">$!{data.userAddr}</span></span>
+                <input class="js-useraddr-edit db w1 fc-impor-one" type="text" placeholder="输入详细地址，美食将送达您手上哦~" />
+            </label>
+            <div class="tar b-t-dash pt10">
+                <i class="js-close-receipt i-arrow-up"></i>
+            </div>
+        </section>
+        ## 就餐方式
+        <section class="js-din-mode-mask mask-din-mode r4 bcf pa ofh">
+            <span class="fc-impor-one pl5">就餐方式</span>
+            <div class="js-m-dinbtn mask-dim-btn b-t-dash p10 tac">
+                ## 这里是动态变化内容
+            </div>
+            <div class="b-t-dash c p5 pt10">
+                <dl class="dlb">
+                    <dt class="dlb">配送费</dt>
+                    <dd class="js-m-sendfee dlb fc-number price"></dd>
+                </dl>
+                <i class="js-close-din fr i-arrow-up"></i>
+            </div>
+        </section>
+    </div>
+    <script>
+    var G = {
+        phone: '$!{data.userPhone}',
+        addr: '$!{data.userAddr}',
+        userId: '$!{data.userId}',
+        device: '$!{data.device}',
+        baseAddr: '$!{data.userAddr}',
+        amount: '$!{data.amount}'
+    };
+    </script>
+    <script src="/dist/js/lib-pub.js"></script>
+    <script src="/dist/js/order-sure.js"></script>
+</body>
+
+</html>

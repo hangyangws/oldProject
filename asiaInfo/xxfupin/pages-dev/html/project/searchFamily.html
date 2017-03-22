@@ -1,0 +1,133 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>用户登录</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <!-- /coolie -->
+</head>
+
+<body>
+    <h1>搜索</h1>
+    <ul>
+    	<li><a href="$ctx/project/add">添加项目</a></li>
+    </ul>
+    <section>
+    	<form id="form" method="post">
+	        <p>受助原因<select name="reason">
+	        	<option></option>
+	        	#option($!reasonList)
+		        </select>
+	        <p>年龄<input name="startAge">-<input name="endAge">
+	        <p>性别<select name="sex">
+	        	#option($!sexList)
+		        </select>
+	        <p>受助地区<select name="addrProvince"></select>
+	        	<select name="addrCity"></select>
+	        	<select name="addrDistrict"></select>
+	        <p>关键字<input name="keyword">
+	        <p><button id="btnSign">保存</button>
+        </form>
+    </section>
+    <ul id="list"></ul>
+    <ul id="page"></ul>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script>
+    $('#btnSign').click(function() {
+    	go(1)
+    	return false;
+    });
+
+    function go(pageNo) {
+    	var data = $('form').serialize() + '&include=false';
+    	// 测试期间，每页三条
+    	$.post('$ctx/project/family/$!projectId/search/' + pageNo + '/2', data, function(json) {
+    		if(json && json.code === 0) {
+    			var page = json.data;
+    			// 计算页数
+    			var pageCount = Math.ceil(page.count * 1.0 / page.size);
+    			// 生成翻页按钮
+    			$('#page').html('页码：');
+    			for(var i = 1; i <= pageCount; i++) {
+    				$('#page').append('<li><a href="javascript:go(' + i + ');">' + i + '</a></li>');
+    			}
+    			// 显示数据
+    			var list = page.data;
+    			$('#list').html('');
+    			for(var i = 0; i < list.length; i++) {
+    				var data = list[i];
+    				var s = '<li>'
+    					+ '姓名:' + data.name + '<br/>'
+						+ '性别:' + data.sexLabel + '<br/>'
+						+ '年龄:' + data.age + '<br/>'
+						+ '地址:' + data.addrProvinceLabel + data.addrCityLabel + data.addrDistrictLabel + data.address + '<br/>';
+    				var tags = data.tags;
+    				for(var j in tags) {
+    					s += '<i>' + tags[j] + '</i> ';
+    				}
+    				s += '<p>';
+    				if(data.bindId) {
+    					s += '<a href="$ctx/project/family/del/' + data.bindId + '">取消添加</a> ';
+    				} else {
+    					s += '<a href="$ctx/project/family/$!projectId/' + data.memberId + '/add">添加到计划</a> '
+    				}
+    				s += '<a href="$ctx/project/family/$!projectId/' + data.familyId + '">查看详情</a></li>';
+
+    				$('#list').append(s);
+    			}
+    		} else {
+    			alert(json.msg);
+    		}
+    	});
+    }
+
+    $(function() {
+    	getSelect('[name=addrProvince]', '-');
+    	getSelect('[name=addrCity]', $('[name=addrProvince]').val());
+    	getSelect('[name=addrDistrict]', $('[name=addrCity]').val());
+
+    	$('[name=addrProvince],[name=addrCity]').change(function() {
+    		getSelect($(this).next(), $(this).val(), null)
+    	});
+    });
+
+    function getSelect(selector, parent, value) {
+    	if(!parent) {
+    		return;
+    	}
+    	$.get('$ctx/area/' + parent, function(json) {
+    		if(json && json.code === 0) {
+    			var list = json.data;
+    			var html = '<option></option>';
+    			for(var i in list) {
+    				var dic = list[i];
+    				html += '<option value="' + dic.code + '"';
+    				if(dic.code === value) {
+    					html += ' selected="selected"';
+    				}
+    				html += '>' + dic.label + '</option>';
+    			}
+				$(selector).html(html);
+    		} else {
+    			alert(json.msg);
+    		}
+    	});
+    }
+    </script>
+    <!-- /coolie -->
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>奖励零钱明细</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/layer-old.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/record.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <header id="header" class="header card pr r4 ofh" data-bg="$!ctx/pages-dev/static/img/bg/user-bg.png">
+        <ul class="h-txt pa c fc9 fs12">
+            <li class="fl">已成功邀请$!JoinCount人加入</li>
+            <!-- <li class="fl">已邀请$!loginCount人加入平台</li> -->
+            <!-- <li class="fr">已邀请$!JoinCount人加入计划</li> -->
+        </ul>
+        <div class="j-b-wrap balance-wrap pr bc z1" data-bg="$!ctx/pages-dev/static/img/bg/record1.png">
+            <div class="balance-con top-middle top-50 pr z3 tac">
+                <h1>￥$!balance</h1>
+                <h2>奖励零钱余额</h2>
+            </div>
+        </div>
+    </header>
+    <main class="main-wrap card">
+        <table class="content tac fc3">
+            <tbody id="listWrap">
+                <tr class="fc9 tac"><td>数据加载中……</td></tr>
+            </tbody>
+        </table>
+        <footer id="footer" class="footer tac"><i class="i-add vam"></i><span class="ml10 vam">加载更多</span></footer>
+    </main>
+    <!-- 字符串模板 -->
+    <template id="tpList">
+        <tr class="{{type}}">
+            <td class="who">
+                <span>{{name}}</span>
+                <span class="gray">{{time}}</span>
+            </td>
+            <td>{{tit}}</td>
+            <td>
+                <span class="amount">{{money}}元</span>
+            </td>
+        </tr>
+    </template>
+    <script>
+    var G = {
+        loadUrl: '$ctx/my/record/data'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/layer-old.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/record.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

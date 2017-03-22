@@ -1,0 +1,92 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>密码设置</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <link rel="shortcut icon" href="$!ctx/pages-dev/static/img/icon/ico.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/layer-old.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$!ctx/pages-dev/static/css/repassword.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <!-- 密码输入界面 -->
+    <!-- visible 展示密码明文 -->
+    <section id="password" class="pass-wrap pr bcf">
+        <i class="i-pass pa"></i>
+        <div class="pass-con pr">
+            <span class="pa t0 l0">输入密码</span>
+            <ul class="pass-parent h1 tac">
+                <!-- li-focus 表示聚焦 -->
+                <!-- li-input 表示已经输入值 -->
+                <!-- data-num 表示当前输入值 -->
+                <li class="j-ipt li-focus"></li>
+                <li class="j-ipt"></li>
+                <li class="j-ipt"></li>
+                <li class="j-ipt"></li>
+                <li class="j-ipt"></li>
+                <li class="j-ipt"></li>
+            </ul>
+        </div>
+        <span class="j-visible see-wrap pa"><i class="i-see-hidden middle"></i></span>
+    </section>
+    <!-- 完成按钮 -->
+    <section id="submit" class="submit fcf bcf tac">
+        <button class="j-submit r4">完成</button>
+    </section>
+    <!-- 虚拟键盘 -->
+    <section id="keyborad" class="keyborad bcf pa b0 l0 w1 bb">
+        <table class="keyborad-con w1 tac pr">
+            <tbody>
+                <tr>
+                    <td class="j-num able-tap" data-num="1">1</td>
+                    <td class="j-num able-tap" data-num="2">2</td>
+                    <td class="j-num able-tap" data-num="3">3</td>
+                </tr>
+                <tr>
+                    <td class="j-num able-tap" data-num="4">4</td>
+                    <td class="j-num able-tap" data-num="5">5</td>
+                    <td class="j-num able-tap" data-num="6">6</td>
+                </tr><tr>
+                    <td class="j-num able-tap" data-num="7">7</td>
+                    <td class="j-num able-tap" data-num="8">8</td>
+                    <td class="j-num able-tap" data-num="9">9</td>
+                </tr><tr>
+                    <td></td>
+                    <td class="j-num able-tap" data-num="0">0</td>
+                    <td class="j-del del able-tap">回删</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <script>
+    var G = {
+        baseUrl: '$ctx'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/fastclick.js"></script>
+    <script src="$!ctx/pages-dev/static/js/zepto.js"></script>
+    <script src="$!ctx/pages-dev/static/js/touch.js"></script>
+    <script src="$!ctx/pages-dev/static/js/public.js"></script>
+    <script src="$!ctx/pages-dev/static/js/layer-old.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$!ctx/pages-dev/static/js/repassword.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>
