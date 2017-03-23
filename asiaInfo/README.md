@@ -1,3 +1,0 @@
-# asiaInfo
-
-front-end code
