@@ -13,13 +13,13 @@ header {
 
 .witch-all,
 .extend-top,
-.rD-left>span,
+.rD-left > span,
 .three-light span {
-    -webkit-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
 }
 
 
@@ -34,41 +34,41 @@ header {
 /*extend*/
 
 .extend {
+    z-index: 2;
+    top: 72px;
+    right: 0;
     width: 60px;
     height: 350px;
     margin-right: 20px;
-    top: 72px;
-    right: 0;
-    z-index: 2;
 }
 
 .extend-witch {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 60px;
     height: 315px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     margin: auto;
 }
 
 .witch-all {
     width: 5px;
     height: 5px;
+    margin: 0 0 30px 55px;
     border-radius: 2.5px;
     background-color: #999;
-    margin: 0 0 30px 55px;
-    box-shadow: 0px 0px 1px #f80;
+    box-shadow: 0 0 1px #f80;
 }
 
 .witch-add {
     background-color: #f80;
-    box-shadow: 0px 0px 8px #666;
+    box-shadow: 0 0 8px #666;
 }
 
 .witch-all:hover {
     background-color: #f80;
-    box-shadow: 0px 0px 8px #666;
+    box-shadow: 0 0 8px #666;
 }
 
 .extend-top {
@@ -80,16 +80,16 @@ header {
 }
 
 .extend-top:hover {
-    background-position: 0px -5px;
+    background-position: 0 -5px;
 }
 
 
 /*center*/
 
 .center-all {
-    height: 494px;
-    min-width: 800px;
     overflow: hidden;
+    min-width: 800px;
+    height: 494px;
 }
 
 
@@ -101,8 +101,8 @@ header {
 
 .one-left {
     float: left;
-    height: 100%;
     width: 45%;
+    height: 100%;
     background: url('../images/leftHand.jpg') no-repeat;
     background-position: left bottom;
     background-size: contain;
@@ -110,8 +110,8 @@ header {
 
 .one-right {
     float: left;
-    height: 100%;
     width: 50%;
+    height: 100%;
     padding-left: 5%;
 }
 
@@ -122,18 +122,18 @@ header {
 
 .rT-left {
     float: left;
-    height: 100%;
     width: 150px;
+    height: 100%;
 }
 
 .rT-left span {
-    width: 100%;
-    height: 60px;
+    font-size: 46px;
     line-height: 60px;
     bottom: 0;
-    font-size: 46px;
-    letter-spacing: 1px;
+    width: 100%;
+    height: 60px;
     text-indent: 4px;
+    letter-spacing: 1px;
 }
 
 .nine-rT-left span {
@@ -142,20 +142,20 @@ header {
 
 .rT-right {
     float: left;
-    height: 100%;
     width: 80px;
+    height: 100%;
 }
 
 .rT-right span {
-    height: 38px;
-    line-height: 38px;
     font-size: 32px;
-    color: #f80;
+    line-height: 38px;
     bottom: 9px;
     width: 100%;
-    border-radius: 19px;
-    letter-spacing: 2px;
+    height: 38px;
     margin-left: 20px;
+    letter-spacing: 2px;
+    color: #f80;
+    border-radius: 19px;
 }
 
 .right-intro {
@@ -168,12 +168,12 @@ header {
 }
 
 .rI-up span {
-    height: 30px;
-    line-height: 30px;
-    color: #e0e0e0;
     font-size: 15px;
+    line-height: 30px;
+    height: 30px;
     text-indent: 5px;
     letter-spacing: 1px;
+    color: #e0e0e0;
 }
 
 .nine-rI-up span {
@@ -185,15 +185,15 @@ header {
 }
 
 .rI-down span {
-    height: 30px;
-    line-height: 30px;
-    color: #e0e0e0;
-    text-indent: 5px;
-    letter-spacing: 1px;
     font-size: 18px;
-    height: 50px;
+    line-height: 30px;
     top: 0;
     left: 0;
+    height: 30px;
+    height: 50px;
+    text-indent: 5px;
+    letter-spacing: 1px;
+    color: #e0e0e0;
 }
 
 .nine-rI-up span,
@@ -207,17 +207,17 @@ header {
 }
 
 .rD-left {
+    float: left;
     width: 100%;
     height: 50%;
-    float: left;
 }
 
-.rD-left>span:hover {
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
+.rD-left > span:hover {
+    box-shadow: 0 0 5px rgba(255, 255, 255, .6);
 }
 
-.nine-rD-left>span:hover {
-    box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.6);
+.nine-rD-left > span:hover {
+    box-shadow: 0 0 5px rgba(51, 51, 51, .6);
 }
 
 .dL-up,
@@ -228,8 +228,8 @@ header {
     max-width: 180px;
     height: 50px;
     margin-top: 20px;
-    margin-left: 5px;
     margin-right: 15px;
+    margin-left: 5px;
     border-radius: 25px;
     background-color: #f80;
 }
@@ -249,14 +249,14 @@ header {
 
 .downImage {
     background: url('../images/download.png');
-    background-position: 0px 50px;
+    background-position: 0 50px;
 }
 
 .dlText {
-    height: 50px;
-    line-height: 50px;
     font-size: 15px;
+    line-height: 50px;
     width: 100%;
+    height: 50px;
     text-indent: 30px;
 }
 
@@ -288,34 +288,34 @@ header {
     margin: 0 auto;
 }
 
-.two-top-wrap>span,
-.three-top-wrap>span,
-.four-top-wrap>span,
-.five-top-wrap>span,
-.six-top-wrap>span,
-.seven-top-wrap>span,
-.eight-top-wrap>span,
-.nine-top-wrap>span {
+.two-top-wrap > span,
+.three-top-wrap > span,
+.four-top-wrap > span,
+.five-top-wrap > span,
+.six-top-wrap > span,
+.seven-top-wrap > span,
+.eight-top-wrap > span,
+.nine-top-wrap > span {
     bottom: 0;
     width: 100%;
 }
 
 .twTile {
+    font-family: '华文细黑', 'Microsoft YaHei';
+    font-size: 50px;
+    line-height: 40px;
     min-width: 910px;
     height: 40px;
-    line-height: 40px;
-    font-family: '华文细黑', 'Microsoft YaHei';
-    -webkit-font-smoothing: antialiased;
-    font-size: 50px;
     text-indent: 80px;
     color: #444;
+    -webkit-font-smoothing: antialiased;
 }
 
 .twContent {
-    margin-top: 20px;
-    height: 30px;
     font-size: 20px;
     line-height: 30px;
+    height: 30px;
+    margin-top: 20px;
     text-indent: 80px;
     color: #555;
 }
@@ -380,19 +380,19 @@ header {
 }
 
 .tD-image-l {
+    top: 50%;
+    left: 40%;
     width: 60px;
     height: 71px;
-    left: 40%;
-    top: 50%;
     background: url('../images/p.png') no-repeat;
     background-size: contain;
 }
 
 .tD-image-r {
+    top: 60%;
+    left: 70%;
     width: 90px;
     height: 106px;
-    left: 70%;
-    top: 60%;
     background: url('../images/p.png') no-repeat;
     background-size: contain;
 }
@@ -419,8 +419,8 @@ header {
 }
 
 .light-red {
-    box-shadow: 0px 0px 15px #f80;
     background-color: #f80;
+    box-shadow: 0 0 15px #f80;
 }
 
 .light-green,
@@ -433,8 +433,8 @@ header {
 }
 
 .three-car {
-    bottom: 0;
     right: 0;
+    bottom: 0;
     width: 20%;
     height: 20%;
     background: url('../images/car.png') no-repeat bottom;
@@ -448,33 +448,33 @@ header {
     background-color: #50e29b;
 }
 
-.four-image>span {
+.four-image > span {
     z-index: 1;
 }
 
 .fourION {
+    top: 30%;
+    left: 10%;
     width: 14%;
     height: 28%;
-    left: 10%;
-    top: 30%;
     background: url('../images/fourOne.png') no-repeat bottom center;
     background-size: contain;
 }
 
 .fourITW {
+    top: 42%;
+    left: 14%;
     width: 18%;
     height: 30%;
-    left: 14%;
-    top: 42%;
     background: url('../images/fourTwo.png') no-repeat bottom center;
     background-size: contain;
 }
 
 .fourITH {
+    top: 20%;
+    right: 10%;
     width: 30%;
     height: 50%;
-    right: 10%;
-    top: 20%;
     background: url('../images/fourThree.png') no-repeat bottom center;
     background-size: contain;
 }
@@ -482,12 +482,12 @@ header {
 .fourAll {
     z-index: 0;
     bottom: -20%;
-    border-top-left-radius: 50% 80%;
-    border-top-right-radius: 50% 80%;
     width: 90%;
     height: 100%;
     margin: 0 5%;
     border: 1px solid #fff;
+    border-top-left-radius: 50% 80%;
+    border-top-right-radius: 50% 80%;
 }
 
 
@@ -501,19 +501,19 @@ header {
 /*seven*/
 
 .sevenStarOne {
-    width: 5%;
-    height: 8%;
     top: 76%;
     left: 6%;
+    width: 5%;
+    height: 8%;
     background: url('../images/sevenStarOne.png') no-repeat left bottom;
     background-size: contain;
 }
 
 .sevenStarTwo {
-    width: 5%;
-    height: 6%;
     top: 26%;
     left: 40%;
+    width: 5%;
+    height: 6%;
     background: url('../images/sevenStarTwo.png') no-repeat left bottom;
     background-size: contain;
 }
@@ -543,9 +543,9 @@ header {
 }
 
 .nine-left {
+    float: left;
     width: 45%;
     height: 100%;
-    float: left;
     background: url('../images/ninePhone.png') no-repeat right bottom;
     background-size: contain;
 }
@@ -553,16 +553,16 @@ header {
 .nine-right {
     float: left;
     width: 50%;
-    padding-left: 5%;
     height: 100%;
+    padding-left: 5%;
 }
 
 .nine-down {
+    line-height: 30px;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 30px;
-    line-height: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
     /*background-color: rgba(234,234,234,0.5);*/
@@ -570,11 +570,11 @@ header {
 }
 
 .nine-down span {
-    height: 100%;
-    width: 100%;
     font-size: 15px;
-    color: #555;
+    width: 100%;
+    height: 100%;
     letter-spacing: 1px;
+    color: #555;
 }
 
 .nine-down span a {
@@ -606,8 +606,8 @@ header {
     .seven-top,
     .eight-top,
     .nine-top {
-        top: 10px;
         z-index: 1;
+        top: 10px;
     }
     .two-top-wrap,
     .three-top-wrap,
@@ -620,9 +620,9 @@ header {
         width: 100%;
     }
     .tD-image {
-        width: 650px;
         position: absolute;
-        left: 0px;
+        left: 0;
+        width: 650px;
     }
     .twTile {
         text-indent: 40px;
@@ -638,12 +638,12 @@ header {
     .nine-right {
         position: absolute;
         left: 20%;
-        padding-left: 0;
         width: 55%;
+        padding-left: 0;
     }
     .three-light {
-        margin-left: 20px;
         left: 20px;
+        margin-left: 20px;
     }
     .fourITH {
         right: 16%;
@@ -682,29 +682,29 @@ header {
         left: 20px;
     }
     .rT-left span {
-        text-indent: 0;
         font-size: 30px;
+        text-indent: 0;
     }
     .rT-right span {
         font-size: 20px;
-        height: 26px;
         line-height: 26px;
-        border-radius: 13px;
-        width: 70%;
         bottom: 16px;
         left: -50px;
+        width: 70%;
+        height: 26px;
+        border-radius: 13px;
     }
     .rI-up span {
-        text-indent: 0px;
-        letter-spacing: 0px;
+        text-indent: 0;
+        letter-spacing: 0;
     }
     .nine-rI-up span {
         font-size: 15px;
     }
     .rI-down span {
         font-size: 15px;
-        letter-spacing: 0px;
-        text-indent: 0px;
+        text-indent: 0;
+        letter-spacing: 0;
     }
     .tD-image {
         width: 500px;
@@ -722,26 +722,26 @@ header {
     }
     .dL-up,
     .dL-down {
-        margin-left: 0px;
         min-width: 150px;
+        margin-left: 0;
     }
     .dlText,
     .dL-up,
     .dL-down {
-        height: 45px;
         line-height: 45px;
+        height: 45px;
     }
     .dlText {
+        font-size: 14px;
         text-align: left;
         text-indent: 40px;
-        font-size: 14px;
     }
     .dL-up {
         margin-bottom: 15px;
     }
     .dlImage {
-        left: -10px;
         top: -2px;
+        left: -10px;
     }
     .rD-left {
         width: 42%;
@@ -779,15 +779,15 @@ header {
         height: 16%;
     }
     .sevenStarOne {
-        height: 6%;
         top: 85%;
         left: 4%;
+        height: 6%;
     }
     .sevenStarTwo {
         top: 55%;
     }
     .three-light {
-        left: 0px;
+        left: 0;
     }
 }
 
@@ -816,8 +816,8 @@ header {
         left: 12%;
     }
     .fourITW {
-        left: 16%;
         top: 36%;
+        left: 16%;
     }
     .nine-down {
         width: 320px;
