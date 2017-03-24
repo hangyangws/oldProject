@@ -1,10 +1,11 @@
-# xxfupin prioject frontend
+# 信心扶贫-项目前端代码
+
+> 代码都是用`velocity`模板引擎渲染，需要数据库和服务器支持，不能直接运行
 
 ### 代码编写
 
 在pages-dev文件夹下编写文件  
-html 文件中使用[coolie](https://coolie.ydr.me/document/coolie.config.js/)
-语法。
+html 文件中使用[coolie](https://coolie.ydr.me/document/coolie.config.js/)语法。
 
 ### 前端可视化开发
 
@@ -20,7 +21,6 @@ html 文件中使用[coolie](https://coolie.ydr.me/document/coolie.config.js/)
 1. 发布：`npm run coolie`
 1. 全局替换把`pages-dev/html`文件里面的`"../static` 替换为 `"$!ctx/pages-dev/static`
 1. 全局替换把`pages-dev/html/user`文件里面的`"../../static` 替换为 `"$!ctx/pages-dev/static`
-
 
 ### 代码风格
 
