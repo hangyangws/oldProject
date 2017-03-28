@@ -1,0 +1,56 @@
+html,
+body,
+.main-wrap {
+    height: 100%;
+}
+
+.main-wrap {
+    background-color: #f6f6f6;
+}
+
+
+/**
+ * 列表样式
+ */
+
+.tag-active {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.list-wrap {
+    overflow-y: auto;
+    height: 100%;
+    padding-top: 4.34rem;
+}
+
+.list-con {
+    display: none;
+    overflow: hidden;
+    margin: 1rem;
+}
+
+.list-con-active {
+    display: block;
+}
+
+
+/*创建时间*/
+
+.create-time {
+    padding-top: .4rem;
+}
+
+.task-desc {
+    display: -webkit-box;
+    overflow: hidden;
+    line-height: 1.6rem;
+    margin-top: .2rem;
+    text-overflow: ellipsis;
+    color: #646464;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

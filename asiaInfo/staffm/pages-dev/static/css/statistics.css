@@ -1,0 +1,83 @@
+body {
+    background-color: #f6f6f6;
+}
+
+.card {
+    box-shadow: 0 1px 10px 0 rgba(233, 233, 233, .75);
+}
+
+.depart-con {
+    padding: 1rem 0;
+}
+
+.depart-each {
+    padding: 1rem;
+    border-radius: 0;
+}
+
+.depart-tit {
+    font-size: 1.143rem;
+    color: #333;
+}
+
+.depart-tit::before {
+    display: inline-block;
+    width: 2px;
+    height: 1.143rem;
+    margin-top: -1px;
+    margin-right: .6rem;
+    content: '';
+    vertical-align: middle;
+    border-radius: 1px;
+    background-color: #1c9ae7;
+}
+
+.type-wrap {
+    font-size: 0;
+    position: relative;
+    left: -.4rem;
+    overflow-x: auto;
+    margin-top: .4rem;
+    padding: .4rem;
+}
+
+.type-con {
+    width: 999rem;
+}
+
+.type-each {
+    font-size: 1rem;
+    display: inline-block;
+    width: 6.6rem;
+    height: 100%;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 6px;
+    box-shadow: 0 1px 8px 0 rgba(193, 232, 252, .35);
+}
+
+.type-each:not(:last-child) {
+    margin-right: .8rem;
+}
+
+.type-chart {
+    display: block;
+    width: 5.8rem;
+    height: 5.8rem;
+    margin: .4rem auto;
+    border-radius: 50%;
+    background-color: #f6f6f6;
+}
+
+.type-num {
+    font-size: .857rem;
+    color: #9b9b9b;
+    ;
+}
+
+.type-part {
+    margin-top: .4rem;
+    padding: .4rem 0;
+    color: #101933;
+    border-top: .5px dashed #e6e6e6;
+}

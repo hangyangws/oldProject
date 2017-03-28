@@ -1,0 +1,71 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>资源预约</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/statistics.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <div class="main-wrap">
+        <ul id="departCon" class="depart-con">&emsp;数据加载中…</ul>
+    </div>
+    <template data-name="depart">
+        <li class="depart-each card">
+            <h4 class="depart-tit">{{name}}</h4>
+            <div class="type-wrap">
+                <ul class="j-type-con type-con">{{data}}</ul>
+            </div>
+        </li>
+    </template>
+    <template data-name="data">
+        <li class="j-jump type-each" data-href="$ctx/supporter/status?areaid={{areaid}}&depid={{depid}}">
+            <figure class="j-type-chart type-chart" data-rate="{{rate}}"></figure>
+            <span class="type-num">预约量{{rate}}%</span>
+            <p class="type-part">{{areaname}}</p>
+        </li>
+    </template>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$ctx/pages-dev/static/js/public.js"></script>
+    <script src="$ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        statisticsUrl: '$ctx/statistics/'
+    };
+    </script>
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/chart.css" />
+    <!-- coolie -->
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/chart.js"></script>
+    <!-- /coolie -->
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/statistics.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+#set($ctx = $rc.contextPath)
+
+#set($uctx = $ctx + $!USER_SESSION.location)
+
+#macro(option $data $value)
+    #foreach($dic in $data)
+    <option value="$dic.code" #if($dic.code == $value) selected="selected" #end>$dic.label</option>
+    #end
+#end
+
+#macro(options $tag $value $disableId)
+    #set($data = $confUtils.list($tag))
+    #foreach($dic in $data)
+        #if($dic.code != $disableId)
+        <option value="$dic.code" #if($dic.code == $value) selected="selected" #end>$dic.label</option>
+        #end
+    #end
+#end
+
+#macro(radio $name $value $vtype $vname)
+<label>
+    <input class="o-radio" type="radio" value="1" name="$name"
+       #if($!value == 1) checked="checked" #end
+       #if($vtype) data-vtype="$vtype" data-vname="$vname" #end />
+    <span class="u-radio"></span>
+    <span>是</span>
+</label>
+<label>
+    <input class="o-radio" type="radio" value="0" name="$name"
+       #if($!value == 0)checked="checked" #end
+       #if($vtype)data-vtype="$vtype"#end />
+    <span class="u-radio"></span>
+    <span>否</span>
+</label>
+#end
+
+#macro(radios $tag $name $value $vtype $vname)
+    #set($data = $confUtils.list($tag))
+    #foreach($dic in $data)
+    <label>
+        <input class="o-radio" type="radio" value="$dic.code" name="$name"
+           #if($dic.code == $!value) checked="checked" #end
+           #if($vtype) data-vtype="$vtype" data-vname="$vname" #end />
+        <span class="u-radio"></span>
+        <span>$dic.label</span>
+    </label>
+    #end
+#end
+
+#macro(yesno $value)
+<option></option>
+<option value="1" #if(1 == $value) selected="selected" #end>是</option>
+<option value="0" #if(2 == $value) selected="selected" #end>否</option>
+#end
+
+#macro(header $url $title)
+<header class="pf w1 t0 l0 z1">
+    <div class="url-head bcf fc3 fs0 bc tac bb pr">
+        <a class="pa h1 t0" href="$!url"><i class="pa t0 b0 l0 i i-7-19"></i></a>
+        <p>$!title</p>
+    </div>
+</header>
+#end

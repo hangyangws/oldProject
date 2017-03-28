@@ -1,0 +1,128 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>我的申请</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/myask.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <div id="app" class="main-wrap">
+        <ul class="list-head">
+            <li class="j-tabone-label j-list-tag list-tag gray" data-tab="tabone">
+                <i class="i i-1-15"></i>
+                <p>已同意</p>
+            </li>
+            <li class="j-tabtwo-label j-list-tag list-tag gray" data-tab="tabtwo">
+                <i class="i i-1-17"></i>
+                <p>已驳回</p>
+            </li>
+            <li class="j-tabthree-label j-list-tag list-tag gray" data-tab="tabthree">
+                <i class="i i-1-19"></i>
+                <p>待审批</p>
+            </li>
+        </ul>
+        <main id="main" class="list-wrap bb">
+            <ul class="j-tabone-con list-con"></ul>
+            <ul class="j-tabtwo-con list-con"></ul>
+            <ul class="j-tabthree-con list-con"></ul>
+        </main>
+    </div>
+    <!-- 新建申请 -->
+    <button class="fixed-btn gradient-bg pf"><a href="$ctx/support/create"><i class="i2 i-2-1"></i></a></button>
+    <!-- 蒙层 -->
+    <div id="mask" class="mask pf none">
+        <!-- 驳回理由 -->
+        <div class="popup">
+            <button class="j-close-mask reject-close"><i class="i i-4-3"></i></button>
+            <header class="reject-head gradient-bg">
+                <i class="i i-3-1"></i>
+                <span>驳回理由</span>
+            </header>
+            <div class="reject-con texture-bg">
+                <p class="j-reject-txt"></p>
+            </div>
+        </div>
+    </div>
+    <!-- 申请列表 -->
+    <template data-name="asklist">
+        <li class="card-list j-{{btnType}}" data-id="{{supportid}}">
+            <section class="card-l-data">
+                <span class="card-l-time">{{createTime}}</span>
+                <dl class="card-l-item">
+                    <dt>
+                        <i class="i i-1-7"></i>
+                        <span>支持人：</span>
+                    </dt>
+                    <dd>{{supporterName}}</dd>
+                </dl>
+                <dl class="card-l-item">
+                    <dt>
+                        <i class="i i-1-11"></i>
+                        <span>工作方式：</span>
+                    </dt>
+                    <dd>{{workWay}}</dd>
+                </dl>
+                <dl class="card-l-item">
+                    <dt>
+                        <i class="i i-1-20"></i>
+                        <span>时间周期：</span>
+                    </dt>
+                    <dd>{{starttime}} - {{endtime}}</dd>
+                </dl>
+            </section>
+            <a class="list-btn j-go-comment list-btn-comment {{gray}}" data-href="$ctx/support/{{supportid}}/comment">
+                <i class="i i-4-2"></i>
+                <span></span>
+            </a>
+            <button class="list-btn j-reject-view list-btn-reject" data-txt="{{rejectReason}}">
+                <i class="i i-4-13"></i>
+                <span>查看驳回理由</span>
+            </button>
+        </li>
+    </template>
+    <!-- 空数据 -->
+    <template data-name="empty">
+        <li class="list-nodata">
+            <p class="list-nodata-text">空空如也...</p>
+            <i class="list-nodata-img"></i>
+        </li>
+    </template>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$ctx/pages-dev/static/js/public.js"></script>
+    <script src="$ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        listUrl: '$ctx/myask/{{page}}/{{size}}'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/myask.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

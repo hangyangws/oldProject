@@ -1,0 +1,30 @@
+body {
+    background-color: #f6f6f6;
+}
+
+.item-con {
+    padding: .94rem 0;
+}
+
+.task-wrap {
+    padding: 1rem;
+}
+
+.gray {
+    opacity: .6;
+}
+
+.item-big {
+    color: #515151;
+}
+
+.task-desc {
+    line-height: 1.6rem;
+    display: -webkit-box;
+    overflow: hidden;
+    margin-top: .2rem;
+    text-overflow: ellipsis;
+    color: #646464;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

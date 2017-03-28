@@ -1,0 +1,158 @@
+html,
+body {
+    height: 100%;
+}
+
+.m-color {
+    color: #008cd1;
+}
+
+.main-wrap {
+    background-color: #f6f6f6;
+    min-height: 100%;
+    padding: 1rem 1rem 5.8rem 1rem;
+}
+
+.creat-list-wrap {
+    padding-bottom: 2rem;
+}
+
+
+/*date-picker*/
+
+.date-picker {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.date-picker .lr-l-left,
+.date-picker .lr-l-right {
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: .5px solid #efefef;
+}
+
+.date-picker input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+
+/*support-method*/
+
+.support-method label {
+    display: inline-block;
+}
+
+.support-method .i,
+.support-method span {
+    pointer-events: none;
+}
+
+.support-method .lr-l-right span {
+    margin-left: .4rem;
+}
+
+.support-method input {
+    display: none;
+}
+
+.support-method input:checked + .i {
+    background-position: -280px -79px;
+}
+
+
+/*support-desc*/
+
+.support-desc {
+    padding: 1rem 1rem 0 0;
+    width: 100%;
+}
+
+.support-desc textarea {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    width: 100%;
+    height: 12rem;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: rgba(248, 248, 248, .8);
+    box-shadow: inset 1px 1px 4px 0 rgba(241, 241, 241, .75);
+}
+
+
+/*footer*/
+
+.bottom-fooer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.submit-btn {
+    -webkit-transition: filter 600ms;
+    -moz-transition: filter 600ms;
+    -o-transition: filter 600ms;
+}
+
+.submit-btn.gray {
+    background: #bbb;
+}
+
+
+/*preview*/
+
+.mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.perview-wrap {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem 5.8rem 1rem;
+}
+
+.perview-con {
+    overflow-y: auto;
+    height: 100%;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.perview-btn {
+    font-size: 0;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.perview-btn button {
+    font-size: 1.143rem;
+    width: 50%;
+    padding: 1rem 0;
+    background-color: transparent;
+}
+
+.perview-btn::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    content: '';
+    border-left: .5px dashed rgba(255, 255, 255, .5);
+}

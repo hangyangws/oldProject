@@ -1,0 +1,46 @@
+<main class="main-con">
+    <section class="base-info card">
+        <figure>
+            <i class="info-bg gradient-bg"></i>
+            <span class="info-head">
+                <i class="j-delay-bg" data-bg="#if($!user.photo && $!user.photo != '') $!user.photo #else $ctx/pages-dev/static/img/man-default.png #end"></i>
+            </span>
+            <h3 class="info-name">$!user.name</h3>
+            <p class="info-area">$!user.depname - $!user.areaname</p>
+            <i class="line"></i>
+        </figure>
+        <dl class="base-desc">
+            <dt><i class="i i-6-1"></i><span>个人简介</span></dt>
+            <dd>#if($!user.userdesc && $!user.userdesc != '') $!user.userdesc#else<span class="tip-text">暂无简介</span>#end</dd>
+        </dl>
+    </section>
+    <section class="card">
+        <i class="calendar-bar"></i>
+        <div class="calendar-wrap"></div>
+    </section>
+    <section class="card">
+        <h4 class="comment-tit"><i class="i i-1-3"></i><span>销售评价</span></h4>
+        <ul class="comment-con">
+            #if($!comments.size() == 0)
+            <span class="tip-text">暂无评价</span>
+            #end
+            #foreach($comment in $!comments)
+            <li class="comment-item">
+                <header class="comment-heaader">
+                    <i class="comment-head j-delay-bg" data-bg="#if($!comment.actorPhoto != '') $!comment.actorPhoto #else $ctx/pages-dev/static/img/man-default.png #end"></i>
+                    <span class="comment-name">$!comment.actorName</span>
+                    <div class="comment-start start-$!comment.comment">
+                        <span class="comment-start-gray"></span>
+                        <span class="comment-start-blue"></span>
+                        <img src="$ctx/pages-dev/static/img/start.png" />
+                    </div>
+                </header>
+                <p>$!comment.commentDesc</p>
+                <footer>
+                    <span>$!comment.commentTime</span>
+                </footer>
+            </li>
+            #end
+        </ul>
+    </section>
+</main>

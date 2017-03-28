@@ -1,0 +1,99 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>我的预约</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/pre_sale_task.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <div class="main-wrap">
+        <section id="taskWrap" class="task-wrap"></section>
+    </div>
+    <template data-name="tasklist">
+        <a class="card {{isAccept}}" href="$ctx/support/{{supportid}}">
+            <ul>
+                <li class="lr-list">
+                    <i class="i i-1-7"></i>
+                    <div class="lr-l-con">
+                        <div class="lr-l-left">
+                            <span class="lr-l-large">申请人：{{askerName}}</span>
+                        </div>
+                        <div class="lr-l-right">
+                            <span class="lr-l-middle"> {{createTime}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="lr-list">
+                    <i class="i i-1-20"></i>
+                    <div class="lr-l-con">
+                        <div class="lr-l-left">
+                            <span class="lr-l-large">时间周期：{{starttime}} - {{endtime}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="lr-list">
+                    <i class="i i-1-11"></i>
+                    <div class="lr-l-con">
+                        <div class="lr-l-left">
+                            <span class="lr-l-large">工作方式：{{workWay}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="lr-list">
+                    <i class="i i-1-12"></i>
+                    <div class="lr-l-con">
+                        <div class="lr-l-left">
+                            <span class="lr-l-large">申请说明：</span>
+                            <span class="lr-l-middle task-desc">{{supportDesc}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </a>
+    </template>
+    <!-- 空数据 -->
+    <template data-name="empty">
+        <div class="list-nodata">
+            <p class="list-nodata-text">空空如也...</p>
+            <i class="list-nodata-img"></i>
+        </div>
+    </template>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$ctx/pages-dev/static/js/public.js"></script>
+    <script src="$ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        taskUrl: '$ctx/mytask/{{page}}/{{size}}'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/pre_sale_task.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

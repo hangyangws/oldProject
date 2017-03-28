@@ -1,0 +1,70 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>评论</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/comment.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <div class="main-wrap">
+        <main id="main" class="main-con bb">
+            <figure class="start-wrap">
+                <div class="j-start start-con">
+                    <span class="start-gray"></span>
+                    <span class="j-start-blue start-blue"></span>
+                    <img src="$ctx/pages-dev/static/img/start.png" />
+                </div>
+                <i class="card-line"></i>
+            </figure>
+            <div class="comment-wrap">
+                <h4 class="comment-tit"><i class="i i-4-2"></i><span>评论</span></h4>
+                <textarea class="j-ipt commnet-ipt bb" name="" placeholder="对您的支持人员说点啥吧！"></textarea>
+                <p class="j-tip comment-tip">温馨提示：输入内容不得少于6个字哦！</p>
+            </div>
+        </main>
+        <footer id="footer" class="fixed-bottom">
+            <div>
+                <button class="j-btn submit-btn btn-def gradient-bg gray"><i class="i i-3-4"></i><span>提交</span></button>
+            </div>
+        </footer>
+    </div>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$ctx/pages-dev/static/js/public.js"></script>
+    <script src="$ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        commentUrl: '$!ctx/support/$!supportid/comment',
+        goUrl: '$ctx/index'
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/comment.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

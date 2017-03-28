@@ -1,0 +1,61 @@
+#parse("./common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>员工详情</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/detail.css" />
+    <!-- /coolie -->
+</head>
+
+<body>
+    <div class="main-wrap">
+        #parse("/app/supporter/detailContent.html")
+    </div>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/plugin/fastclick.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/zepto.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/touch.js"></script>
+    <script src="$ctx/pages-dev/static/js/plugin/layer.js"></script>
+    <script src="$ctx/pages-dev/static/js/public.js"></script>
+    <script src="$ctx/pages-dev/static/js/verify.js"></script>
+    <!-- /coolie -->
+    <!-- 日历插件：是我自己开发的^_^ -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/calendar.css" />
+    <script src="$ctx/pages-dev/static/js/plugin/calendar.js"></script>
+    <!-- /coolie -->
+    <script>
+    (window || this).G = {
+        worktime: '$!workTimes',
+        goUrl: '$!ctx/support/create',
+        supporter: {
+            id: '$!user.userid',
+            name: '$!user.name',
+            desc: '$!{user.depname}-$!{user.areaname}'
+        }
+    };
+    </script>
+    <!-- coolie -->
+    <script src="$ctx/pages-dev/static/js/detail.js"></script>
+    <!-- /coolie -->
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #f6f6f6;
+}
+
+.con-empty {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.gray {
+    opacity: .5;
+}
+
+.man-l-small {
+    top: .1rem;
+}
+
+
+/**
+ * 列表样式
+ */
+
+.list-con {
+    margin: 1rem;
+}

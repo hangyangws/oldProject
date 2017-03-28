@@ -1,0 +1,43 @@
+#parse("././common.html")
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- /coolie -->
+    <title>$!msg</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="robots" content="index" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="$ctx/pages-dev/static/img/icon/icon.png" />
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/base.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/public.css" />
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/plugin/layer.css" />
+    <!-- /coolie -->
+    <!-- coolie -->
+    <link rel="stylesheet" href="$ctx/pages-dev/static/css/msginfo.css" />
+    <!-- /coolie -->
+</head>
+
+<body class="bg-gray">
+    <main class="main-wrap">
+        <div class="msg-wrap bcf fcf tac ofh">
+            <i class="msg-ok db"></i>
+            <h3>$!msg</h3>
+        </div>
+        <footer class="footer pa w1 l0 b0 p10 bb">
+            #foreach($key in $!btns.keySet())
+            <a class="btn-def" href="$!btns[$key]" role="button"><i class="i i-3-4"></i><span>&emsp;$!key</span></a>
+            #end
+        </footer>
+    </main>
+</body>
+
+</html>

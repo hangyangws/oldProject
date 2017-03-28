@@ -1,0 +1,634 @@
+/*居中主体*/
+
+.main-wrap {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    overflow-x: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*图标*/
+
+.i,
+.i2 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background: url(../img/icon/i.png) no-repeat;
+    background-size: 2000%;
+}
+
+.i2 {
+    width: 25px;
+    height: 25px;
+    background-size: 1100%;
+}
+
+.i-1-1 {
+    background-position: 0 0;
+}
+
+.i-1-2 {
+    background-position: -20px 0;
+}
+
+.i-1-3 {
+    background-position: -40px 0;
+}
+
+.i-1-4 {
+    background-position: -60px -1px;
+}
+
+.i-1-5 {
+    background-position: -80px -1px;
+}
+
+.i-1-6 {
+    background-position: -100px -1px;
+}
+
+.i-1-7 {
+    background-position: -120px 0;
+}
+
+.i-1-8 {
+    background-position: -140px -1px;
+}
+
+.i-1-9 {
+    background-position: -160px 0;
+}
+
+.i-1-10 {
+    background-position: -180px 0;
+}
+
+.i-1-11 {
+    background-position: -200px 0;
+}
+
+.i-1-12 {
+    background-position: -220px 0;
+}
+
+.i-1-13 {
+    background-position: -240px 0;
+}
+
+.i-1-14 {
+    background-position: -260px 0;
+}
+
+.i-1-15 {
+    background-position: -280px 0;
+}
+
+.i-1-16 {
+    background-position: -300px 0;
+}
+
+.i-1-17 {
+    background-position: -320px 0;
+}
+
+.i-1-18 {
+    background-position: -340px 0;
+}
+
+.i-1-19 {
+    background-position: -360px 0;
+}
+
+.i-1-20 {
+    background-position: -380px 0;
+}
+
+.i-2-1 {
+    background-position: -1px -15px;
+}
+
+.i-2-2 {
+    background-position: -29px -15px;
+}
+
+.i-2-3 {
+    background-position: -60px -15px;
+}
+
+.i-2-4 {
+    background-position: -141px -29px;
+}
+
+.i-3-1 {
+    background-position: 0 -60px;
+}
+
+.i-3-2 {
+    background-position: -19px -60px;
+}
+
+.i-3-3 {
+    background-position: -40px -60px;
+}
+
+.i-3-4 {
+    background-position: -60px -60px;
+}
+
+.i-3-5 {
+    background-position: -80px -60px;
+}
+
+.i-4-1 {
+    background-position: 0 -80px;
+}
+
+.i-4-2 {
+    background-position: -20px -79px;
+}
+
+.i-4-3 {
+    background-position: -40px -80px;
+}
+
+.i-4-4 {
+    background-position: -60px -80px;
+}
+
+.i-4-5 {
+    background-position: -80px -80px;
+}
+
+.i-4-6 {
+    background-position: -100px -80px;
+}
+
+.i-4-7 {
+    background-position: -120px -80px;
+}
+
+.i-4-8 {
+    background-position: -140px -80px;
+}
+
+.i-4-9 {
+    background-position: -160px -80px;
+}
+
+.i-4-10 {
+    background-position: -180px -80px;
+}
+
+.i-4-11 {
+    background-position: -200px -80px;
+}
+
+.i-4-12 {
+    background-position: -220px -80px;
+}
+
+.i-4-13 {
+    background-position: -240px -79px;
+}
+
+.i-4-14 {
+    background-position: -260px -79px;
+}
+
+.i-4-15 {
+    background-position: -280px -79px;
+}
+
+.i-6-1 {
+    background-position: 0 -140px;
+}
+
+.i-6-2 {
+    background-position: -20px -140px;
+}
+
+.i-6-3 {
+    background-position: -40px -140px;
+}
+
+.i + span {
+    display: inline-block;
+    margin-left: 1rem;
+    vertical-align: middle;
+}
+
+
+/*按钮*/
+
+.gradient-bg,
+.btn-def {
+    background-image: -moz-linear-gradient( 180deg, rgb(0, 133, 204) 0%, rgb(0, 176, 234) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(0, 133, 204) 0%, rgb(0, 176, 234) 100%);
+    background-image: -ms-linear-gradient( 180deg, rgb(0, 133, 204) 0%, rgb(0, 176, 234) 100%);
+}
+
+
+/*灰色条纹背景*/
+
+.texture-bg {
+    background-image: -moz-linear-gradient(left, #fafafa 2.5px, #efefef 3px);
+    background-image: -webkit-linear-gradient(left, #fafafa 2.5px, #efefef 3px);
+    background-image: -webkit-linear-gradient(left, #fafafa 2.5px, #efefef 3px);
+    background-size: 3px 100%;
+}
+
+.texture-bg-white {
+    background-image: -moz-linear-gradient(left, #fff 2.5px, #efefef 3px);
+    background-image: -webkit-linear-gradient(left, #fff 2.5px, #efefef 3px);
+    background-image: -webkit-linear-gradient(left, #fff 2.5px, #efefef 3px);
+    background-size: 3px 100%;
+}
+
+
+/*默认按钮*/
+
+.btn-def {
+    font-size: 1.143rem;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    color: #fff;
+    border-radius: 6px;
+    background-color: transparent;
+    box-shadow: 0 -2px 8px 0 rgba(168, 213, 236, .75);
+}
+
+
+/*弹窗*/
+
+.popup {
+    position: relative;
+    top: 50%;
+    overflow: hidden;
+    margin: 0 2rem;
+    -webkit-transform: -webkit-translateY(-50%);
+    -moz-transform: -moz-translateY(-50%);
+    -o-transform: -o-translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 6px;
+    box-shadow: 0 0 1px .4rem rgba(140, 140, 140, .5);
+}
+
+
+/*页脚固定按钮*/
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transform: translateZ(0);
+}
+
+.fixed-bottom > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1rem;
+}
+
+
+/*置灰*/
+
+.gray {
+    -webkit-filter: grayscale();
+    -moz-filter: grayscale();
+    -ms-filter: grayscale();
+    -o-filter: grayscale();
+    filter: grayscale();
+}
+
+
+/*卡片效果*/
+
+.card {
+    display: block;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 0 rgba(233, 233, 233, .75);
+}
+
+.card:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+
+/*无数据提示-公共*/
+
+.list-nodata {
+    position: relative;
+    left: 1.4rem;
+    margin-top: 10rem;
+}
+
+.list-nodata-text {
+    font-size: 1.143rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-indent: -2rem;
+    color: #cbcbcb;
+}
+
+.list-nodata-img {
+    display: block;
+    height: 6.5rem;
+    background: url(../img/empty.png) 50% / auto 100% no-repeat;
+}
+
+
+/*列表公共头部-样式*/
+
+
+/**
+ * 列表头部-label-(默认为三项)
+ */
+
+.list-head {
+    font-size: 0;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(233, 233, 233, .75);
+}
+
+.list-tag {
+    position: relative;
+    display: inline-block;
+    width: 33.33%;
+    padding: .7rem 0;
+    color: #008cd1;
+}
+
+.list-tag:not(:last-child)::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    content: '';
+    border-right: .5px dashed #eee;
+}
+
+.list-tag p {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-top: .4rem;
+}
+
+
+/*兼容气球其他项目*/
+
+.tag-2 {
+    width: 50%;
+}
+
+.tag-4 {
+    width: 25%;
+}
+
+.tag-5 {
+    width: 20%;
+}
+
+
+/**
+ * 列表样式，第一类型。（Dom结构见，销售首页列表）
+ */
+
+.card-list {
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(233, 233, 233, .75);
+}
+
+.card-list:not(last-child) {
+    margin-bottom: 1rem;
+}
+
+.card-l-data {
+    font-size: 0;
+    position: relative;
+    padding: 1rem;
+}
+
+.card-l-time {
+    font-size: .857rem;
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+    color: #a3a3a3;
+}
+
+.card-l-item:not(:last-child) {
+    margin-bottom: .4rem;
+}
+
+.card-l-item span {
+    margin-left: .2rem;
+}
+
+.card-l-item dt,
+.card-l-item dd {
+    font-size: 1.143rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/**
+ * 展示列表，类型二(Dom结构见，创建申请页)
+ */
+
+.lr-list {
+    position: relative;
+}
+
+.lr-list > .i {
+    position: absolute;
+    top: 1.2rem;
+    left: 0;
+    margin: 0 10px;
+}
+
+.lr-l-con {
+    font-size: 0;
+    display: block;
+    overflow: hidden;
+    margin-left: 40px;
+    padding: 1rem 0;
+    border-bottom: .5px solid #efefef;
+}
+
+.lr-list:last-child .lr-l-con {
+    border-bottom: none;
+}
+
+.lr-l-left {
+    float: left;
+}
+
+.lr-l-right {
+    float: right;
+    text-align: right;
+}
+
+.lr-l-large,
+.lr-l-middle,
+.lr-l-small {
+    font-size: 1.143rem;
+    display: inline-block;
+    margin-right: 1rem;
+    word-break: break-all;
+}
+
+.lr-l-middle,
+.lr-l-small {
+    font-size: 1rem;
+    color: #a3a3a3;
+}
+
+.lr-l-small {
+    font-size: .857rem;
+}
+
+
+/**
+ * 展示列表，类型三（Dom结构见，员工情况页）
+ */
+
+.man-list {
+    padding-left: 1.4rem;
+}
+
+.man-l-con {
+    position: relative;
+    display: block;
+}
+
+.man-list:not(:last-child) .man-l-con {
+    border-bottom: .5px solid #efefef;
+}
+
+.man-l-head {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4rem;
+    height: 4rem;
+    margin: auto 0;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.man-l-data {
+    margin-left: 4rem;
+    padding: 1rem;
+}
+
+.man-l-item {
+    overflow: hidden;
+}
+
+.man-l-item:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.man-l-left {
+    float: left;
+}
+
+.man-l-right {
+    float: right;
+}
+
+.man-l-large {
+    font-size: 1.143rem;
+}
+
+.man-l-middle {
+    font-size: 1rem;
+    color: #727272;
+}
+
+.man-l-small {
+    font-size: .857rem;
+    position: relative;
+    top: .2rem;
+    color: #acacac;
+}
+
+.man-l-left > span,
+.man-l-right > span {
+    margin-left: .2rem;
+}
+
+
+/**
+ * 其他
+ */
+
+
+/*不显示*/
+
+.none {
+    display: none !important;
+}
+
+
+/*页脚右下方按钮*/
+
+.fixed-btn {
+    right: 1rem;
+    bottom: 2rem;
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    box-shadow: 0 5px 7px 0 rgba(168, 213, 236, .75);
+}
+
+.fixed-btn > a {
+    display: block;
+    padding: 10px 0;
+}
+
+
+/*媒体查询*/
+
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 12px;
+    }
+}
