@@ -1,0 +1,15 @@
+{
+  "name": "zhejiang_mobile_full_screen",
+  "version": "1.0.0",
+  "description": "> 使用Echarts为图标库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "github.com/hangyangws",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1"
+  }
+}
