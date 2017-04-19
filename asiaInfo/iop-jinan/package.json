@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "author": "github.com/hangyangws",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1"
+  }
+}
