@@ -5,40 +5,40 @@
 */
 
 body {
-    scrollbar-face-color: #bbb;
-    scrollbar-shadow-color: #bbb;
-    scrollbar-3dlight-color: #bbb;
-    scrollbar-arrow-color: #bbb;
-    scrollbar-highlight-color: #ccc;
-    scrollbar-track-color: #ccc;
-    scrollbar-darkshadow-color: #bbb;
+  scrollbar-face-color: #bbb;
+  scrollbar-shadow-color: #bbb;
+  scrollbar-3dlight-color: #bbb;
+  scrollbar-arrow-color: #bbb;
+  scrollbar-highlight-color: #ccc;
+  scrollbar-track-color: #ccc;
+  scrollbar-darkshadow-color: #bbb;
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background-color: #bbb;
+  border-radius: 3px;
+  background-color: #bbb;
 }
 
 ::-webkit-scrollbar-button {
-    width: 0;
-    height: 0;
+  width: 0;
+  height: 0;
 }
 
 ::-webkit-scrollbar-corner {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 
@@ -47,21 +47,21 @@ body {
  */
 
 ::-moz-selection {
-    color: #398;
-    background: #fff;
+  color: #398;
+  background: #fff;
 }
 
 ::selection {
-    color: #bdb099;
-    background: #fff;
+  color: #bdb099;
+  background: #fff;
 }
 
 .fcm {
-    color: #bdb099;
+  color: #bdb099;
 }
 
 .bcm {
-    background-color: #bdb099;
+  background-color: #bdb099;
 }
 
 
@@ -70,17 +70,17 @@ body {
  */
 
 #mask {
-    position: fixed;
-    z-index: 1001;
-    top: 0;
-    left: 0;
-    display: none;
-    width: 100%;
-    height: 100%;
-    /*chrome 内核 浏览器 position: fixed 防止抖动*/
-    -webkit-transform: translateZ(0);
-    background-color: #333;
-    background-color: rgba(0, 0, 0, .6);
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  /*chrome 内核 浏览器 position: fixed 防止抖动*/
+  -webkit-transform: translateZ(0);
+  background-color: #333;
+  background-color: rgba(0, 0, 0, .6);
 }
 
 
@@ -89,31 +89,31 @@ body {
  */
 
 .remaind-wrap {
-    width: 300px;
-    height: 125px;
-    text-align: center;
+  width: 300px;
+  height: 125px;
+  text-align: center;
 }
 
 #remaindMessage {
-    display: block;
-    height: 50px;
-    padding: 20px 0;
-    background-color: #fff;
+  display: block;
+  height: 50px;
+  padding: 20px 0;
+  background-color: #fff;
 }
 
 #confirmRemaind {
-    font-size: 20px;
-    line-height: 35px;
-    display: block;
-    height: 35px;
-    cursor: pointer;
-    letter-spacing: 2px;
-    color: #333;
-    background-color: #999;
+  font-size: 20px;
+  line-height: 35px;
+  display: block;
+  height: 35px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  color: #333;
+  background-color: #999;
 }
 
 #confirmRemaind:hover {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 
@@ -122,82 +122,82 @@ body {
  */
 
 .b1e0 {
-    /*只有登陆和注册用到*/
-    border: 1px solid #e0e0e0;
+  /*只有登陆和注册用到*/
+  border: 1px solid #e0e0e0;
 }
 
 .b1m {
-    border: 1px solid #bdb099;
+  border: 1px solid #bdb099;
 }
 
 .sign-m {
-    background-color: #f5f6f5;
+  background-color: #f5f6f5;
 }
 
 .sign-num {
-    line-height: 30px;
-    width: 44px;
-    border-right: 1px solid #e0e0e0;
+  line-height: 30px;
+  width: 44px;
+  border-right: 1px solid #e0e0e0;
 }
 
 .sign-tel {
-    width: 173px;
+  width: 173px;
 }
 
 .sign-in-s,
 .sign-up-s,
 .sign-re-s {
-    width: 240px;
+  width: 240px;
 }
 
 .sign-m .b1m:hover {
-    color: #bdb099;
-    background-color: #fff;
+  color: #bdb099;
+  background-color: #fff;
 }
 
 .sign-x::before,
 .sign-x::after {
-    position: absolute;
-    top: 2px;
-    left: 9px;
-    display: block;
-    width: 2px;
-    height: 16px;
-    content: '';
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    background-color: #999;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  display: block;
+  width: 2px;
+  height: 16px;
+  content: '';
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: #999;
 }
 
 .sign-x::after {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .sign-x:hover {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .sign-err {
-    color: #f33;
+  color: #f33;
 }
 
 .offset-top {
-    -webkit-transform: scale(.8, .8);
-    -moz-transform: scale(.8, .8);
-    -ms-transform: scale(.8, .8);
-    -o-transform: scale(.8, .8);
-    transform: scale(.8, .8);
+  -webkit-transform: scale(.8, .8);
+  -moz-transform: scale(.8, .8);
+  -ms-transform: scale(.8, .8);
+  -o-transform: scale(.8, .8);
+  transform: scale(.8, .8);
 }
 
 
@@ -206,8 +206,8 @@ body {
  */
 
 input.err {
-    -moz-box-shadow: 0 0 1px 1px #f33 inset;
-    box-shadow: 0 0 1px 1px #f33 inset;
+  -moz-box-shadow: 0 0 1px 1px #f33 inset;
+  box-shadow: 0 0 1px 1px #f33 inset;
 }
 
 
@@ -216,25 +216,25 @@ input.err {
  */
 
 .i-arrow {
-    width: 18px;
-    height: 18px;
-    background: url(../img/info/arrow.png) no-repeat;
+  width: 18px;
+  height: 18px;
+  background: url(../img/info/arrow.png) no-repeat;
 }
 
 .i-arrow-t {
-    background-position: 0 -36px;
+  background-position: 0 -36px;
 }
 
 .i-arrow-l {
-    background-position: 0 -18px;
+  background-position: 0 -18px;
 }
 
 .i-arrow-r {
-    background-position: 0 0;
+  background-position: 0 0;
 }
 
 .i-arrow-b {
-    background-position: 0 -54px;
+  background-position: 0 -54px;
 }
 
 
@@ -243,47 +243,47 @@ input.err {
  */
 
 .css-hart {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background-color: #999;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #999;
 }
 
 .css-hart,
 .css-arrow::before {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .css-hart::before {
-    position: absolute;
-    top: 0;
-    left: -7px;
-    width: 14px;
-    height: 14px;
-    content: '';
-    border-radius: 7px;
-    background-color: #999;
+  position: absolute;
+  top: 0;
+  left: -7px;
+  width: 14px;
+  height: 14px;
+  content: '';
+  border-radius: 7px;
+  background-color: #999;
 }
 
 .css-hart::after {
-    position: absolute;
-    top: -7px;
-    left: 0;
-    width: 14px;
-    height: 14px;
-    content: '';
-    border-radius: 7px;
-    background-color: #999;
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  content: '';
+  border-radius: 7px;
+  background-color: #999;
 }
 
 .css-hart.active,
 .css-hart.active::before,
 .css-hart.active::after {
-    background-color: #f55;
+  background-color: #f55;
 }
 
 
@@ -292,21 +292,21 @@ input.err {
  */
 
 .css-arrow {
-    overflow: hidden;
-    width: 20px;
-    height: 11px;
+  overflow: hidden;
+  width: 20px;
+  height: 11px;
 }
 
 .css-arrow::before {
-    position: absolute;
-    top: -8px;
-    left: 2px;
-    width: 12px;
-    height: 12px;
-    content: '';
-    border: 1px solid #999;
+  position: absolute;
+  top: -8px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  content: '';
+  border: 1px solid #999;
 }
 
 .css-arrow.active::before {
-    top: 5px;
+  top: 5px;
 }

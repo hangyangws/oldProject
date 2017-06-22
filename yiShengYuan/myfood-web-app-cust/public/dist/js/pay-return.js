@@ -1,1 +1,0 @@
-!function(o,e,n){"use strict";var t=e("#footer"),i={pageGo:function(e){1==G.device?"index"===e?o.android.toIndex():o.android.toOrder():"index"===e?location.href="objc://ToIndex":location.href="objc://ToOrder"}};t.on("tap",".js-page-go",function(){i.pageGo(e(this).data("page"))})}(window||this,Zepto);

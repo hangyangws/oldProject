@@ -4,260 +4,260 @@
 
 body,
 html {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 header {
-    position: fixed;
+  position: fixed;
 }
 
 .witch-all,
 .extend-top,
 .rD-left > span,
 .three-light span {
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -ms-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
 }
 
 
 /*self*/
 
 .car {
-    /*change - color #444 */
-    color: #fff;
+  /*change - color #444 */
+  color: #fff;
 }
 
 
 /*extend*/
 
 .extend {
-    z-index: 2;
-    top: 72px;
-    right: 0;
-    width: 60px;
-    height: 350px;
-    margin-right: 20px;
+  z-index: 2;
+  top: 72px;
+  right: 0;
+  width: 60px;
+  height: 350px;
+  margin-right: 20px;
 }
 
 .extend-witch {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 315px;
-    margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 315px;
+  margin: auto;
 }
 
 .witch-all {
-    width: 5px;
-    height: 5px;
-    margin: 0 0 30px 55px;
-    border-radius: 2.5px;
-    background-color: #999;
-    box-shadow: 0 0 1px #f80;
+  width: 5px;
+  height: 5px;
+  margin: 0 0 30px 55px;
+  border-radius: 2.5px;
+  background-color: #999;
+  box-shadow: 0 0 1px #f80;
 }
 
 .witch-add {
-    background-color: #f80;
-    box-shadow: 0 0 8px #666;
+  background-color: #f80;
+  box-shadow: 0 0 8px #666;
 }
 
 .witch-all:hover {
-    background-color: #f80;
-    box-shadow: 0 0 8px #666;
+  background-color: #f80;
+  box-shadow: 0 0 8px #666;
 }
 
 .extend-top {
-    bottom: 0;
-    left: 25px;
-    width: 35px;
-    height: 35px;
-    background: url('../images/top.png') #567fb6 no-repeat;
+  bottom: 0;
+  left: 25px;
+  width: 35px;
+  height: 35px;
+  background: url('../images/top.png') #567fb6 no-repeat;
 }
 
 .extend-top:hover {
-    background-position: 0 -5px;
+  background-position: 0 -5px;
 }
 
 
 /*center*/
 
 .center-all {
-    overflow: hidden;
-    min-width: 800px;
-    height: 494px;
+  overflow: hidden;
+  min-width: 800px;
+  height: 494px;
 }
 
 
 /*one*/
 
 .center-one {
-    background-color: #2a5bdc;
+  background-color: #2a5bdc;
 }
 
 .one-left {
-    float: left;
-    width: 45%;
-    height: 100%;
-    background: url('../images/leftHand.jpg') no-repeat;
-    background-position: left bottom;
-    background-size: contain;
+  float: left;
+  width: 45%;
+  height: 100%;
+  background: url('../images/leftHand.jpg') no-repeat;
+  background-position: left bottom;
+  background-size: contain;
 }
 
 .one-right {
-    float: left;
-    width: 50%;
-    height: 100%;
-    padding-left: 5%;
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding-left: 5%;
 }
 
 .right-title {
-    width: 100%;
-    height: 50%;
+  width: 100%;
+  height: 50%;
 }
 
 .rT-left {
-    float: left;
-    width: 150px;
-    height: 100%;
+  float: left;
+  width: 150px;
+  height: 100%;
 }
 
 .rT-left span {
-    font-size: 46px;
-    line-height: 60px;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    text-indent: 4px;
-    letter-spacing: 1px;
+  font-size: 46px;
+  line-height: 60px;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  text-indent: 4px;
+  letter-spacing: 1px;
 }
 
 .nine-rT-left span {
-    color: #444;
+  color: #444;
 }
 
 .rT-right {
-    float: left;
-    width: 80px;
-    height: 100%;
+  float: left;
+  width: 80px;
+  height: 100%;
 }
 
 .rT-right span {
-    font-size: 32px;
-    line-height: 38px;
-    bottom: 9px;
-    width: 100%;
-    height: 38px;
-    margin-left: 20px;
-    letter-spacing: 2px;
-    color: #f80;
-    border-radius: 19px;
+  font-size: 32px;
+  line-height: 38px;
+  bottom: 9px;
+  width: 100%;
+  height: 38px;
+  margin-left: 20px;
+  letter-spacing: 2px;
+  color: #f80;
+  border-radius: 19px;
 }
 
 .right-intro {
-    width: 100%;
-    height: 10%;
+  width: 100%;
+  height: 10%;
 }
 
 .rI-up {
-    height: 50%;
+  height: 50%;
 }
 
 .rI-up span {
-    font-size: 15px;
-    line-height: 30px;
-    height: 30px;
-    text-indent: 5px;
-    letter-spacing: 1px;
-    color: #e0e0e0;
+  font-size: 15px;
+  line-height: 30px;
+  height: 30px;
+  text-indent: 5px;
+  letter-spacing: 1px;
+  color: #e0e0e0;
 }
 
 .nine-rI-up span {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .rI-down {
-    height: 50%;
+  height: 50%;
 }
 
 .rI-down span {
-    font-size: 18px;
-    line-height: 30px;
-    top: 0;
-    left: 0;
-    height: 30px;
-    height: 50px;
-    text-indent: 5px;
-    letter-spacing: 1px;
-    color: #e0e0e0;
+  font-size: 18px;
+  line-height: 30px;
+  top: 0;
+  left: 0;
+  height: 30px;
+  height: 50px;
+  text-indent: 5px;
+  letter-spacing: 1px;
+  color: #e0e0e0;
 }
 
 .nine-rI-up span,
 .nine-rI-down span {
-    color: #555;
+  color: #555;
 }
 
 .right-down {
-    width: 100%;
-    height: 40%;
+  width: 100%;
+  height: 40%;
 }
 
 .rD-left {
-    float: left;
-    width: 100%;
-    height: 50%;
+  float: left;
+  width: 100%;
+  height: 50%;
 }
 
 .rD-left > span:hover {
-    box-shadow: 0 0 5px rgba(255, 255, 255, .6);
+  box-shadow: 0 0 5px rgba(255, 255, 255, .6);
 }
 
 .nine-rD-left > span:hover {
-    box-shadow: 0 0 5px rgba(51, 51, 51, .6);
+  box-shadow: 0 0 5px rgba(51, 51, 51, .6);
 }
 
 .dL-up,
 .dL-down {
-    float: left;
-    width: 40%;
-    min-width: 150px;
-    max-width: 180px;
-    height: 50px;
-    margin-top: 20px;
-    margin-right: 15px;
-    margin-left: 5px;
-    border-radius: 25px;
-    background-color: #f80;
+  float: left;
+  width: 40%;
+  min-width: 150px;
+  max-width: 180px;
+  height: 50px;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-left: 5px;
+  border-radius: 25px;
+  background-color: #f80;
 }
 
 .dL-up {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .dlImage {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 .upImage {
-    background: url('../images/download.png');
+  background: url('../images/download.png');
 }
 
 .downImage {
-    background: url('../images/download.png');
-    background-position: 0 50px;
+  background: url('../images/download.png');
+  background-position: 0 50px;
 }
 
 .dlText {
-    font-size: 15px;
-    line-height: 50px;
-    width: 100%;
-    height: 50px;
-    text-indent: 30px;
+  font-size: 15px;
+  line-height: 50px;
+  width: 100%;
+  height: 50px;
+  text-indent: 30px;
 }
 
 
@@ -271,8 +271,8 @@ header {
 .seven-top,
 .eight-top,
 .nine-top {
-    width: 100%;
-    height: 30%;
+  width: 100%;
+  height: 30%;
 }
 
 .two-top-wrap,
@@ -283,9 +283,9 @@ header {
 .seven-top-wrap,
 .eight-top-wrap,
 .nine-top-wrap {
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .two-top-wrap > span,
@@ -296,28 +296,28 @@ header {
 .seven-top-wrap > span,
 .eight-top-wrap > span,
 .nine-top-wrap > span {
-    bottom: 0;
-    width: 100%;
+  bottom: 0;
+  width: 100%;
 }
 
 .twTile {
-    font-family: '华文细黑', 'Microsoft YaHei';
-    font-size: 50px;
-    line-height: 40px;
-    min-width: 910px;
-    height: 40px;
-    text-indent: 80px;
-    color: #444;
-    -webkit-font-smoothing: antialiased;
+  font-family: '华文细黑', 'Microsoft YaHei';
+  font-size: 50px;
+  line-height: 40px;
+  min-width: 910px;
+  height: 40px;
+  text-indent: 80px;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
 }
 
 .twContent {
-    font-size: 20px;
-    line-height: 30px;
-    height: 30px;
-    margin-top: 20px;
-    text-indent: 80px;
-    color: #555;
+  font-size: 20px;
+  line-height: 30px;
+  height: 30px;
+  margin-top: 20px;
+  text-indent: 80px;
+  color: #555;
 }
 
 .two-down,
@@ -327,502 +327,502 @@ header {
 .six-down,
 .seven-down,
 .eight-down {
-    width: 100%;
-    height: 70%;
+  width: 100%;
+  height: 70%;
 }
 
 .tD-image {
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .two-image {
-    background: url('../images/two.png') no-repeat;
-    background-position: bottom;
-    background-size: contain;
+  background: url('../images/two.png') no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .three-image {
-    background: url('../images/three.png') no-repeat;
-    background-position: bottom;
-    background-size: contain;
+  background: url('../images/three.png') no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .five-image {
-    background: url('../images/five.png') no-repeat;
-    background-position: bottom;
-    background-size: contain;
+  background: url('../images/five.png') no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .six-image {
-    background: url('../images/six.png') no-repeat;
-    background-position: bottom;
-    background-size: contain;
+  background: url('../images/six.png') no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .seven-image {
-    background: url('../images/seven.png') no-repeat;
-    background-position: bottom;
-    background-size: contain;
+  background: url('../images/seven.png') no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .eight-image {
-    background: url('../images/eight.png') no-repeat;
-    background-position: bottom;
-    background-size: contain;
+  background: url('../images/eight.png') no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .nine-image {
-    background: url('../images/nine.png') no-repeat;
-    background-position: bottom;
-    background-size: contain;
+  background: url('../images/nine.png') no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .tD-image-l {
-    top: 50%;
-    left: 40%;
-    width: 60px;
-    height: 71px;
-    background: url('../images/p.png') no-repeat;
-    background-size: contain;
+  top: 50%;
+  left: 40%;
+  width: 60px;
+  height: 71px;
+  background: url('../images/p.png') no-repeat;
+  background-size: contain;
 }
 
 .tD-image-r {
-    top: 60%;
-    left: 70%;
-    width: 90px;
-    height: 106px;
-    background: url('../images/p.png') no-repeat;
-    background-size: contain;
+  top: 60%;
+  left: 70%;
+  width: 90px;
+  height: 106px;
+  background: url('../images/p.png') no-repeat;
+  background-size: contain;
 }
 
 
 /*three*/
 
 .center-three {
-    background-color: #ffc000;
+  background-color: #ffc000;
 }
 
 .three-light {
-    top: 40px;
-    left: 150px;
-    width: 45px;
-    padding: 5px;
-    border-radius: 25px;
+  top: 40px;
+  left: 150px;
+  width: 45px;
+  padding: 5px;
+  border-radius: 25px;
 }
 
 .three-light span {
-    width: 45px;
-    height: 45px;
-    border-radius: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
 }
 
 .light-red {
-    background-color: #f80;
-    box-shadow: 0 0 15px #f80;
+  background-color: #f80;
+  box-shadow: 0 0 15px #f80;
 }
 
 .light-green,
 .light-yellow {
-    background-color: #999;
+  background-color: #999;
 }
 
 .light-green {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 .three-car {
-    right: 0;
-    bottom: 0;
-    width: 20%;
-    height: 20%;
-    background: url('../images/car.png') no-repeat bottom;
-    background-size: contain;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+  height: 20%;
+  background: url('../images/car.png') no-repeat bottom;
+  background-size: contain;
 }
 
 
 /*four*/
 
 .center-four {
-    background-color: #50e29b;
+  background-color: #50e29b;
 }
 
 .four-image > span {
-    z-index: 1;
+  z-index: 1;
 }
 
 .fourION {
-    top: 30%;
-    left: 10%;
-    width: 14%;
-    height: 28%;
-    background: url('../images/fourOne.png') no-repeat bottom center;
-    background-size: contain;
+  top: 30%;
+  left: 10%;
+  width: 14%;
+  height: 28%;
+  background: url('../images/fourOne.png') no-repeat bottom center;
+  background-size: contain;
 }
 
 .fourITW {
-    top: 42%;
-    left: 14%;
-    width: 18%;
-    height: 30%;
-    background: url('../images/fourTwo.png') no-repeat bottom center;
-    background-size: contain;
+  top: 42%;
+  left: 14%;
+  width: 18%;
+  height: 30%;
+  background: url('../images/fourTwo.png') no-repeat bottom center;
+  background-size: contain;
 }
 
 .fourITH {
-    top: 20%;
-    right: 10%;
-    width: 30%;
-    height: 50%;
-    background: url('../images/fourThree.png') no-repeat bottom center;
-    background-size: contain;
+  top: 20%;
+  right: 10%;
+  width: 30%;
+  height: 50%;
+  background: url('../images/fourThree.png') no-repeat bottom center;
+  background-size: contain;
 }
 
 .fourAll {
-    z-index: 0;
-    bottom: -20%;
-    width: 90%;
-    height: 100%;
-    margin: 0 5%;
-    border: 1px solid #fff;
-    border-top-left-radius: 50% 80%;
-    border-top-right-radius: 50% 80%;
+  z-index: 0;
+  bottom: -20%;
+  width: 90%;
+  height: 100%;
+  margin: 0 5%;
+  border: 1px solid #fff;
+  border-top-left-radius: 50% 80%;
+  border-top-right-radius: 50% 80%;
 }
 
 
 /*six*/
 
 .center-six {
-    background-color: #f6923a;
+  background-color: #f6923a;
 }
 
 
 /*seven*/
 
 .sevenStarOne {
-    top: 76%;
-    left: 6%;
-    width: 5%;
-    height: 8%;
-    background: url('../images/sevenStarOne.png') no-repeat left bottom;
-    background-size: contain;
+  top: 76%;
+  left: 6%;
+  width: 5%;
+  height: 8%;
+  background: url('../images/sevenStarOne.png') no-repeat left bottom;
+  background-size: contain;
 }
 
 .sevenStarTwo {
-    top: 26%;
-    left: 40%;
-    width: 5%;
-    height: 6%;
-    background: url('../images/sevenStarTwo.png') no-repeat left bottom;
-    background-size: contain;
+  top: 26%;
+  left: 40%;
+  width: 5%;
+  height: 6%;
+  background: url('../images/sevenStarTwo.png') no-repeat left bottom;
+  background-size: contain;
 }
 
 
 /*eight*/
 
 .center-eight {
-    background-color: #3eb9f4;
+  background-color: #3eb9f4;
 }
 
 .myFSpace {
-    width: 80px;
+  width: 80px;
 }
 
 
 /*nine*/
 
 .center-nine {
-    background: url('../images/nineBG.png') no-repeat;
-    background-size: 100% 100%;
+  background: url('../images/nineBG.png') no-repeat;
+  background-size: 100% 100%;
 }
 
 .nine-up {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .nine-left {
-    float: left;
-    width: 45%;
-    height: 100%;
-    background: url('../images/ninePhone.png') no-repeat right bottom;
-    background-size: contain;
+  float: left;
+  width: 45%;
+  height: 100%;
+  background: url('../images/ninePhone.png') no-repeat right bottom;
+  background-size: contain;
 }
 
 .nine-right {
-    float: left;
-    width: 50%;
-    height: 100%;
-    padding-left: 5%;
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding-left: 5%;
 }
 
 .nine-down {
-    line-height: 30px;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    /*background-color: rgba(234,234,234,0.5);*/
-    background-color: #eaeaea;
+  line-height: 30px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /*background-color: rgba(234,234,234,0.5);*/
+  background-color: #eaeaea;
 }
 
 .nine-down span {
-    font-size: 15px;
-    width: 100%;
-    height: 100%;
-    letter-spacing: 1px;
-    color: #555;
+  font-size: 15px;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 1px;
+  color: #555;
 }
 
 .nine-down span a {
-    color: #555;
+  color: #555;
 }
 
 .nine-down span a:hover {
-    color: #444;
+  color: #444;
 }
 
 @media only screen and (max-width: 1200px) {
-    .three-light {
-        left: 130px;
-    }
+  .three-light {
+    left: 130px;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
-    .three-light {
-        left: 120px;
-    }
+  .three-light {
+    left: 120px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
-    .two-top,
-    .three-top,
-    .four-top,
-    .five-top,
-    .six-top,
-    .seven-top,
-    .eight-top,
-    .nine-top {
-        z-index: 1;
-        top: 10px;
-    }
-    .two-top-wrap,
-    .three-top-wrap,
-    .four-top-wrap,
-    .five-top-wrap,
-    .six-top-wrap,
-    .seven-top-wrap,
-    .eight-top-wrap,
-    .nine-top-wrap {
-        width: 100%;
-    }
-    .tD-image {
-        position: absolute;
-        left: 0;
-        width: 650px;
-    }
-    .twTile {
-        text-indent: 40px;
-    }
-    .twContent {
-        text-indent: 40px;
-    }
-    .one-left,
-    .nine-left {
-        display: none;
-    }
-    .one-right,
-    .nine-right {
-        position: absolute;
-        left: 20%;
-        width: 55%;
-        padding-left: 0;
-    }
-    .three-light {
-        left: 20px;
-        margin-left: 20px;
-    }
-    .fourITH {
-        right: 16%;
-    }
-    .nine-down {
-        width: 600px;
-    }
-    .myFSpace {
-        width: 40px;
-    }
-    .sixPageOne {
-        top: 28%;
-    }
-    .sixPageTwo {
-        top: 65%;
-    }
-    .sevenStarOne {
-        top: 80%;
-        left: 3%;
-    }
-    .sevenStarTwo {
-        top: 40%;
-    }
+  .two-top,
+  .three-top,
+  .four-top,
+  .five-top,
+  .six-top,
+  .seven-top,
+  .eight-top,
+  .nine-top {
+    z-index: 1;
+    top: 10px;
+  }
+  .two-top-wrap,
+  .three-top-wrap,
+  .four-top-wrap,
+  .five-top-wrap,
+  .six-top-wrap,
+  .seven-top-wrap,
+  .eight-top-wrap,
+  .nine-top-wrap {
+    width: 100%;
+  }
+  .tD-image {
+    position: absolute;
+    left: 0;
+    width: 650px;
+  }
+  .twTile {
+    text-indent: 40px;
+  }
+  .twContent {
+    text-indent: 40px;
+  }
+  .one-left,
+  .nine-left {
+    display: none;
+  }
+  .one-right,
+  .nine-right {
+    position: absolute;
+    left: 20%;
+    width: 55%;
+    padding-left: 0;
+  }
+  .three-light {
+    left: 20px;
+    margin-left: 20px;
+  }
+  .fourITH {
+    right: 16%;
+  }
+  .nine-down {
+    width: 600px;
+  }
+  .myFSpace {
+    width: 40px;
+  }
+  .sixPageOne {
+    top: 28%;
+  }
+  .sixPageTwo {
+    top: 65%;
+  }
+  .sevenStarOne {
+    top: 80%;
+    left: 3%;
+  }
+  .sevenStarTwo {
+    top: 40%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .twTile {
-        font-size: 25px;
-        text-indent: 20px;
-    }
-    .twContent {
-        text-indent: 20px;
-    }
-    .one-right,
-    .nine-right {
-        left: 20px;
-    }
-    .rT-left span {
-        font-size: 30px;
-        text-indent: 0;
-    }
-    .rT-right span {
-        font-size: 20px;
-        line-height: 26px;
-        bottom: 16px;
-        left: -50px;
-        width: 70%;
-        height: 26px;
-        border-radius: 13px;
-    }
-    .rI-up span {
-        text-indent: 0;
-        letter-spacing: 0;
-    }
-    .nine-rI-up span {
-        font-size: 15px;
-    }
-    .rI-down span {
-        font-size: 15px;
-        text-indent: 0;
-        letter-spacing: 0;
-    }
-    .tD-image {
-        width: 500px;
-    }
-    .tD-image-l {
-        width: 40px;
-        height: 46px;
-    }
-    .tD-image-r {
-        width: 60px;
-        height: 70px;
-    }
-    .rT-left span {
-        text-align: left;
-    }
-    .dL-up,
-    .dL-down {
-        min-width: 150px;
-        margin-left: 0;
-    }
-    .dlText,
-    .dL-up,
-    .dL-down {
-        line-height: 45px;
-        height: 45px;
-    }
-    .dlText {
-        font-size: 14px;
-        text-align: left;
-        text-indent: 40px;
-    }
-    .dL-up {
-        margin-bottom: 15px;
-    }
-    .dlImage {
-        top: -2px;
-        left: -10px;
-    }
-    .rD-left {
-        width: 42%;
-    }
-    .fourITH {
-        top: 2%;
-        width: 25%;
-        height: 50%;
-    }
-    .fourION {
-        left: 2%;
-    }
-    .fourITW {
-        left: 6%;
-    }
-    .nine-down {
-        width: 450px;
-    }
-    .myFSpace {
-        width: 20px;
-    }
-    .myBr {
-        display: block;
-    }
-    .mySpace {
-        display: inline-block;
-        width: 20px;
-    }
-    .sixPageOne {
-        top: 40%;
-        height: 20%;
-    }
-    .sixPageTwo {
-        top: 75%;
-        height: 16%;
-    }
-    .sevenStarOne {
-        top: 85%;
-        left: 4%;
-        height: 6%;
-    }
-    .sevenStarTwo {
-        top: 55%;
-    }
-    .three-light {
-        left: 0;
-    }
+  .twTile {
+    font-size: 25px;
+    text-indent: 20px;
+  }
+  .twContent {
+    text-indent: 20px;
+  }
+  .one-right,
+  .nine-right {
+    left: 20px;
+  }
+  .rT-left span {
+    font-size: 30px;
+    text-indent: 0;
+  }
+  .rT-right span {
+    font-size: 20px;
+    line-height: 26px;
+    bottom: 16px;
+    left: -50px;
+    width: 70%;
+    height: 26px;
+    border-radius: 13px;
+  }
+  .rI-up span {
+    text-indent: 0;
+    letter-spacing: 0;
+  }
+  .nine-rI-up span {
+    font-size: 15px;
+  }
+  .rI-down span {
+    font-size: 15px;
+    text-indent: 0;
+    letter-spacing: 0;
+  }
+  .tD-image {
+    width: 500px;
+  }
+  .tD-image-l {
+    width: 40px;
+    height: 46px;
+  }
+  .tD-image-r {
+    width: 60px;
+    height: 70px;
+  }
+  .rT-left span {
+    text-align: left;
+  }
+  .dL-up,
+  .dL-down {
+    min-width: 150px;
+    margin-left: 0;
+  }
+  .dlText,
+  .dL-up,
+  .dL-down {
+    line-height: 45px;
+    height: 45px;
+  }
+  .dlText {
+    font-size: 14px;
+    text-align: left;
+    text-indent: 40px;
+  }
+  .dL-up {
+    margin-bottom: 15px;
+  }
+  .dlImage {
+    top: -2px;
+    left: -10px;
+  }
+  .rD-left {
+    width: 42%;
+  }
+  .fourITH {
+    top: 2%;
+    width: 25%;
+    height: 50%;
+  }
+  .fourION {
+    left: 2%;
+  }
+  .fourITW {
+    left: 6%;
+  }
+  .nine-down {
+    width: 450px;
+  }
+  .myFSpace {
+    width: 20px;
+  }
+  .myBr {
+    display: block;
+  }
+  .mySpace {
+    display: inline-block;
+    width: 20px;
+  }
+  .sixPageOne {
+    top: 40%;
+    height: 20%;
+  }
+  .sixPageTwo {
+    top: 75%;
+    height: 16%;
+  }
+  .sevenStarOne {
+    top: 85%;
+    left: 4%;
+    height: 6%;
+  }
+  .sevenStarTwo {
+    top: 55%;
+  }
+  .three-light {
+    left: 0;
+  }
 }
 
 @media only screen and (max-width: 500px) {
-    .tD-image {
-        width: 380px;
-    }
-    .sixPageOne {
-        top: 55%;
-        height: 15%;
-    }
-    .sixPageTwo {
-        top: 80%;
-        height: 12%;
-    }
-    .sevenStarTwo {
-        top: 65%;
-    }
+  .tD-image {
+    width: 380px;
+  }
+  .sixPageOne {
+    top: 55%;
+    height: 15%;
+  }
+  .sixPageTwo {
+    top: 80%;
+    height: 12%;
+  }
+  .sevenStarTwo {
+    top: 65%;
+  }
 }
 
 @media only screen and (max-width: 380px) {
-    .tD-image {
-        width: 280px;
-    }
-    .fourION {
-        left: 12%;
-    }
-    .fourITW {
-        top: 36%;
-        left: 16%;
-    }
-    .nine-down {
-        width: 320px;
-    }
-    .nine-down span {
-        letter-spacing: 0;
-    }
+  .tD-image {
+    width: 280px;
+  }
+  .fourION {
+    left: 12%;
+  }
+  .fourITW {
+    top: 36%;
+    left: 16%;
+  }
+  .nine-down {
+    width: 320px;
+  }
+  .nine-down span {
+    letter-spacing: 0;
+  }
 }

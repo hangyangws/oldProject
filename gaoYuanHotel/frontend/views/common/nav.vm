@@ -1,6 +1,0 @@
-<nav class="user-nav pf c">
-    <a class="back-home dlb fl r4 tac bcf mr10" href="/">BACK HOME</a>
-    <a class="user-head dlb fl r4 ofh" href="/searchHotel/user">
-        <img class="w1" src="/img/public/user-head-default.jpg" />
-    </a>
-</nav>

@@ -5,38 +5,38 @@
  */
 
 .header {
-    min-width: 1000px;
+  min-width: 1000px;
 }
 
 .header-wrap {
-    width: 80%;
+  width: 80%;
 }
 
 .header,
 .header-down-con {
-    background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, .9);
 }
 
 .header-list,
 .heade-nav-des {
-    line-height: 30px;
+  line-height: 30px;
 }
 
 .header-list.active,
 .header-list:hover,
 .header-down:hover a.header-list {
-    color: #fff;
-    background-color: #bdb099;
+  color: #fff;
+  background-color: #bdb099;
 }
 
 .header-down:hover .i-arrow-b {
-    background-position: -18px -36px;
+  background-position: -18px -36px;
 }
 
 .header-down-con {
-    top: -800px;
+  top: -800px;
 }
 
 .header-down:hover .header-down-con {
-    top: 60px;
+  top: 60px;
 }

@@ -4,9 +4,9 @@
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 
@@ -38,7 +38,7 @@ body {
 .fourAll,
 .seven-image span,
 .nine-down {
-    position: absolute;
+  position: absolute;
 }
 
 
@@ -84,14 +84,14 @@ body {
 .center-nine,
 .nine-up,
 .nine-left {
-    position: relative;
+  position: relative;
 }
 
 
 /*position: fixed;*/
 
 .extend {
-    position: fixed;
+  position: fixed;
 }
 
 
@@ -101,7 +101,7 @@ body {
 .header-menu-con a,
 .rT-left span,
 .dlText {
-    color: #fff;
+  color: #fff;
 }
 
 
@@ -114,7 +114,7 @@ body {
 .center-seven,
 .center-nine,
 .rT-right span {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 
@@ -124,7 +124,7 @@ body {
 .header-nav-each,
 .header-menu-con a,
 .nine-down span a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 
@@ -136,7 +136,7 @@ body {
 .sel-menu,
 .dlText,
 .myFSpace {
-    display: inline-block;
+  display: inline-block;
 }
 
 
@@ -148,7 +148,7 @@ body {
 .fourAll,
 .fourION,
 .fourITW {
-    display: none;
+  display: none;
 }
 
 
@@ -177,7 +177,7 @@ body {
 .three-light span,
 .myOtherRow,
 .nine-down span {
-    display: block;
+  display: block;
 }
 
 
@@ -187,7 +187,7 @@ body {
 .dlText,
 .nine-down span,
 .rT-right span {
-    text-align: center;
+  text-align: center;
 }
 
 
@@ -203,7 +203,7 @@ body {
 .twContent,
 .nine-down span,
 .rT-left span {
-    font-family: '微软雅黑', '华文细黑';
+  font-family: '微软雅黑', '华文细黑';
 }
 
 
@@ -215,5 +215,5 @@ body {
 .dL-down,
 .extend-top,
 .witch-all {
-    cursor: pointer;
+  cursor: pointer;
 }

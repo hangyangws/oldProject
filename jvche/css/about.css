@@ -1,59 +1,59 @@
 @charset 'utf-8';
 .about {
-    color: #fff;
+  color: #fff;
 }
 
 
 /*loation*/
 
 .location {
-    position: relative;
-    z-index: -1;
-    top: -74px;
-    width: 100%;
-    min-width: 558px;
-    height: 800px;
-    background: url('../images/about.jpg') no-repeat;
-    background-color: #999;
-    background-position: bottom;
-    background-size: cover;
+  position: relative;
+  z-index: -1;
+  top: -74px;
+  width: 100%;
+  min-width: 558px;
+  height: 800px;
+  background: url('../images/about.jpg') no-repeat;
+  background-color: #999;
+  background-position: bottom;
+  background-size: cover;
 }
 
 .location-title,
 .localtion-content {
-    position: relative;
-    display: none;
-    width: 100%;
-    height: 50%;
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 50%;
 }
 
 .location-title > span {
-    font-family: '黑体', '微软雅黑', '华文细黑', Arial;
-    font-size: 2em;
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    display: block;
-    width: 100%;
-    text-align: center;
-    letter-spacing: 2px;
-    color: #fff;
+  font-family: '黑体', '微软雅黑', '华文细黑', Arial;
+  font-size: 2em;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #fff;
 }
 
 .localtion-content > div {
-    width: 100%;
+  width: 100%;
 }
 
 .localtion-content > div > span {
-    font-family: '华文细黑', '微软雅黑', Arial, '黑体';
-    font-size: 1.2em;
-    line-height: 22px;
-    display: block;
-    width: 100%;
-    height: 22px;
-    text-align: center;
-    letter-spacing: 2px;
-    color: #fff;
+  font-family: '华文细黑', '微软雅黑', Arial, '黑体';
+  font-size: 1.2em;
+  line-height: 22px;
+  display: block;
+  width: 100%;
+  height: 22px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #fff;
 }
 
 
@@ -61,85 +61,85 @@
 
 .time,
 .map {
-    position: relative;
-    top: -74px;
-    width: 80%;
-    min-width: 860px;
-    margin: 0 auto;
+  position: relative;
+  top: -74px;
+  width: 80%;
+  min-width: 860px;
+  margin: 0 auto;
 }
 
 .time-each {
-    width: 50%;
+  width: 50%;
 }
 
 .time > div:nth-child(1) {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .time-each:last-child {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .time > div:nth-child(odd) {
-    margin-left: 50%;
-    border-left: 2px solid #eaeaea;
+  margin-left: 50%;
+  border-left: 2px solid #eaeaea;
 }
 
 .time > div:nth-child(even) {
-    margin-right: 50%;
-    border-right: 2px solid #eaeaea;
+  margin-right: 50%;
+  border-right: 2px solid #eaeaea;
 }
 
 .t-e-title,
 .r-e-content {
-    font-family: Arial, '微软雅黑';
-    text-indent: 15px;
-    color: #9e9e9e;
+  font-family: Arial, '微软雅黑';
+  text-indent: 15px;
+  color: #9e9e9e;
 }
 
 .t-e-title {
-    font-size: 2em;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #eaeaea;
+  font-size: 2em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eaeaea;
 }
 
 .r-e-content {
-    font-size: 1em;
-    padding-top: 10px;
+  font-size: 1em;
+  padding-top: 10px;
 }
 
 .r-e-content > span {
-    display: block;
-    padding: 3px 0;
+  display: block;
+  padding: 3px 0;
 }
 
 
 /*map*/
 
 #map-wrap {
-    width: 100%;
-    height: 400px;
+  width: 100%;
+  height: 400px;
 }
 
 #map-wrap > div:nth-child(6),
 #map-wrap > div:nth-child(4) {
-    display: none;
+  display: none;
 }
 
 .map-brief {
-    font-family: '微软雅黑';
-    font-size: 1em;
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
+  font-family: '微软雅黑';
+  font-size: 1em;
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
 }
 
 .map-brief > span {
-    margin-right: 20px;
-    color: #ababab;
+  margin-right: 20px;
+  color: #ababab;
 }
 
 .map-brief > span > span {
-    margin: 0 5px;
-    color: #333;
+  margin: 0 5px;
+  color: #333;
 }

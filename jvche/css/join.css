@@ -1,67 +1,67 @@
 @charset 'utf-8';
 body {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .join {
-    color: #fff;
+  color: #fff;
 }
 
 
 /*title*/
 
 .title {
-    position: relative;
-    z-index: -1;
-    top: -73px;
-    width: 100%;
-    min-width: 422px;
-    height: 800px;
-    background-color: #50e29a;
+  position: relative;
+  z-index: -1;
+  top: -73px;
+  width: 100%;
+  min-width: 422px;
+  height: 800px;
+  background-color: #50e29a;
 }
 
 .location-title,
 .localtion-content {
-    position: relative;
-    display: none;
-    width: 100%;
-    height: 50%;
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 50%;
 }
 
 .location-title > span {
-    font-family: '微软雅黑', Arial;
-    font-size: 3em;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    text-align: center;
-    letter-spacing: 2px;
-    color: #fff;
+  font-family: '微软雅黑', Arial;
+  font-size: 3em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #fff;
 }
 
 .blank {
-    display: inline-block;
-    width: 1em;
+  display: inline-block;
+  width: 1em;
 }
 
 .localtion-content > div {
-    position: absolute;
-    top: 20px;
-    width: 100%;
+  position: absolute;
+  top: 20px;
+  width: 100%;
 }
 
 .localtion-content > div > span {
-    font-family: '华文细黑', '微软雅黑', Arial, '黑体';
-    font-size: 1.2em;
-    line-height: 22px;
-    display: block;
-    width: 100%;
-    height: 22px;
-    text-align: center;
-    letter-spacing: 2px;
-    color: #fff;
+  font-family: '华文细黑', '微软雅黑', Arial, '黑体';
+  font-size: 1.2em;
+  line-height: 22px;
+  display: block;
+  width: 100%;
+  height: 22px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #fff;
 }
 
 
@@ -69,102 +69,102 @@ body {
 
 .join-wrap,
 .join_talk {
-    position: relative;
-    top: -72px;
-    width: 80%;
-    min-width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #eaeaea;
+  position: relative;
+  top: -72px;
+  width: 80%;
+  min-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .join-title {
-    width: 100%;
-    height: 50px;
+  width: 100%;
+  height: 50px;
 }
 
 .join-title > ul {
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    list-style-type: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  list-style-type: none;
 }
 
 .join-title > ul > li {
-    font-family: '微软雅黑';
-    font-size: 1.3em;
-    line-height: 30px;
-    float: left;
-    height: 30px;
-    margin-top: 18px;
-    margin-right: 25px;
-    cursor: pointer;
-    color: #333;
+  font-family: '微软雅黑';
+  font-size: 1.3em;
+  line-height: 30px;
+  float: left;
+  height: 30px;
+  margin-top: 18px;
+  margin-right: 25px;
+  cursor: pointer;
+  color: #333;
 }
 
 .join-title > ul > li:nth-child(1) {
-    border-bottom: 2px solid #50e29a;
+  border-bottom: 2px solid #50e29a;
 }
 
 .join-main {
-    width: 100%;
+  width: 100%;
 }
 
 #position_name {
-    font-family: '微软雅黑';
-    font-size: 1.2em;
-    line-height: 30px;
-    display: block;
-    height: 30px;
-    margin-top: 30px;
-    color: #333;
+  font-family: '微软雅黑';
+  font-size: 1.2em;
+  line-height: 30px;
+  display: block;
+  height: 30px;
+  margin-top: 30px;
+  color: #333;
 }
 
 .woek_describe,
 .work_duty {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .woek_describe > span,
 .work_duty > span {
-    font-family: '微软雅黑';
-    font-size: 1em;
-    line-height: 20px;
-    display: block;
-    height: 20px;
-    margin-top: 30px;
-    color: #333;
+  font-family: '微软雅黑';
+  font-size: 1em;
+  line-height: 20px;
+  display: block;
+  height: 20px;
+  margin-top: 30px;
+  color: #333;
 }
 
 #describe,
 #duty {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 #describe > li,
 #duty > li,
 .join_talk > span {
-    font-family: '微软雅黑';
-    font-size: 1em;
-    line-height: 30px;
-    display: block;
-    height: 30px;
-    color: #3e3e3e;
+  font-family: '微软雅黑';
+  font-size: 1em;
+  line-height: 30px;
+  display: block;
+  height: 30px;
+  color: #3e3e3e;
 }
 
 .join_talk {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .join_talk > span {
-    text-align: center;
-    color: #ababab;
+  text-align: center;
+  color: #ababab;
 }
 
 .to_me > em {
-    font-style: normal;
-    margin-left: 10px;
-    color: #50e29a;
+  font-style: normal;
+  margin-left: 10px;
+  color: #50e29a;
 }
