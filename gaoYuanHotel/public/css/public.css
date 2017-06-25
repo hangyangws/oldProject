@@ -1,0 +1,35 @@
+@charset 'utf-8';
+
+/*用户导航*/
+
+.user-nav {
+    z-index: 99;
+    top: 14px;
+    left: 15px;
+    opacity: .6;
+}
+
+.back-home {
+    line-height: 34px;
+    width: 170px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    color: #a9976d;
+    border: 1px solid #a9976d;
+}
+
+.user-head {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #a9976d;
+}
+
+/*color*/
+
+.fcm {
+    color: #a9976d;
+}
+
+.bcm {
+    background-color: #a9976d;
+}

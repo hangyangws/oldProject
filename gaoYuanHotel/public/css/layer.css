@@ -1,0 +1,241 @@
+.layermbox {
+    position: relative;
+    z-index: 19891014;
+}
+
+.layermmain,
+.laymshade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.layermbtn span,
+.layermchild {
+    position: relative;
+    display: inline-block;
+}
+
+.laymshade {
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.layermmain {
+    display: table;
+    pointer-events: none;
+}
+
+.layermmain .section {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.layermchild {
+    -webkit-animation-duration: .18s;
+    animation-duration: .18s;
+    text-align: left;
+    pointer-events: auto;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.layermborder {
+    border: 1px solid #999;
+}
+
+@-webkit-keyframes bounceIn {
+    0% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.layermanim {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+}
+
+.layermbox0 .layermchild {
+    min-width: 150px;
+    max-width: 90%;
+}
+
+.layermbox1 .layermchild {
+    border: none;
+    border-radius: 0;
+}
+
+.layermbox2 .layermchild {
+    width: auto;
+    min-width: 40px;
+    max-width: 260px;
+    color: #fff;
+    border: none;
+    background: 0 0;
+    box-shadow: none;
+}
+
+.layermchild h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 50px;
+    height: 50px;
+    padding: 0 45px 0 10px;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 3px 3px 0 0;
+}
+
+.layermbtn span,
+.layermchild h3 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.layermcont {
+    line-height: 22px;
+    padding: 16px 14px;
+    text-align: center;
+}
+
+.layermbox1 .layermcont {
+    padding: 0;
+    text-align: left;
+}
+
+.layermbox2 .layermcont {
+    line-height: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.layermbox2 .layermcont i {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    border-radius: 100%;
+    background-color: #fff;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes bouncedelay {
+    0%,
+    100%,
+    80% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes bouncedelay {
+    0%,
+    100%,
+    80% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.layermbox2 .layermcont i:first-child {
+    margin-left: 0;
+    -webkit-animation-delay: -.32s;
+    animation-delay: -.32s;
+}
+
+.layermbox2 .layermcont i.laymloadtwo {
+    -webkit-animation-delay: -.16s;
+    animation-delay: -.16s;
+}
+
+.layermbox2 .layermcont > div {
+    line-height: 22px;
+    margin-bottom: 20px;
+    padding-top: 7px;
+}
+
+.layermbtn {
+    line-height: 30px;
+    position: relative;
+    height: 30px;
+    border-top: 1px solid #ebebeb;
+}
+
+.layermbtn span {
+    width: 50%;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0 3px 0 0;
+}
+
+.layermbtn span:first-child {
+    border-radius: 0 0 0 3px;
+    background-color: #fff;
+}
+
+.layermbtn:before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 30px;
+    content: '\20';
+    background-color: #ebebeb;
+}
+
+.layermend {
+    font-size: 30px;
+    font-weight: 400;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 0;
+    background: 0 0;
+    -webkit-appearance: none;
+}
+
+.layermend::after,
+.layermend::before {
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    width: 18px;
+    height: 1px;
+    content: '';
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 3px;
+    background-color: #999;
+}
+
+.layermend::after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
